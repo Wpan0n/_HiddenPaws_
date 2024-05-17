@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ca0yuxla1x6m3"]
+
+[ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
+[ext_resource type="Texture2D" uid="uid://bbmssowsvvlmt" path="res://assets/MainGame/HiddenPaws.png" id="1_j1k4u"]
+
+[node name="Main Game" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j1k4u")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.1, 0.1)
+limit_left = -4003
+limit_top = -2285
+limit_right = 4002
+limit_bottom = 2282
+editor_draw_limits = true
+script = ExtResource("1_ei4ws")

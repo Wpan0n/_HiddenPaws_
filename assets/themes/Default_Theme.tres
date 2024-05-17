@@ -1,0 +1,24 @@
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://bbvq4quc60gam"]
+
+[ext_resource type="FontFile" uid="uid://c2ep0aaegexyu" path="res://assets/fonts/Nabana-ShadowBold - DEMO.ttf" id="1_3yjhh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c1pfj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6in66"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_03tyj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpgui"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_udth1"]
+
+[resource]
+default_font = ExtResource("1_3yjhh")
+Button/colors/font_focus_color = Color(0.137255, 0.137255, 0.137255, 1)
+Button/colors/font_hover_color = Color(0.894118, 0.72549, 0.0823529, 1)
+Button/colors/font_pressed_color = Color(0, 0.682353, 0.92549, 1)
+Button/styles/disabled = SubResource("StyleBoxEmpty_c1pfj")
+Button/styles/focus = SubResource("StyleBoxEmpty_6in66")
+Button/styles/hover = SubResource("StyleBoxEmpty_03tyj")
+Button/styles/normal = SubResource("StyleBoxEmpty_lpgui")
+Button/styles/pressed = SubResource("StyleBoxEmpty_udth1")
