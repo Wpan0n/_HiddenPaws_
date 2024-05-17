@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtqnn4evowgyk"]
+[gd_scene load_steps=7 format=3 uid="uid://3vsfi5k0puw0"]
 
 [ext_resource type="FontFile" uid="uid://c2ep0aaegexyu" path="res://assets/fonts/Nabana-ShadowBold - DEMO.ttf" id="1_3yxio"]
 [ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_s0d8h"]
@@ -221,6 +221,6 @@ text = "VSync
 [connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]
 [connection signal="toggled" from="Checks/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="toggled" from="Checks/Borderless" to="." method="_on_borderless_toggled"]
-[connection signal="toggled" from="Checks/Windowed" to="." method="_on_windowed_toggled"]
 [connection signal="toggled" from="Checks/Windowed" to="." method="_on_borderless_toggled"]
+[connection signal="toggled" from="Checks/Windowed" to="." method="_on_windowed_toggled"]
 [connection signal="toggled" from="Checks/VSync" to="." method="_on_v_sync_toggled"]

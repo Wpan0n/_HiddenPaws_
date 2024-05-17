@@ -5,16 +5,15 @@
 
 [node name="Main Game" type="Node2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_j1k4u")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.16, 0.16)
-limit_left = -4003
+limit_left = -3997
 limit_top = -2285
 limit_right = 4002
 limit_bottom = 2282
 position_smoothing_enabled = true
-position_smoothing_speed = 1.0
 editor_draw_limits = true
 script = ExtResource("1_ei4ws")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_j1k4u")

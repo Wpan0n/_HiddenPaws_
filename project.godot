@@ -21,5 +21,6 @@ AudioPlayer="*res://Global/audio_player.tscn"
 
 [display]
 
-window/size/initial_position_type=2
+window/size/viewport_width=1920
+window/size/viewport_height=1080
 mouse_cursor/custom_image="res://assets/pawcursor32.png"

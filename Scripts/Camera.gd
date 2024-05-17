@@ -4,10 +4,12 @@ extends Camera2D
 var _target_zoom: float = 1.0
 
 # Constants for zoom limits and increment
-const MIN_ZOOM: float = 0.2
-const MAX_ZOOM: float = 0.5
-const ZOOM_INCREMENT: float = 0.01
+const MIN_ZOOM: float = 0.24
+const MAX_ZOOM: float = 1
+const ZOOM_INCREMENT: float = 0.025
 const ZOOM_RATE: float = 2.0
+const DRAG_SPEED: float = 3  # New constant to control drag speed
+const ZOOM_SPEED: float = 2.0  # New constant to control zoom speed
 
 # Variables for click-and-drag functionality
 var dragging: bool = false
@@ -18,7 +20,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	# Handle middle mouse button drag for panning
 	if event is InputEventMouseMotion:
 		if dragging:
-			position -= event.relative * zoom  # Inverted direction
+			position -= event.relative * zoom * DRAG_SPEED  # Apply drag speed multiplier
 
 	# Handle mouse wheel for zooming
 	if event is InputEventMouseButton:
@@ -36,12 +38,12 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Function to zoom in
 func zoom_in() -> void:
-	_target_zoom = max(_target_zoom - ZOOM_INCREMENT, MIN_ZOOM)
+	_target_zoom = min(_target_zoom + ZOOM_INCREMENT * ZOOM_SPEED, MAX_ZOOM)
 	set_physics_process(true)
 
 # Function to zoom out
 func zoom_out() -> void:
-	_target_zoom = min(_target_zoom + ZOOM_INCREMENT, MAX_ZOOM)
+	_target_zoom = max(_target_zoom - ZOOM_INCREMENT * ZOOM_SPEED, MIN_ZOOM)
 	set_physics_process(true)
 
 # Called every physics frame to update the zoom level smoothly
