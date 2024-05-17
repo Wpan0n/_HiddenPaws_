@@ -36,12 +36,12 @@ func _unhandled_input(event: InputEvent) -> void:
 
 # Function to zoom in
 func zoom_in() -> void:
-	_target_zoom = min(_target_zoom + ZOOM_INCREMENT, MAX_ZOOM)
+	_target_zoom = max(_target_zoom - ZOOM_INCREMENT, MIN_ZOOM)
 	set_physics_process(true)
 
 # Function to zoom out
 func zoom_out() -> void:
-	_target_zoom = max(_target_zoom - ZOOM_INCREMENT, MIN_ZOOM)
+	_target_zoom = min(_target_zoom + ZOOM_INCREMENT, MAX_ZOOM)
 	set_physics_process(true)
 
 # Called every physics frame to update the zoom level smoothly
