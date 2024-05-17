@@ -6,6 +6,7 @@ var audio_server = Engine.get_singleton("AudioServer")
 var level_music: AudioStream
 var level_music_player: AudioStreamPlayer
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# Load the music stream for preview.	
@@ -80,4 +81,4 @@ func _on_windowed_toggled(toggled_on):
 	if toggled_on == true:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	else:
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)	
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
