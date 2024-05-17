@@ -69,7 +69,7 @@ anchor_bottom = 0.5
 offset_left = 451.0
 offset_top = -306.0
 offset_right = -484.0
-offset_bottom = 60.0
+offset_bottom = -150.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -149,8 +149,8 @@ anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -672.0
 offset_top = -71.0
-offset_right = -648.0
-offset_bottom = 10.0
+offset_right = -656.0
+offset_bottom = -3.0
 grow_horizontal = 0
 grow_vertical = 2
 scale = Vector2(2, 2)
@@ -161,6 +161,10 @@ layout_mode = 2
 theme = ExtResource("5_ugnno")
 
 [node name="Borderless" type="CheckBox" parent="Checks"]
+layout_mode = 2
+theme = ExtResource("5_ugnno")
+
+[node name="Windowed" type="CheckBox" parent="Checks"]
 layout_mode = 2
 theme = ExtResource("5_ugnno")
 
@@ -175,11 +179,11 @@ anchor_top = 0.5
 anchor_bottom = 0.5
 offset_left = 540.0
 offset_top = -74.0
-offset_right = 1149.0
+offset_right = 694.0
 offset_bottom = 75.0
 grow_vertical = 2
 
-[node name="FullScreenLabel2" type="Label" parent="VBoxContainer"]
+[node name="FullScreenLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_3yxio")
@@ -195,6 +199,13 @@ theme_override_font_sizes/font_size = 32
 text = "Borderless
 "
 
+[node name="WindowedLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_3yxio")
+theme_override_font_sizes/font_size = 32
+text = "Windowed"
+
 [node name="VSyncLabel2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -207,3 +218,8 @@ text = "VSync
 [connection signal="mouse_exited" from="AudioOptions/VBoxContainer/SfxSlider" to="AudioOptions" method="_on_sfx_slider_mouse_exited"]
 [connection signal="pressed" from="AudioOptions/Apply" to="." method="_on_apply_pressed"]
 [connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]
+[connection signal="toggled" from="Checks/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="Checks/Borderless" to="." method="_on_borderless_toggled"]
+[connection signal="toggled" from="Checks/Windowed" to="." method="_on_windowed_toggled"]
+[connection signal="toggled" from="Checks/Windowed" to="." method="_on_borderless_toggled"]
+[connection signal="toggled" from="Checks/VSync" to="." method="_on_v_sync_toggled"]
