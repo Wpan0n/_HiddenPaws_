@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ca0yuxla1x6m3"]
+[gd_scene load_steps=3 format=3 uid="uid://da2icft4lvrpc"]
 
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
 [ext_resource type="Texture2D" uid="uid://bbmssowsvvlmt" path="res://assets/MainGame/HiddenPaws.png" id="1_j1k4u"]
@@ -9,7 +9,7 @@
 texture = ExtResource("1_j1k4u")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.1, 0.1)
+zoom = Vector2(0.16, 0.16)
 limit_left = -4003
 limit_top = -2285
 limit_right = 4002
