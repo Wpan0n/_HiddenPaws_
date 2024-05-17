@@ -5,7 +5,7 @@ var _target_zoom: float = 1.0
 
 # Constants for zoom limits and increment
 const MIN_ZOOM: float = 0.2
-const MAX_ZOOM: float = 1.0
+const MAX_ZOOM: float = 0.5
 const ZOOM_INCREMENT: float = 0.01
 const ZOOM_RATE: float = 2.0
 
