@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcjm7gll6i7ig"
-path="res://.godot/imported/volume.png-ce3201b622e0d23f771ede047a294b64.ctex"
+uid="uid://dmxjjkikdeaa0"
+path="res://.godot/imported/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.u2.webp-2976c3b4af2b401c80f5f9e365b45106.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Sfx_Music/volume.png"
-dest_files=["res://.godot/imported/volume.png-ce3201b622e0d23f771ede047a294b64.ctex"]
+source_file="res://assets/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.u2.webp"
+dest_files=["res://.godot/imported/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.u2.webp-2976c3b4af2b401c80f5f9e365b45106.ctex"]
 
 [params]
 
