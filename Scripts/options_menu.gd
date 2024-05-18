@@ -86,3 +86,9 @@ func _on_windowed_toggled(toggled_on):
 
 func _on_brightness_slider_value_changed(value):
 	GlobalWorldEnvironment.environment.adjustment_brightness = value
+
+	# Check if the "Escape" key is just pressed
+	if Input.is_action_just_pressed("Escape"):
+		# Change the scene to the main menu
+		get_tree().change_scene_to_file("res://Scences/main_menu.tscn")
+		

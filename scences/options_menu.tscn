@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://3vsfi5k0puw0"]
+[gd_scene load_steps=9 format=3 uid="uid://3vsfi5k0puw0"]
 
 [ext_resource type="FontFile" uid="uid://c2ep0aaegexyu" path="res://assets/fonts/Nabana-ShadowBold - DEMO.ttf" id="1_3yxio"]
 [ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_s0d8h"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/AudioOptions.gd" id="3_ssu5k"]
 [ext_resource type="Script" path="res://Scences/BrightnessSlider.gd" id="5_c25o4"]
 [ext_resource type="Theme" uid="uid://bbvq4quc60gam" path="res://assets/themes/Default_Theme.tres" id="5_ugnno"]
+[ext_resource type="ButtonGroup" uid="uid://d2rqon4ux2cd7" path="res://button_group_video.tres" id="7_twvdu"]
 
 [sub_resource type="SystemFont" id="SystemFont_vh322"]
 font_names = PackedStringArray("Impact")
@@ -115,7 +116,7 @@ text = "Brightness"
 layout_mode = 2
 size_flags_vertical = 8
 min_value = 0.05
-max_value = 1.5
+max_value = 1.15
 step = 0.01
 value = 0.5
 tick_count = 15
@@ -177,15 +178,17 @@ theme_override_constants/separation = 10
 [node name="Fullscreen" type="CheckBox" parent="Checks"]
 layout_mode = 2
 theme = ExtResource("5_ugnno")
-button_pressed = true
+button_group = ExtResource("7_twvdu")
 
 [node name="Borderless" type="CheckBox" parent="Checks"]
 layout_mode = 2
 theme = ExtResource("5_ugnno")
+button_group = ExtResource("7_twvdu")
 
 [node name="Windowed" type="CheckBox" parent="Checks"]
 layout_mode = 2
 theme = ExtResource("5_ugnno")
+button_group = ExtResource("7_twvdu")
 
 [node name="VSync" type="CheckBox" parent="Checks"]
 layout_mode = 2
