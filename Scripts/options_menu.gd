@@ -82,3 +82,7 @@ func _on_windowed_toggled(toggled_on):
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	else:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+
+
+func _on_brightness_slider_value_changed(value):
+	GlobalWorldEnvironment.environment.adjustment_brightness = value
