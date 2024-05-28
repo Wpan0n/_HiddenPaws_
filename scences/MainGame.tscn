@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cfj3b1a4evng0"]
+[gd_scene load_steps=6 format=3 uid="uid://cfj3b1a4evng0"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
 [ext_resource type="Texture2D" uid="uid://bbmssowsvvlmt" path="res://assets/MainGame/HiddenPaws.png" id="1_j1k4u"]
+[ext_resource type="Texture2D" uid="uid://lvlaexunbf5g" path="res://icon.svg" id="4_io54o"]
+[ext_resource type="Script" path="res://Scripts/testsprite.gd" id="5_j0mpy"]
 
 [node name="Main Game" type="Node2D"]
 script = ExtResource("1_8h63c")
@@ -18,3 +20,8 @@ script = ExtResource("1_ei4ws")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_j1k4u")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(175, -203)
+texture = ExtResource("4_io54o")
+script = ExtResource("5_j0mpy")
