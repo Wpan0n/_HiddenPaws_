@@ -5,7 +5,7 @@ func _ready():
 	pass # Replace with function body if needed.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# Check if the "Escape" key is just pressed
 	if Input.is_action_just_pressed("Escape"):
 		# Change the scene to the main menu
