@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cfj3b1a4evng0"]
+[gd_scene load_steps=36 format=3 uid="uid://cfj3b1a4evng0"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
@@ -23,6 +23,18 @@
 [ext_resource type="Texture2D" uid="uid://ixcbmtgilbi2" path="res://Cat_Sprites/Layer 17.svg" id="21_i456o"]
 [ext_resource type="Texture2D" uid="uid://dwp0eas4t5tat" path="res://Cat_Sprites/Layer 18.svg" id="22_2q8c5"]
 [ext_resource type="Texture2D" uid="uid://drnpaqhpplgqv" path="res://Cat_Sprites/Layer 33.svg" id="23_8oyk5"]
+[ext_resource type="Texture2D" uid="uid://cngxk2447a8rg" path="res://Cat_Sprites/Layer 19.svg" id="24_7sn12"]
+[ext_resource type="Texture2D" uid="uid://c0fn814kbe8s1" path="res://Cat_Sprites/Layer 34.svg" id="25_wn6sh"]
+[ext_resource type="Texture2D" uid="uid://fksgw2xpgyh4" path="res://Cat_Sprites/Layer 38.svg" id="26_q2dh0"]
+[ext_resource type="Texture2D" uid="uid://cbxtdffp06pbc" path="res://Cat_Sprites/Layer 43.svg" id="27_ci355"]
+[ext_resource type="Texture2D" uid="uid://gnmoekcmxquf" path="res://Cat_Sprites/Layer 44.svg" id="28_l8rgt"]
+[ext_resource type="Texture2D" uid="uid://dhw7yw3fr0she" path="res://Cat_Sprites/Layer 45.svg" id="29_ea34f"]
+[ext_resource type="Texture2D" uid="uid://b3ca85at62tpn" path="res://Cat_Sprites/Layer 47.svg" id="30_7dhej"]
+[ext_resource type="Texture2D" uid="uid://75utwcl3cj5d" path="res://Cat_Sprites/Layer 48.svg" id="31_ctn6l"]
+[ext_resource type="Texture2D" uid="uid://dbxpnanhggbal" path="res://Cat_Sprites/Layer 49.svg" id="32_eb1u5"]
+[ext_resource type="Texture2D" uid="uid://disddt6oort6n" path="res://Cat_Sprites/Layer 50.svg" id="33_e0f0c"]
+[ext_resource type="Texture2D" uid="uid://chl5mc0xqwoxx" path="res://Cat_Sprites/Layer 51.svg" id="34_j1p2l"]
+[ext_resource type="Texture2D" uid="uid://bwf83wwwmtvoa" path="res://Cat_Sprites/Layer 52.svg" id="35_4ywdu"]
 
 [node name="Main Game" type="Node2D"]
 script = ExtResource("1_8h63c")
@@ -92,8 +104,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D7" type="Sprite2D" parent="."]
-position = Vector2(-2292, 79)
-scale = Vector2(0.0535834, 0.0535834)
+position = Vector2(-1982, -41)
+scale = Vector2(0.036407, 0.036407)
 texture = ExtResource("11_34tfw")
 script = ExtResource("5_j0mpy")
 
@@ -233,8 +245,10 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D21" type="Sprite2D" parent="."]
-position = Vector2(-1487, 236)
+position = Vector2(-3346, -1862)
 scale = Vector2(0.0632354, 0.0632354)
+texture = ExtResource("24_7sn12")
+flip_v = true
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer20" type="AudioStreamPlayer" parent="."]
@@ -242,8 +256,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D22" type="Sprite2D" parent="."]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(525, 699)
+scale = Vector2(0.046357, 0.046357)
+texture = ExtResource("25_wn6sh")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer21" type="AudioStreamPlayer" parent="."]
@@ -251,8 +266,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D23" type="Sprite2D" parent="."]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-931, -30)
+scale = Vector2(0.0438934, 0.0438934)
+texture = ExtResource("26_q2dh0")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer22" type="AudioStreamPlayer" parent="."]
@@ -260,8 +276,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D24" type="Sprite2D" parent="."]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-1958, 1376)
+scale = Vector2(0.0450405, 0.0450405)
+texture = ExtResource("27_ci355")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer23" type="AudioStreamPlayer" parent="."]
@@ -269,8 +286,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D25" type="Sprite2D" parent="."]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-1610, -1688)
+scale = Vector2(0.0429527, 0.0429527)
+texture = ExtResource("28_l8rgt")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer24" type="AudioStreamPlayer" parent="."]
@@ -278,8 +296,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D26" type="Sprite2D" parent="."]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-603, -6)
+scale = Vector2(0.0431602, 0.0431602)
+texture = ExtResource("29_ea34f")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer25" type="AudioStreamPlayer" parent="."]
@@ -287,8 +306,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D27" type="Sprite2D" parent="."]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(1183, 413)
+scale = Vector2(0.0330503, 0.0330503)
+texture = ExtResource("30_7dhej")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer26" type="AudioStreamPlayer" parent="."]
@@ -296,8 +316,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D28" type="Sprite2D" parent="."]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-2337, 1662)
+scale = Vector2(0.0494748, 0.0494748)
+texture = ExtResource("31_ctn6l")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer27" type="AudioStreamPlayer" parent="."]
@@ -305,8 +326,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D29" type="Sprite2D" parent="."]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-385, -717)
+scale = Vector2(0.0385656, 0.0385657)
+texture = ExtResource("32_eb1u5")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer28" type="AudioStreamPlayer" parent="."]
@@ -314,8 +336,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D30" type="Sprite2D" parent="."]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-2479, 115)
+scale = Vector2(0.0316066, 0.0316066)
+texture = ExtResource("33_e0f0c")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer29" type="AudioStreamPlayer" parent="."]
@@ -323,8 +346,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D31" type="Sprite2D" parent="."]
-position = Vector2(-1487, 236)
+position = Vector2(-3171, 1172)
 scale = Vector2(0.0632354, 0.0632354)
+texture = ExtResource("34_j1p2l")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer30" type="AudioStreamPlayer" parent="."]
@@ -332,8 +356,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D32" type="Sprite2D" parent="."]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-3238, 183)
+scale = Vector2(0.0328141, 0.0328141)
+texture = ExtResource("35_4ywdu")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer31" type="AudioStreamPlayer" parent="."]

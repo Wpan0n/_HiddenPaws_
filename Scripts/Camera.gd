@@ -5,10 +5,10 @@ var _target_zoom: float = .25
 
 # Constants for zoom limits and increment
 const MIN_ZOOM: float = 0.24
-const MAX_ZOOM: float = 1
-const ZOOM_INCREMENT: float = 0.025
+const MAX_ZOOM: float = 1.5
+const ZOOM_INCREMENT: float = 0.045
 const ZOOM_RATE: float = 2.0
-const DRAG_SPEED: float = 5  # New constant to control drag speed
+const DRAG_SPEED: float = 4  # New constant to control drag speed
 const ZOOM_SPEED: float = 3.0  # New constant to control zoom speed
 
 # Variables for click-and-drag functionality
