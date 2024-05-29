@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://32t6u6w5plc1"]
+
+[ext_resource type="Script" path="res://HUD.gd" id="1_hq651"]
+[ext_resource type="Texture2D" uid="uid://da5h2l33v5nxw" path="res://assets/image-256x254-removebg-preview (1) (2).png" id="2_qppsd"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_hq651")
+
+[node name="catcount" type="Label" parent="."]
+offset_right = 370.0
+offset_bottom = 138.0
+text = "Cats:"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(24, 18)
+scale = Vector2(0.696429, 0.696429)
+texture = ExtResource("2_qppsd")
