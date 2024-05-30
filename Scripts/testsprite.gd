@@ -1,29 +1,26 @@
 extends Sprite2D
 
-signal sprite_color_changed
+signal sprite_clicked
 
+# Reference to the AudioStreamPlayer node, ensuring the correct path is used
 @onready var audio_player = $"../AudioStreamPlayer"
-var score = 0
 
-# Dictionary to track clicked state for each sprite
-var spriteClickedStates = {}
-
-func _ready():
-	# Initialize clicked state for this sprite
-	spriteClickedStates[self] = false
-
+# This function is called whenever there is an input event
 func _input(event):
+	# Check if the event is a mouse button event
 	if event is InputEventMouseButton:
+		# Check if the left mouse button was pressed
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			if is_pixel_opaque(get_local_mouse_position()) and !spriteClickedStates[self]:
-				print("Sprite clicked")
-				modulate = Color(1, 0, 0)
+			# Check if the click was on an opaque pixel of the sprite
+			if is_pixel_opaque(get_local_mouse_position()):
+				print("sprite clicked")  # Print message to the console
+				modulate = Color(1, 0, 0)  # Change the sprite color to red
+				# Check if the audio_player node is valid
 				if audio_player:
-					audio_player.play()
+					audio_player.play()  # Play the sound effect
 				else:
-					print("AudioStreamPlayer node not found")
-				emit_signal("sprite_color_changed")
-				print("Signal emitted")
-				score += 1
-				print("Score:", score)
-				spriteClickedStates[self] = true  # Mark this sprite as clicked
+					print("AudioStreamPlayer node not found")  # Print error message
+				
+				# Emit a signal to notify that the sprite was clicked
+				emit_signal("sprite_clicked")
+				print("Signal emitted")  # Print a message when the signal is emitted
