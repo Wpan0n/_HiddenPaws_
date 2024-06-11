@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://cfj3b1a4evng0"]
+[gd_scene load_steps=63 format=3 uid="uid://cfj3b1a4evng0"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
@@ -60,6 +60,8 @@
 [ext_resource type="Texture2D" uid="uid://ikakqvp4ohwe" path="res://Cat_Sprites/Layer 100.svg" id="58_hdb6j"]
 [ext_resource type="Texture2D" uid="uid://bt8f732ol14y3" path="res://Cat_Sprites/Layer 104.svg" id="59_i67fr"]
 [ext_resource type="Texture2D" uid="uid://cwi4rdt4hrfdy" path="res://Cat_Sprites/Layer 99.svg" id="60_815mu"]
+[ext_resource type="Script" path="res://Scripts/GameUI.gd" id="61_qf1fh"]
+[ext_resource type="FontFile" uid="uid://c2ep0aaegexyu" path="res://assets/fonts/Nabana-ShadowBold - DEMO.ttf" id="62_3nfgi"]
 
 [node name="Main Game" type="Node2D"]
 script = ExtResource("1_8h63c")
@@ -138,7 +140,7 @@ script = ExtResource("5_j0mpy")
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D8" type="Sprite2D" parent="Sprite2D"]
+[node name="Sprite2D8" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
 position = Vector2(80.2849, 223.165)
 scale = Vector2(0.0494748, 0.0494748)
 texture = ExtResource("12_8adlo")
@@ -542,7 +544,7 @@ script = ExtResource("5_j0mpy")
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D48" type="Sprite2D" parent="Sprite2D"]
+[node name="Sprite2D48" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
 position = Vector2(116, -4)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("51_b8j7e")
@@ -1045,3 +1047,32 @@ script = ExtResource("5_j0mpy")
 [node name="AudioStreamPlayer100" type="AudioStreamPlayer" parent="Sprite2D"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
+
+[node name="UserInterface" type="CanvasLayer" parent="."]
+
+[node name="GameUI" type="Control" parent="UserInterface"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -684.0
+offset_top = -2280.0
+offset_right = -684.0
+offset_bottom = -2280.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("61_qf1fh")
+
+[node name="Score" type="Label" parent="UserInterface/GameUI"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 560.0
+offset_top = 2270.0
+offset_right = 740.0
+offset_bottom = 2347.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("62_3nfgi")
+theme_override_font_sizes/font_size = 50
