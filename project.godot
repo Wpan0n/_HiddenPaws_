@@ -22,6 +22,7 @@ GlobalWorldEnvironment="*res://world_environment.tscn"
 
 [display]
 
+window/size/mode=3
 mouse_cursor/custom_image="res://assets/pawcursor32.png"
 
 [input]

@@ -110,7 +110,7 @@ script = ExtResource("5_j0mpy")
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D"]
+[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
 position = Vector2(-394, 1085)
 scale = Vector2(0.05759, 0.05759)
 texture = ExtResource("9_th002")
@@ -1076,5 +1076,5 @@ offset_bottom = 2347.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("62_3nfgi")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 40
 metadata/_edit_use_anchors_ = true
