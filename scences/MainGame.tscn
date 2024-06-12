@@ -1,4 +1,4 @@
-[gd_scene load_steps=63 format=3 uid="uid://cfj3b1a4evng0"]
+[gd_scene load_steps=79 format=3 uid="uid://cfj3b1a4evng0"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
@@ -60,8 +60,24 @@
 [ext_resource type="Texture2D" uid="uid://ikakqvp4ohwe" path="res://Cat_Sprites/Layer 100.svg" id="58_hdb6j"]
 [ext_resource type="Texture2D" uid="uid://bt8f732ol14y3" path="res://Cat_Sprites/Layer 104.svg" id="59_i67fr"]
 [ext_resource type="Texture2D" uid="uid://cwi4rdt4hrfdy" path="res://Cat_Sprites/Layer 99.svg" id="60_815mu"]
+[ext_resource type="Texture2D" uid="uid://b4x6rabqgscoc" path="res://assets/40 cats sprites/2f010980a035d7562974e57a08b31a94.png" id="61_lb0cy"]
 [ext_resource type="Script" path="res://Scripts/GameUI.gd" id="61_qf1fh"]
 [ext_resource type="FontFile" uid="uid://c2ep0aaegexyu" path="res://assets/fonts/Nabana-ShadowBold - DEMO.ttf" id="62_3nfgi"]
+[ext_resource type="Texture2D" uid="uid://c4fs1v8in178n" path="res://assets/40 cats sprites/5b308a07f3097f90c3fae72e4c3d799d.png" id="62_73xrv"]
+[ext_resource type="Texture2D" uid="uid://doqx6bt3ejxxh" path="res://assets/40 cats sprites/08ce989b7b6e8b80a703b9b59ff28627.png" id="63_typgg"]
+[ext_resource type="Texture2D" uid="uid://0wbb3rlfgxsm" path="res://assets/40 cats sprites/9f45e26c154dd49a3a152e8bcef537a2.png" id="64_iiu4n"]
+[ext_resource type="Texture2D" uid="uid://ceu1oru1y8oe" path="res://assets/40 cats sprites/28fa002c4b28507f0775de8830443408.png" id="65_dhyt3"]
+[ext_resource type="Texture2D" uid="uid://dhkrg8v5rvd4g" path="res://assets/40 cats sprites/57e4d24735fc146fbb25330ec98d461a.png" id="66_xjmqb"]
+[ext_resource type="Texture2D" uid="uid://b4lh4ammx5vre" path="res://assets/40 cats sprites/60b6d5cf8e64bf5db022fa557256fa08.png" id="67_cy70r"]
+[ext_resource type="Texture2D" uid="uid://cmdgkbjv2jt04" path="res://assets/40 cats sprites/312025ebb9fb72a6e3e8a747d40e2b6a.png" id="68_pwbkj"]
+[ext_resource type="Texture2D" uid="uid://doa6qq4m8oqie" path="res://assets/40 cats sprites/157455243d7699aa183921e1aa070edb.png" id="69_051pf"]
+[ext_resource type="Texture2D" uid="uid://c424j4q4l7gdm" path="res://assets/40 cats sprites/a65866164b89c8b81798ad008b6ce595.png" id="70_gyauk"]
+[ext_resource type="Texture2D" uid="uid://bfu6oywhejfo6" path="res://assets/40 cats sprites/b1b58cf01bb83d5a5934f2a9f90dcf14.png" id="71_61gdy"]
+[ext_resource type="Texture2D" uid="uid://t5ta1fyjxir2" path="res://assets/40 cats sprites/b7db0dbcd3a49023b14587edda309e24.png" id="72_hdrcw"]
+[ext_resource type="Texture2D" uid="uid://uty6k8af8etm" path="res://assets/40 cats sprites/cfcdff2ff8cf0722dba4ee5dde7216f6.png" id="73_rkef8"]
+[ext_resource type="Texture2D" uid="uid://b6ri45mc4hiuj" path="res://assets/40 cats sprites/e73658554ff4702b0d9134dda4b2fbb5.png" id="74_trqe3"]
+[ext_resource type="Texture2D" uid="uid://drfuahes43o8k" path="res://assets/40 cats sprites/efc167b18f18bf16fcdb908211a97990.png" id="75_8j2dw"]
+[ext_resource type="Texture2D" uid="uid://msvl0yj386b5" path="res://assets/40 cats sprites/f8c138b8b42c31a7ebb2b409fc36194c.png" id="76_6wth7"]
 
 [node name="Main Game" type="Node2D"]
 script = ExtResource("1_8h63c")
@@ -698,8 +714,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D63" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
+position = Vector2(1057, 910)
 scale = Vector2(0.0632354, 0.0632354)
+texture = ExtResource("61_lb0cy")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer62" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -707,8 +724,10 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D64" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
+position = Vector2(-708, -632)
+rotation = -0.0610865
 scale = Vector2(0.0632354, 0.0632354)
+texture = ExtResource("62_73xrv")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer63" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -716,8 +735,10 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D65" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
+position = Vector2(-3327, -306)
+rotation = -0.322886
 scale = Vector2(0.0632354, 0.0632354)
+texture = ExtResource("63_typgg")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer64" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -725,8 +746,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D66" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-1628, -475)
+scale = Vector2(0.122475, 0.122475)
+texture = ExtResource("64_iiu4n")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer65" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -734,8 +756,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D67" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-3769, -340)
+scale = Vector2(0.0511559, 0.0511559)
+texture = ExtResource("65_dhyt3")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer66" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -743,8 +766,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D68" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(1133, -772)
+scale = Vector2(0.0866798, 0.0866799)
+texture = ExtResource("66_xjmqb")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer67" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -752,8 +776,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D69" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
+position = Vector2(-1094, -438)
 scale = Vector2(0.0632354, 0.0632354)
+texture = ExtResource("67_cy70r")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer68" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -761,8 +786,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D70" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
+position = Vector2(123, 541)
 scale = Vector2(0.0632354, 0.0632354)
+texture = ExtResource("68_pwbkj")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer69" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -770,8 +796,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D71" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
+position = Vector2(-1269, -24)
 scale = Vector2(0.0632354, 0.0632354)
+texture = ExtResource("69_051pf")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer70" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -779,8 +806,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D72" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
+position = Vector2(-662, 171)
 scale = Vector2(0.0632354, 0.0632354)
+texture = ExtResource("70_gyauk")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer71" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -788,8 +816,10 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D73" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
+position = Vector2(-1727, 928)
+rotation = -0.16057
 scale = Vector2(0.0632354, 0.0632354)
+texture = ExtResource("71_61gdy")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer72" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -797,8 +827,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D74" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-1054, 994)
+scale = Vector2(0.0949511, 0.0949511)
+texture = ExtResource("72_hdrcw")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer73" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -806,8 +837,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D75" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
+position = Vector2(-2876, 968)
 scale = Vector2(0.0632354, 0.0632354)
+texture = ExtResource("73_rkef8")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer74" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -815,8 +847,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D76" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-2688, 595)
+scale = Vector2(0.0458021, 0.0454195)
+texture = ExtResource("74_trqe3")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer75" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -824,8 +857,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D77" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
+position = Vector2(-1895, -229)
 scale = Vector2(0.0632354, 0.0632354)
+texture = ExtResource("75_8j2dw")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer76" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -833,8 +867,10 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D78" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1487, 236)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-2816, -927)
+rotation = 0.122173
+scale = Vector2(0.0493479, 0.0493479)
+texture = ExtResource("76_6wth7")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer77" type="AudioStreamPlayer" parent="Sprite2D"]
