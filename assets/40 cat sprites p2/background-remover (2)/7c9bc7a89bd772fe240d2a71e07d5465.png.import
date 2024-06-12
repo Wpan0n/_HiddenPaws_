@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://msvl0yj386b5"
-path="res://.godot/imported/f8c138b8b42c31a7ebb2b409fc36194c.png-e8756b7f39a0c524e2ab26d7ea96f916.ctex"
+uid="uid://cvvlk6k1wnta5"
+path="res://.godot/imported/7c9bc7a89bd772fe240d2a71e07d5465.png-4eedb48d081d98d7f31666fec5f352c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/40 cats sprites/f8c138b8b42c31a7ebb2b409fc36194c.png"
-dest_files=["res://.godot/imported/f8c138b8b42c31a7ebb2b409fc36194c.png-e8756b7f39a0c524e2ab26d7ea96f916.ctex"]
+source_file="res://assets/40 cat sprites p2/background-remover (2)/7c9bc7a89bd772fe240d2a71e07d5465.png"
+dest_files=["res://.godot/imported/7c9bc7a89bd772fe240d2a71e07d5465.png-4eedb48d081d98d7f31666fec5f352c4.ctex"]
 
 [params]
 
