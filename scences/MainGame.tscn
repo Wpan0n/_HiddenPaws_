@@ -1,4 +1,4 @@
-[gd_scene load_steps=100 format=3 uid="uid://cfj3b1a4evng0"]
+[gd_scene load_steps=103 format=3 uid="uid://cfj3b1a4evng0"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://c4pnnrli4eafp" path="res://Cat_Sprites/Layer 15.svg" id="19_wdhjn"]
 [ext_resource type="Texture2D" uid="uid://yscs8yr86aru" path="res://Cat_Sprites/Layer 16.svg" id="20_m8ltl"]
 [ext_resource type="Texture2D" uid="uid://ixcbmtgilbi2" path="res://Cat_Sprites/Layer 17.svg" id="21_i456o"]
+[ext_resource type="Texture2D" uid="uid://oa0acj43af5w" path="res://assets/catsp3/5b11332ab7c85944e41632b805dba918.png" id="21_nipam"]
 [ext_resource type="Texture2D" uid="uid://dwp0eas4t5tat" path="res://Cat_Sprites/Layer 18.svg" id="22_2q8c5"]
 [ext_resource type="Texture2D" uid="uid://drnpaqhpplgqv" path="res://Cat_Sprites/Layer 33.svg" id="23_8oyk5"]
 [ext_resource type="Texture2D" uid="uid://cngxk2447a8rg" path="res://Cat_Sprites/Layer 19.svg" id="24_7sn12"]
@@ -50,10 +51,10 @@
 [ext_resource type="Texture2D" uid="uid://cygutli4tjwav" path="res://Cat_Sprites/Layer 67.svg" id="48_21jlo"]
 [ext_resource type="Texture2D" uid="uid://1e267wxrrxgn" path="res://Cat_Sprites/Layer 62.svg" id="49_2wu6o"]
 [ext_resource type="Texture2D" uid="uid://ckbjscnmu64qy" path="res://Cat_Sprites/Layer 64.svg" id="50_n6avu"]
-[ext_resource type="Texture2D" uid="uid://b2e5l8thsppav" path="res://Cat_Sprites/Layer 85.svg" id="51_b8j7e"]
-[ext_resource type="Texture2D" uid="uid://b075645phisg1" path="res://Cat_Sprites/Layer 87.svg" id="52_htlhd"]
 [ext_resource type="Texture2D" uid="uid://bfng0afbq8uj7" path="res://Cat_Sprites/Layer 88.svg" id="53_obqfn"]
+[ext_resource type="Texture2D" uid="uid://b0p0or1fq6bs3" path="res://assets/catsp3/63488e6c9952d604fa08ace4e36e996e.png" id="54_5qhlt"]
 [ext_resource type="Texture2D" uid="uid://bcgryg704dmrh" path="res://Cat_Sprites/Layer 90.svg" id="54_fl4no"]
+[ext_resource type="Texture2D" uid="uid://btpy0qywl70qy" path="res://assets/catsp3/dec298e40a4ea1f9bdcbeaaa17457f48.png" id="55_mfkf7"]
 [ext_resource type="Texture2D" uid="uid://c6sqerlycobl" path="res://Cat_Sprites/Layer 96.svg" id="55_ynmgs"]
 [ext_resource type="Texture2D" uid="uid://01jtsuxbeoge" path="res://Cat_Sprites/Layer 97.svg" id="56_1c2al"]
 [ext_resource type="Texture2D" uid="uid://ftwnivxupqf1" path="res://Cat_Sprites/Layer 98.svg" id="57_0cb68"]
@@ -64,12 +65,14 @@
 [ext_resource type="Script" path="res://Scripts/GameUI.gd" id="61_qf1fh"]
 [ext_resource type="FontFile" uid="uid://c2ep0aaegexyu" path="res://assets/fonts/Nabana-ShadowBold - DEMO.ttf" id="62_3nfgi"]
 [ext_resource type="Texture2D" uid="uid://c4fs1v8in178n" path="res://assets/40 cats sprites/5b308a07f3097f90c3fae72e4c3d799d.png" id="62_73xrv"]
+[ext_resource type="Texture2D" uid="uid://bp7etuecj3t3i" path="res://assets/catsp3/a0bdfbd88f26ed24b0f1a349c6a6af2b.png" id="63_21vy7"]
 [ext_resource type="Texture2D" uid="uid://doqx6bt3ejxxh" path="res://assets/40 cats sprites/08ce989b7b6e8b80a703b9b59ff28627.png" id="63_typgg"]
 [ext_resource type="Texture2D" uid="uid://0wbb3rlfgxsm" path="res://assets/40 cats sprites/9f45e26c154dd49a3a152e8bcef537a2.png" id="64_iiu4n"]
 [ext_resource type="Texture2D" uid="uid://dhkrg8v5rvd4g" path="res://assets/40 cats sprites/57e4d24735fc146fbb25330ec98d461a.png" id="66_xjmqb"]
 [ext_resource type="Texture2D" uid="uid://b4lh4ammx5vre" path="res://assets/40 cats sprites/60b6d5cf8e64bf5db022fa557256fa08.png" id="67_cy70r"]
 [ext_resource type="Texture2D" uid="uid://cmdgkbjv2jt04" path="res://assets/40 cats sprites/312025ebb9fb72a6e3e8a747d40e2b6a.png" id="68_pwbkj"]
 [ext_resource type="Texture2D" uid="uid://doa6qq4m8oqie" path="res://assets/40 cats sprites/157455243d7699aa183921e1aa070edb.png" id="69_051pf"]
+[ext_resource type="Texture2D" uid="uid://cq0apcjir2yaq" path="res://assets/catsp3/5d458a610cb2a4ae0a379a78f72b695e.png" id="69_q74tl"]
 [ext_resource type="Texture2D" uid="uid://c424j4q4l7gdm" path="res://assets/40 cats sprites/a65866164b89c8b81798ad008b6ce595.png" id="70_gyauk"]
 [ext_resource type="Texture2D" uid="uid://bfu6oywhejfo6" path="res://assets/40 cats sprites/b1b58cf01bb83d5a5934f2a9f90dcf14.png" id="71_61gdy"]
 [ext_resource type="Texture2D" uid="uid://t5ta1fyjxir2" path="res://assets/40 cats sprites/b7db0dbcd3a49023b14587edda309e24.png" id="72_hdrcw"]
@@ -281,8 +284,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D15" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1490, 234)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(607.5, 900.291)
+scale = Vector2(0.264693, 0.264693)
+texture = ExtResource("21_nipam")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer14" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -614,9 +618,10 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D48" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(113, -6)
-scale = Vector2(0.0632354, 0.0632354)
-texture = ExtResource("51_b8j7e")
+position = Vector2(-614, -1048)
+rotation = -0.20944
+scale = Vector2(0.118407, 0.118407)
+texture = ExtResource("54_5qhlt")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer47" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -634,9 +639,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D50" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-2457, 871)
-scale = Vector2(0.0473657, 0.0473657)
-texture = ExtResource("52_htlhd")
+position = Vector2(-3637, 863)
+scale = Vector2(0.221099, 0.221099)
+texture = ExtResource("55_mfkf7")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer49" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -714,9 +719,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D58" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-3719, 1110)
-scale = Vector2(0.0632354, 0.0632354)
-texture = ExtResource("37_c6l7g")
+position = Vector2(-3620, 1082)
+scale = Vector2(0.169915, 0.169915)
+texture = ExtResource("63_21vy7")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer57" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -809,8 +814,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D67" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-3772, -342)
-scale = Vector2(0.0511559, 0.0511559)
+position = Vector2(1741, 1824)
+scale = Vector2(0.364739, 0.405774)
+texture = ExtResource("69_q74tl")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer66" type="AudioStreamPlayer" parent="Sprite2D"]
