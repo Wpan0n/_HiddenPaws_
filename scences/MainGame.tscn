@@ -1165,3 +1165,13 @@ script = ExtResource("5_j0mpy")
 [node name="AudioStreamPlayer100" type="AudioStreamPlayer" parent="Sprite2D"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
+
+[node name="Sprite2D102" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+position = Vector2(1842, -140)
+scale = Vector2(0.228649, 0.228649)
+texture = ExtResource("90_m4pvn")
+script = ExtResource("5_j0mpy")
+
+[node name="AudioStreamPlayer101" type="AudioStreamPlayer" parent="Sprite2D"]
+stream = ExtResource("6_pm1xx")
+volume_db = -30.0
