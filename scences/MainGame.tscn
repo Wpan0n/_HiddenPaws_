@@ -233,7 +233,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D10" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-984, -319)
+position = Vector2(-1466, -858)
 scale = Vector2(0.0452046, 0.0452046)
 texture = ExtResource("14_8ncog")
 script = ExtResource("5_j0mpy")
@@ -243,7 +243,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D11" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(114, -1368)
+position = Vector2(-94.0001, -2079)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("15_bmc15")
 script = ExtResource("5_j0mpy")
@@ -740,8 +740,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D60" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(2813, 369)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(1134, -1651)
+scale = Vector2(0.0481695, 0.0481695)
 texture = ExtResource("43_deeur")
 script = ExtResource("5_j0mpy")
 
@@ -948,8 +948,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D80" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(203, -701)
-rotation = 0.122173
+position = Vector2(-848, -368)
 scale = Vector2(0.353376, 0.353376)
 texture = ExtResource("77_0flo3")
 script = ExtResource("5_j0mpy")
@@ -1081,7 +1080,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D93" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(2221, -275)
+position = Vector2(1808, -1018)
 scale = Vector2(0.267582, 0.267582)
 texture = ExtResource("90_m4pvn")
 script = ExtResource("5_j0mpy")
@@ -1121,8 +1120,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D97" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-2298, -1744)
-scale = Vector2(0.0587915, 0.0587915)
+position = Vector2(-2295, -1742)
+scale = Vector2(0.0587915, 0.0606457)
 texture = ExtResource("94_e8b4i")
 script = ExtResource("5_j0mpy")
 
