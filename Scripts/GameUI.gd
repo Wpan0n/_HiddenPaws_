@@ -1,7 +1,7 @@
 extends Control
 
 var score = 0
-var max_score = 100  
+var max_score = 100 
 @onready var scoreLabel = $Score
 @onready var score_sound_player = $"../../ScoreSoundPlayer"  # Reference to the AudioStreamPlayer2D
 

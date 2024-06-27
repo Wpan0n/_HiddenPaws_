@@ -162,6 +162,7 @@ theme_override_font_sizes/font_size = 18
 text = "Stopwatch
 "
 script = ExtResource("103_7xdmb")
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_j1k4u")
