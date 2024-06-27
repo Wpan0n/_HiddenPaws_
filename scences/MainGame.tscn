@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=3 uid="uid://cfj3b1a4evng0"]
+[gd_scene load_steps=104 format=3 uid="uid://cfj3b1a4evng0"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
@@ -102,6 +102,7 @@
 [ext_resource type="Texture2D" uid="uid://dxyan4oxpepgg" path="res://assets/40 cat sprites p2/e96f0e23b57181a9455a8b5d03df1b8e.png" id="95_1rop7"]
 [ext_resource type="Texture2D" uid="uid://coqne4ktcciql" path="res://assets/40 cat sprites p2/efeaebd05bd507f7c409c6546bdd2512.png" id="96_6bw5e"]
 [ext_resource type="Texture2D" uid="uid://bt6slhf7lv57k" path="res://assets/40 cat sprites p2/fa6cb58bea4a21b8852d117969d451ee.png" id="97_uiylv"]
+[ext_resource type="Script" path="res://Scripts/Stopwatch.gd" id="103_7xdmb"]
 
 [node name="Main Game" type="Node2D"]
 position = Vector2(-3, -2)
@@ -1180,3 +1181,26 @@ script = ExtResource("5_j0mpy")
 [node name="AudioStreamPlayer101" type="AudioStreamPlayer" parent="Sprite2D"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Stopwatch" type="Label" parent="CanvasLayer/Control"]
+offset_left = 693.0
+offset_top = 56.0
+offset_right = 786.0
+offset_bottom = 83.0
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("62_3nfgi")
+theme_override_font_sizes/font_size = 18
+text = "Stopwatch
+"
+script = ExtResource("103_7xdmb")
