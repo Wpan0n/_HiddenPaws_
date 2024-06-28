@@ -76,7 +76,7 @@ theme_override_font_sizes/font_size = 50
 text = "Quit"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(984, 219)
+position = Vector2(960, 219)
 scale = Vector2(0.422056, 0.422056)
 texture = ExtResource("4_lkhfy")
 
