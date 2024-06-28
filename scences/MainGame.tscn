@@ -120,17 +120,6 @@ editor_draw_limits = true
 script = ExtResource("1_ei4ws")
 metadata/_edit_lock_ = true
 
-[node name="CenterContainer" type="CenterContainer" parent="."]
-visible = false
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Sprite2D2" type="Sprite2D" parent="CenterContainer"]
-visible = false
-position = Vector2(75.2234, -788)
-scale = Vector2(1.45283, 1.37069)
-texture = ExtResource("3_j7ik3")
-
 [node name="UserInterface" type="CanvasLayer" parent="."]
 
 [node name="Control" type="Control" parent="UserInterface"]
@@ -197,6 +186,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="UserInterface/GameUI/Score/Stopwatch"]
 visible = false
+layout_mode = 0
 offset_left = -39.0
 offset_top = -41.0
 offset_right = 113.0
