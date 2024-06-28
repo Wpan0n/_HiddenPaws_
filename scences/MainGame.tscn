@@ -122,11 +122,9 @@ metadata/_edit_lock_ = true
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="UserInterface"]
-
-[node name="Sprite2D" type="Sprite2D" parent="UserInterface/CanvasLayer"]
-position = Vector2(725.603, 46)
-scale = Vector2(0.87069, 0.87069)
+[node name="Sprite2D" type="Sprite2D" parent="UserInterface"]
+position = Vector2(879.5, 39)
+scale = Vector2(0.776668, 0.732759)
 texture = ExtResource("3_j7ik3")
 
 [node name="GameUI" type="Control" parent="UserInterface"]
@@ -155,11 +153,14 @@ offset_bottom = 2347.0
 grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("62_3nfgi")
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 35
 metadata/_edit_use_anchors_ = true
 
 [node name="Stopwatch" type="Label" parent="UserInterface/GameUI/Score"]
-layout_mode = 0
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -0.12987
+anchor_bottom = -0.12987
 offset_left = 20.0
 offset_top = 56.0
 offset_right = 113.0
@@ -167,7 +168,7 @@ offset_bottom = 83.0
 size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("62_3nfgi")
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 15
 text = "
 "
 script = ExtResource("103_7xdmb")
@@ -248,7 +249,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D9" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(538, -1594)
+position = Vector2(542, -1589)
+rotation = 0.523599
 scale = Vector2(0.0596879, 0.0596879)
 texture = ExtResource("13_fny4u")
 script = ExtResource("5_j0mpy")
@@ -899,9 +901,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D73" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1730, 926)
-rotation = -0.16057
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-3959, 521)
+rotation = -0.0463764
+scale = Vector2(0.115334, 0.115334)
 texture = ExtResource("71_61gdy")
 script = ExtResource("5_j0mpy")
 
@@ -930,8 +932,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D76" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-2691, 593)
-scale = Vector2(0.0458021, 0.0454195)
+position = Vector2(-2532, 473)
+scale = Vector2(0.0912379, 0.0904757)
 texture = ExtResource("74_trqe3")
 script = ExtResource("5_j0mpy")
 
@@ -940,8 +942,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D77" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1898, -231)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-2707, -19)
+scale = Vector2(0.150561, 0.150561)
 texture = ExtResource("75_8j2dw")
 script = ExtResource("5_j0mpy")
 
@@ -1065,7 +1067,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D89" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-2314.45, -738.087)
+position = Vector2(-3575, 162)
 scale = Vector2(0.0975138, 0.0975138)
 texture = ExtResource("86_3fdxb")
 script = ExtResource("5_j0mpy")
