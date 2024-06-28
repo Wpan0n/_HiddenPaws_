@@ -122,11 +122,6 @@ metadata/_edit_lock_ = true
 
 [node name="UserInterface" type="CanvasLayer" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="UserInterface"]
-position = Vector2(879.5, 39)
-scale = Vector2(0.776668, 0.732759)
-texture = ExtResource("3_j7ik3")
-
 [node name="GameUI" type="Control" parent="UserInterface"]
 layout_mode = 3
 anchors_preset = 15
@@ -1213,3 +1208,12 @@ volume_db = -30.0
 [node name="ScoreSoundPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("104_mwavp")
 volume_db = -12.0
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Sprite2D" type="Sprite2D" parent="CenterContainer"]
+position = Vector2(874, -59)
+scale = Vector2(0.776668, 0.732759)
+texture = ExtResource("3_j7ik3")
