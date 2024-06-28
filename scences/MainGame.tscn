@@ -190,12 +190,12 @@ metadata/_edit_use_anchors_ = true
 layout_mode = 0
 offset_left = -68.0
 offset_top = -40.0
-offset_right = 94.0
+offset_right = 118.0
 offset_bottom = 22.0
 color = Color(0.00784314, 0.00784314, 0.00784314, 0.313726)
 
 [node name="Sprite2D" type="Sprite2D" parent="UserInterface/GameUI/Score/Stopwatch/ColorRect"]
-position = Vector2(27.5002, 28.5)
+position = Vector2(34.5002, 28.5)
 scale = Vector2(0.839286, 0.839286)
 texture = ExtResource("7_r6a0e")
 
