@@ -125,7 +125,8 @@ metadata/_edit_lock_ = true
 [node name="CanvasLayer" type="CanvasLayer" parent="UserInterface"]
 
 [node name="Sprite2D" type="Sprite2D" parent="UserInterface/CanvasLayer"]
-position = Vector2(728, 24)
+position = Vector2(725.603, 46)
+scale = Vector2(0.87069, 0.87069)
 texture = ExtResource("3_j7ik3")
 
 [node name="GameUI" type="Control" parent="UserInterface"]
@@ -134,9 +135,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = -687.0
-offset_top = -2269.0
+offset_top = -2264.0
 offset_right = -687.0
-offset_bottom = -2269.0
+offset_bottom = -2264.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("61_qf1fh")
