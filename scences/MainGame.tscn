@@ -1,4 +1,4 @@
-[gd_scene load_steps=106 format=3 uid="uid://cfj3b1a4evng0"]
+[gd_scene load_steps=107 format=3 uid="uid://bgjarfy7n4o2q"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://1ho361nxnbmd" path="res://Cat_Sprites/Layer 103.svg" id="4_jugfj"]
 [ext_resource type="Script" path="res://Scripts/testsprite.gd" id="5_j0mpy"]
 [ext_resource type="AudioStream" uid="uid://dk6fli64uewdk" path="res://assets/Sfx_Music/kitty-meow-85182.mp3" id="6_pm1xx"]
+[ext_resource type="Texture2D" uid="uid://da5h2l33v5nxw" path="res://assets/image-256x254-removebg-preview (1) (2).png" id="7_r6a0e"]
 [ext_resource type="Texture2D" uid="uid://dmibvpcq8ywh7" path="res://Cat_Sprites/Layer 3.svg" id="8_2uglc"]
 [ext_resource type="Texture2D" uid="uid://chbklughc6ioa" path="res://Cat_Sprites/Layer 4.svg" id="9_th002"]
 [ext_resource type="Texture2D" uid="uid://dleamjd2c5bjt" path="res://Cat_Sprites/Layer 5.svg" id="10_nq607"]
@@ -128,11 +129,6 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Sprite2D" type="Sprite2D" parent="UserInterface/Control"]
-position = Vector2(947.327, 1015)
-scale = Vector2(0.715517, 0.715517)
-texture = ExtResource("3_j7ik3")
-
 [node name="GameUI" type="Control" parent="UserInterface"]
 layout_mode = 3
 anchors_preset = 15
@@ -146,6 +142,12 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("61_qf1fh")
 metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="UserInterface/GameUI"]
+visible = false
+position = Vector2(1634.33, 3279)
+scale = Vector2(0.715517, 0.715517)
+texture = ExtResource("3_j7ik3")
 
 [node name="Score" type="Label" parent="UserInterface/GameUI"]
 layout_mode = 1
@@ -167,9 +169,9 @@ metadata/_edit_use_anchors_ = true
 [node name="Stopwatch" type="Label" parent="UserInterface/GameUI/Score"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.0388889
+anchor_left = -0.0888889
 anchor_top = -0.194805
-anchor_right = -0.0388889
+anchor_right = -0.0888889
 anchor_bottom = -0.194805
 offset_left = 20.0
 offset_top = 56.0
@@ -185,13 +187,23 @@ script = ExtResource("103_7xdmb")
 metadata/_edit_use_anchors_ = true
 
 [node name="ColorRect" type="ColorRect" parent="UserInterface/GameUI/Score/Stopwatch"]
-visible = false
 layout_mode = 0
-offset_left = -39.0
-offset_top = -41.0
-offset_right = 113.0
-offset_bottom = 25.0
-color = Color(0.00784314, 0.00784314, 0.00784314, 0.74902)
+offset_left = -68.0
+offset_top = -40.0
+offset_right = 94.0
+offset_bottom = 22.0
+color = Color(0.00784314, 0.00784314, 0.00784314, 0.313726)
+
+[node name="Sprite2D" type="Sprite2D" parent="UserInterface/GameUI/Score/Stopwatch/ColorRect"]
+position = Vector2(27.5002, 28.5)
+scale = Vector2(0.839286, 0.839286)
+texture = ExtResource("7_r6a0e")
+
+[node name="ColorRect" type="ColorRect" parent="UserInterface/GameUI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(1, 1, 1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_j1k4u")
