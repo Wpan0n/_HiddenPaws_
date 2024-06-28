@@ -789,7 +789,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D62" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(2046, -1299)
+position = Vector2(2048, -1296)
 rotation = 0.16057
 scale = Vector2(0.0404921, 0.0404921)
 texture = ExtResource("36_ppdav")
