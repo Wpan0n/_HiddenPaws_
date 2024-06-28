@@ -323,7 +323,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D16" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(3707.66, -1897.45)
+position = Vector2(3713, -1898)
 scale = Vector2(0.0607258, 0.0607258)
 texture = ExtResource("19_wdhjn")
 flip_v = true
