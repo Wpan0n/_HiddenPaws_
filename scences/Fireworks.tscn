@@ -6,7 +6,8 @@
 shader = ExtResource("1_vbh0n")
 shader_parameter/TWOPI = 6.28319
 shader_parameter/NUM_EXPLOSIONS = 10
-shader_parameter/NUM_PARTICLES = 30
+shader_parameter/NUM_PARTICLES = 20
+shader_parameter/iResolution = Vector2(1024, 600)
 shader_parameter/MOD3 = Vector3(0.1031, 0.11369, 0.13787)
 
 [node name="Fireworks" type="Node2D"]
