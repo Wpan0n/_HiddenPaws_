@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://cfj3b1a4evng0"]
+[gd_scene load_steps=106 format=3 uid="uid://cfj3b1a4evng0"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://t2jvl5ap7b5l" path="res://Cat_Sprites/Layer 2.svg" id="4_hmdvc"]
 [ext_resource type="Texture2D" uid="uid://1ho361nxnbmd" path="res://Cat_Sprites/Layer 103.svg" id="4_jugfj"]
 [ext_resource type="Script" path="res://Scripts/testsprite.gd" id="5_j0mpy"]
+[ext_resource type="Texture2D" uid="uid://lvlaexunbf5g" path="res://icon.svg" id="6_0fnfm"]
 [ext_resource type="AudioStream" uid="uid://dk6fli64uewdk" path="res://assets/Sfx_Music/kitty-meow-85182.mp3" id="6_pm1xx"]
 [ext_resource type="Texture2D" uid="uid://dmibvpcq8ywh7" path="res://Cat_Sprites/Layer 3.svg" id="8_2uglc"]
 [ext_resource type="Texture2D" uid="uid://chbklughc6ioa" path="res://Cat_Sprites/Layer 4.svg" id="9_th002"]
@@ -151,6 +152,7 @@ theme_override_font_sizes/font_size = 40
 metadata/_edit_use_anchors_ = true
 
 [node name="Stopwatch" type="Label" parent="UserInterface/GameUI/Score"]
+layout_mode = 0
 offset_left = 20.0
 offset_top = 56.0
 offset_right = 113.0
@@ -159,10 +161,15 @@ size_flags_vertical = 0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("62_3nfgi")
 theme_override_font_sizes/font_size = 18
-text = "Stopwatch
+text = "
 "
 script = ExtResource("103_7xdmb")
 metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UserInterface"]
+
+[node name="Sprite2D" type="Sprite2D" parent="UserInterface/CanvasLayer"]
+texture = ExtResource("6_0fnfm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_j1k4u")
