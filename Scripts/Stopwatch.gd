@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 # Function to update the displayed time on the label
 func update_timer_display() -> void:
 	var hours = int(time_elapsed / 3600)  # Calculate the number of hours by dividing the total seconds by 3600 (number of seconds in an hour)
-	var minutes = int(time_elapsed) % 3600 / 60  # Calculate the number of minutes by first taking the integer part of time_elapsed, then using modulo 3600 to get the remaining seconds after hours, and dividing by 60
+	var minutes = int(time_elapsed) % 3600 / 60.0  # Calculate the number of minutes by first taking the integer part of time_elapsed, then using modulo 3600 to get the remaining seconds after hours, and dividing by 60.0 for float division
 	var seconds = int(time_elapsed) % 60  # Calculate the number of seconds by taking the remainder of total seconds divided by 60
 	var milliseconds = int((time_elapsed - int(time_elapsed)) * 100)  # Calculate the number of milliseconds by taking the fractional part of time_elapsed and multiplying by 100
 
