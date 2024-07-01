@@ -4,6 +4,7 @@ var score = 0
 var max_score = 100 
 @onready var scoreLabel = $Score
 @onready var score_sound_player = $"../../ScoreSoundPlayer"  # Reference to the AudioStreamPlayer2D
+@onready var colorRect = $"../../Fireworks"  # Reference to your ColorRect node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,10 +25,16 @@ func _on_sprite_color_changed():
 	print("Score: ", score)  # Debugging statement
 	# Update the score label text to display the new score
 	update_score_label()
-	# Check if the score has reached 10 and play sound
+	# Check if the score has reached 100 and play sound
 	if score >= max_score:
 		print("Playing score sound")  # Debugging statement
 		play_score_sound()
+
+	# Toggle ColorRect visibility when score reaches 3
+	if score == 100:
+		colorRect.visible = true
+	else:
+		colorRect.visible = false
 
 # Helper method to update the score label text
 func update_score_label():
