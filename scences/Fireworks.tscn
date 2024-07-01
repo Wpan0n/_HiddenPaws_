@@ -1,18 +1,20 @@
 [gd_scene load_steps=3 format=3 uid="uid://cnc4535rdo5yh"]
 
-[ext_resource type="Shader" path="res://shader/Fireworks.gdshader" id="1_vbh0n"]
+[ext_resource type="Shader" path="res://shader/Fireworks.gdshader" id="1_3pelr"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xkudr"]
-shader = ExtResource("1_vbh0n")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_an8jd"]
+shader = ExtResource("1_3pelr")
 shader_parameter/TWOPI = 6.28319
-shader_parameter/NUM_EXPLOSIONS = 10
-shader_parameter/NUM_PARTICLES = 20
-shader_parameter/iResolution = Vector2(1024, 600)
+shader_parameter/NUM_EXPLOSIONS = 8
+shader_parameter/NUM_PARTICLES = 70
+shader_parameter/iResolution = Vector2(1920, 1080)
 shader_parameter/MOD3 = Vector3(0.1031, 0.11369, 0.13787)
 
-[node name="Fireworks" type="Node2D"]
-
-[node name="ColorRect" type="ColorRect" parent="."]
-material = SubResource("ShaderMaterial_xkudr")
-offset_right = 6000.0
-offset_bottom = 4000.0
+[node name="Fireworks" type="ColorRect"]
+material = SubResource("ShaderMaterial_an8jd")
+offset_left = -4000.0
+offset_top = 2286.0
+offset_right = 4000.0
+offset_bottom = 6857.0
+mouse_filter = 1
+color = Color(1, 1, 1, 0)

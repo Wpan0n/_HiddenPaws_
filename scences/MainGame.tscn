@@ -3,10 +3,9 @@
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
 [ext_resource type="Texture2D" uid="uid://bbmssowsvvlmt" path="res://assets/MainGame/HiddenPaws.png" id="1_j1k4u"]
-[ext_resource type="Texture2D" uid="uid://dkdc755fuqxkx" path="res://assets/printable-banner-template-removebg-preview.png" id="3_j7ik3"]
 [ext_resource type="Texture2D" uid="uid://t2jvl5ap7b5l" path="res://Cat_Sprites/Layer 2.svg" id="4_hmdvc"]
 [ext_resource type="Texture2D" uid="uid://1ho361nxnbmd" path="res://Cat_Sprites/Layer 103.svg" id="4_jugfj"]
-[ext_resource type="Script" path="res://Scripts/testsprite.gd" id="5_j0mpy"]
+[ext_resource type="Script" path="res://Scripts/Cat_Sprite.gd" id="5_j0mpy"]
 [ext_resource type="AudioStream" uid="uid://dk6fli64uewdk" path="res://assets/Sfx_Music/kitty-meow-85182.mp3" id="6_pm1xx"]
 [ext_resource type="Texture2D" uid="uid://da5h2l33v5nxw" path="res://assets/image-256x254-removebg-preview (1) (2).png" id="7_r6a0e"]
 [ext_resource type="Texture2D" uid="uid://dmibvpcq8ywh7" path="res://Cat_Sprites/Layer 3.svg" id="8_2uglc"]
@@ -106,6 +105,7 @@
 [ext_resource type="Texture2D" uid="uid://bt6slhf7lv57k" path="res://assets/40 cat sprites p2/fa6cb58bea4a21b8852d117969d451ee.png" id="97_uiylv"]
 [ext_resource type="Script" path="res://Scripts/Stopwatch.gd" id="103_7xdmb"]
 [ext_resource type="AudioStream" uid="uid://b5nwt8ce6k68f" path="res://assets/Sfx_Music/EndGame_Sound.mp3" id="104_mwavp"]
+[ext_resource type="PackedScene" uid="uid://cnc4535rdo5yh" path="res://scences/Fireworks.tscn" id="107_yp3rx"]
 
 [node name="Main Game" type="Node2D"]
 position = Vector2(-3, -2)
@@ -142,12 +142,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("61_qf1fh")
 metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D2" type="Sprite2D" parent="UserInterface/GameUI"]
-visible = false
-position = Vector2(1634.33, 3279)
-scale = Vector2(0.715517, 0.715517)
-texture = ExtResource("3_j7ik3")
 
 [node name="Score" type="Label" parent="UserInterface/GameUI"]
 layout_mode = 1
@@ -1242,3 +1236,10 @@ volume_db = -30.0
 [node name="ScoreSoundPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("104_mwavp")
 volume_db = -12.0
+
+[node name="Fireworks" parent="." instance=ExtResource("107_yp3rx")]
+visible = false
+offset_left = -4000.0
+offset_top = -2286.0
+offset_right = 4000.0
+offset_bottom = 2285.0
