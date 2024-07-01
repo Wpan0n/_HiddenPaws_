@@ -7,7 +7,7 @@ shader_type canvas_item;
 // Constants
 uniform float TWOPI = 6.283185307179586; // 2 * PI
 uniform int NUM_EXPLOSIONS = 8; // Number of fireworks
-uniform int NUM_PARTICLES = 70; // Number of particles per firework
+uniform int NUM_PARTICLES = 20; // Number of particles per firework
 uniform vec2 iResolution = vec2(600.0, 400.0); // Resolution of the screen
 
 // Noise functions by Dave Hoskins
