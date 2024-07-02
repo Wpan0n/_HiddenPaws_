@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://c628u3wblvb6p"]
+
+[ext_resource type="Texture2D" uid="uid://b38s37gc8b1ri" path="res://smoke-texture-mapping-transparency-and-translucency-information-smoke-b13812777f08abf13b5bfb430b53cf6b.png" id="1_74o5c"]
+
+[sub_resource type="Curve" id="Curve_kk16d"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Area2D" type="Area2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 2000
+lifetime = 3.0
+speed_scale = 0.3
+texture = ExtResource("1_74o5c")
+emission_shape = 2
+emission_sphere_radius = 23.0
+gravity = Vector2(0, -100)
+orbit_velocity_min = -0.2
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_kk16d")
+color = Color(0.952941, 0.952941, 0.952941, 0.156863)
