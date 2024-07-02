@@ -5,7 +5,6 @@
 shader_type canvas_item;
 
 // Constants
-uniform float TWOPI = 6.283185307179586; // 2 * PI
 uniform int NUM_EXPLOSIONS = 8; // Number of fireworks
 uniform int NUM_PARTICLES = 20; // Number of particles per firework
 uniform vec2 iResolution = vec2(600.0, 400.0); // Resolution of the screen
@@ -21,18 +20,7 @@ vec3 hash31(float p) {
 }
 
 // Hash function to generate a pseudo-random float from a 2D vector
-float hash12(vec2 p) {
-    vec3 p3 = fract(vec3(p.xy, 0.0) * MOD3);
-    p3 += dot(p3, p3.yzx + 19.19);
-    return fract((p3.x + p3.y) * p3.z);
-}
 
-// Function to draw a circle
-float circ(vec2 uv, vec2 pos, float size) {
-    uv -= pos;
-    size *= size;
-    return smoothstep(size * 1.1, size, dot(uv, uv));
-}
 
 // Function to create a lighter effect
 float lighter(vec2 uv, vec2 pos, float size) {
@@ -73,7 +61,7 @@ void fragment() {
     uv.x -= 0.5; // Center the coordinates
     uv.x *= iResolution.x / iResolution.y; // Maintain aspect ratio
     
-    float n = hash12(uv + 10.0); // Generate noise based on UV coordinates
+
     float t = TIME * 0.5; // Scale time for slower animation
     vec3 c = vec3(0.0); // Initialize color
 

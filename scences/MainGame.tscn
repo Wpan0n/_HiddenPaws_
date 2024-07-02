@@ -78,7 +78,6 @@
 [ext_resource type="Texture2D" uid="uid://bfu6oywhejfo6" path="res://assets/40 cats sprites/b1b58cf01bb83d5a5934f2a9f90dcf14.png" id="71_61gdy"]
 [ext_resource type="Texture2D" uid="uid://t5ta1fyjxir2" path="res://assets/40 cats sprites/b7db0dbcd3a49023b14587edda309e24.png" id="72_hdrcw"]
 [ext_resource type="Texture2D" uid="uid://uty6k8af8etm" path="res://assets/40 cats sprites/cfcdff2ff8cf0722dba4ee5dde7216f6.png" id="73_rkef8"]
-[ext_resource type="Texture2D" uid="uid://b6ri45mc4hiuj" path="res://assets/40 cats sprites/e73658554ff4702b0d9134dda4b2fbb5.png" id="74_trqe3"]
 [ext_resource type="Texture2D" uid="uid://drfuahes43o8k" path="res://assets/40 cats sprites/efc167b18f18bf16fcdb908211a97990.png" id="75_8j2dw"]
 [ext_resource type="Texture2D" uid="uid://msvl0yj386b5" path="res://assets/40 cats sprites/last.png" id="76_6wth7"]
 [ext_resource type="Texture2D" uid="uid://dxbveerklc117" path="res://assets/40 cat sprites p2/0e6402efc74a8662ba3d5a4f098d2f9b.png" id="76_rtmnv"]
@@ -105,6 +104,7 @@
 [ext_resource type="Texture2D" uid="uid://bt6slhf7lv57k" path="res://assets/40 cat sprites p2/fa6cb58bea4a21b8852d117969d451ee.png" id="97_uiylv"]
 [ext_resource type="Script" path="res://Scripts/Stopwatch.gd" id="103_7xdmb"]
 [ext_resource type="AudioStream" uid="uid://b5nwt8ce6k68f" path="res://assets/Sfx_Music/EndGame_Sound.mp3" id="104_mwavp"]
+[ext_resource type="Texture2D" uid="uid://ulcgx45wi4xy" path="res://assets/catsp3/c5b1d2d42f22550ef25b9e02dfdae327.png" id="104_w4vf7"]
 [ext_resource type="PackedScene" uid="uid://cnc4535rdo5yh" path="res://scences/Fireworks.tscn" id="107_yp3rx"]
 
 [node name="Main Game" type="Node2D"]
@@ -921,7 +921,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D72" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-665, 169)
+position = Vector2(-665, 170)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("70_gyauk")
 script = ExtResource("5_j0mpy")
@@ -952,8 +952,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D75" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-2879, 966)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-2876.42, 962.642)
+scale = Vector2(0.0723981, 0.0723981)
 texture = ExtResource("73_rkef8")
 script = ExtResource("5_j0mpy")
 
@@ -962,9 +962,10 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D76" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-2532, 473)
-scale = Vector2(0.0912379, 0.0904757)
-texture = ExtResource("74_trqe3")
+position = Vector2(2044, -1882)
+rotation = 2.87979
+scale = Vector2(0.225015, 0.236309)
+texture = ExtResource("55_mfkf7")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer75" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -1230,9 +1231,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D102" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(1848, -8)
-scale = Vector2(0.228649, 0.228649)
-texture = ExtResource("90_m4pvn")
+position = Vector2(2175, -403)
+scale = Vector2(0.265734, 0.239357)
+texture = ExtResource("104_w4vf7")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer101" type="AudioStreamPlayer" parent="Sprite2D"]
@@ -1245,9 +1246,7 @@ volume_db = -12.0
 
 [node name="Fireworks" parent="." instance=ExtResource("107_yp3rx")]
 visible = false
-offset_left = -4000.0
 offset_top = -2286.0
-offset_right = 4000.0
 offset_bottom = 2285.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
