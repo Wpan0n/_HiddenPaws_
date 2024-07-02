@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="_Hidden Paws_"
-run/main_scene="res://Scences/main_menu.tscn"
+run/main_scene="res://Scences/MainGame.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
