@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://bgjarfy7n4o2q"]
+[gd_scene load_steps=110 format=3 uid="uid://bgjarfy7n4o2q"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
@@ -107,6 +107,11 @@
 [ext_resource type="Texture2D" uid="uid://ulcgx45wi4xy" path="res://assets/catsp3/c5b1d2d42f22550ef25b9e02dfdae327.png" id="104_w4vf7"]
 [ext_resource type="AudioStream" uid="uid://5a45u7dnkyim" path="res://assets/Sfx_Music/Fireworks Sound Effect with the crowd cheering. (Free to use).mp3" id="107_qku3q"]
 [ext_resource type="PackedScene" uid="uid://cnc4535rdo5yh" path="res://scences/Fireworks.tscn" id="107_yp3rx"]
+[ext_resource type="Texture2D" uid="uid://b38s37gc8b1ri" path="res://smoke-texture-mapping-transparency-and-translucency-information-smoke-b13812777f08abf13b5bfb430b53cf6b.png" id="108_kbdvb"]
+
+[sub_resource type="Curve" id="Curve_ovdql"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
 
 [node name="Main Game" type="Node2D"]
 position = Vector2(-3, -2)
@@ -1253,3 +1258,24 @@ offset_bottom = 2285.0
 [node name="Hooray_EndGame" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("107_qku3q")
 volume_db = -20.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 1105.0
+offset_top = -2178.0
+offset_right = 1494.0
+offset_bottom = -1958.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(1377, -1947)
+amount = 2000
+lifetime = 3.0
+speed_scale = 0.3
+texture = ExtResource("108_kbdvb")
+emission_shape = 2
+emission_sphere_radius = 28.0
+gravity = Vector2(0, -100)
+orbit_velocity_min = -0.2
+scale_amount_min = 0.1
+scale_amount_max = 0.1
+scale_amount_curve = SubResource("Curve_ovdql")
+color = Color(0.866667, 0.866667, 0.866667, 0.156863)
