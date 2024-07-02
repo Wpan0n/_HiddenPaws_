@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://bgjarfy7n4o2q"]
+[gd_scene load_steps=108 format=3 uid="uid://bgjarfy7n4o2q"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
@@ -105,6 +105,7 @@
 [ext_resource type="Script" path="res://Scripts/Stopwatch.gd" id="103_7xdmb"]
 [ext_resource type="AudioStream" uid="uid://b5nwt8ce6k68f" path="res://assets/Sfx_Music/EndGame_Sound.mp3" id="104_mwavp"]
 [ext_resource type="Texture2D" uid="uid://ulcgx45wi4xy" path="res://assets/catsp3/c5b1d2d42f22550ef25b9e02dfdae327.png" id="104_w4vf7"]
+[ext_resource type="AudioStream" uid="uid://5a45u7dnkyim" path="res://assets/Sfx_Music/Fireworks Sound Effect with the crowd cheering. (Free to use).mp3" id="107_qku3q"]
 [ext_resource type="PackedScene" uid="uid://cnc4535rdo5yh" path="res://scences/Fireworks.tscn" id="107_yp3rx"]
 
 [node name="Main Game" type="Node2D"]
@@ -1242,11 +1243,13 @@ volume_db = -30.0
 
 [node name="ScoreSoundPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("104_mwavp")
-volume_db = -12.0
+volume_db = -14.0
 
 [node name="Fireworks" parent="." instance=ExtResource("107_yp3rx")]
 visible = false
 offset_top = -2286.0
 offset_bottom = 2285.0
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="Hooray_EndGame" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("107_qku3q")
+volume_db = -20.0

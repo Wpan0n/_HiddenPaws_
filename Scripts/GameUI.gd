@@ -1,10 +1,11 @@
 extends Control
 
 var score = 0
-var max_score = 100 
+var max_score = 3 
 @onready var scoreLabel = $Score
-@onready var score_sound_player = $"../../ScoreSoundPlayer"  # Reference to the AudioStreamPlayer2D
+@onready var score_sound_player = $"../../ScoreSoundPlayer" 
 @onready var colorRect = $"../../Fireworks"  # Reference to your ColorRect node
+@onready var hooray_sfx = $"../../Hooray_EndGame" # Reference to the AudioStreamPlayer Hooray Sfx
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,9 +31,11 @@ func _on_sprite_color_changed():
 		print("Playing score sound")  # Debugging statement
 		play_score_sound()
 
-	# Toggle ColorRect visibility when score reaches 3
-	if score == 100:
+	# Toggle ColorRect visibility when score reaches 100
+	if score == 3:
 		colorRect.visible = true
+		# Call the function to turn off visibility after 15 seconds
+		call_deferred("turn_off_color_rect_after_delay")
 	else:
 		colorRect.visible = false
 
@@ -40,10 +43,29 @@ func _on_sprite_color_changed():
 func update_score_label():
 	scoreLabel.text = str(score) + "/" + str(max_score)
 
-# Method to play the score sound
+# Method to play the score sound and hooray sound if score_sound_player is playing
 func play_score_sound():
 	if score_sound_player:
 		print("Score sound player exists")  # Debugging statement
 		score_sound_player.play()
+		# Check if hooray_sfx should be played
+		if score_sound_player.is_playing():
+			play_hooray_sfx()
 	else:
 		print("Score sound player does not exist")  # Debugging statement
+
+# Function to turn off ColorRect visibility after 15 seconds
+func turn_off_color_rect_after_delay():
+	var time_elapsed = 0.0
+	while time_elapsed < 15:
+		await get_tree().process_frame
+		time_elapsed += get_process_delta_time()
+	colorRect.visible = false
+
+# Function to play the hooray_sfx
+func play_hooray_sfx():
+	if hooray_sfx:
+		print("Playing hooray sound effect")  # Debugging statement
+		hooray_sfx.play()
+	else:
+		print("Hooray sound effect not available")  # Debugging statement

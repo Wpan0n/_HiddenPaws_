@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5a45u7dnkyim"
+path="res://.godot/imported/Fireworks Sound Effect with the crowd cheering. (Free to use).mp3-214c150b7f76e22838fa97ace32b0786.mp3str"
+
+[deps]
+
+source_file="res://assets/Sfx_Music/Fireworks Sound Effect with the crowd cheering. (Free to use).mp3"
+dest_files=["res://.godot/imported/Fireworks Sound Effect with the crowd cheering. (Free to use).mp3-214c150b7f76e22838fa97ace32b0786.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
