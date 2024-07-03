@@ -80,8 +80,6 @@ position = Vector2(960, 219)
 scale = Vector2(0.422056, 0.422056)
 texture = ExtResource("4_lkhfy")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Settings_Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit_Button" to="." method="_on_quit_button_pressed"]

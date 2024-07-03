@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://c2ep0aaegexyu" path="res://assets/fonts/Nabana-ShadowBold - DEMO.ttf" id="1_3yxio"]
 [ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_s0d8h"]
-[ext_resource type="Texture2D" uid="uid://d1aslvpnqdwtf" path="res://assets/image-256x254-removebg-preview (1) (3).png" id="3_kumj3"]
+[ext_resource type="Texture2D" path="res://assets/image-256x254-removebg-preview (1) (3).png" id="3_kumj3"]
 [ext_resource type="Theme" uid="uid://bbvq4quc60gam" path="res://assets/themes/Default_Theme.tres" id="5_ugnno"]
 [ext_resource type="Texture2D" uid="uid://bj74ihceuxwln" path="res://assets/HiddenPaws Logo.png" id="6_7rbxh"]
 [ext_resource type="ButtonGroup" uid="uid://d2rqon4ux2cd7" path="res://button_group_video.tres" id="7_twvdu"]
