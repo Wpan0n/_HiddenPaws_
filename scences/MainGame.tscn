@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://bgjarfy7n4o2q"]
+[gd_scene load_steps=114 format=3 uid="uid://bgjarfy7n4o2q"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
@@ -108,6 +108,23 @@
 [ext_resource type="AudioStream" uid="uid://5a45u7dnkyim" path="res://assets/Sfx_Music/Fireworks Sound Effect with the crowd cheering. (Free to use).mp3" id="107_qku3q"]
 [ext_resource type="PackedScene" uid="uid://3c5dvluqlxfp" path="res://scences/Fireworks.tscn" id="107_yp3rx"]
 [ext_resource type="Texture2D" uid="uid://gd5p3cde2vmq" path="res://toppng.com-smoke-particle-texture-399x385.png" id="108_6p3bw"]
+[ext_resource type="Shader" path="res://shader/fog.gdshader" id="108_kkxhd"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bwc7e"]
+frequency = 0.003
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vneeo"]
+width = 8000
+height = 899
+seamless = true
+seamless_blend_skirt = 0.75
+noise = SubResource("FastNoiseLite_bwc7e")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ipjb7"]
+shader = ExtResource("108_kkxhd")
+shader_parameter/density = 1.0
+shader_parameter/speed = Vector2(0.01, 0.05)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_vneeo")
 
 [sub_resource type="Curve" id="Curve_ovdql"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -201,627 +218,619 @@ position = Vector2(34.5002, 28.5)
 scale = Vector2(0.839286, 0.839286)
 texture = ExtResource("7_r6a0e")
 
-[node name="ColorRect" type="ColorRect" parent="UserInterface/GameUI"]
-layout_mode = 0
-offset_left = 2.0
-offset_right = 42.0
-offset_bottom = 40.0
-color = Color(1, 1, 1, 0)
-metadata/_edit_use_anchors_ = true
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="HiddenPaw_Scene" type="Sprite2D" parent="."]
 texture = ExtResource("1_j1k4u")
 metadata/_edit_lock_ = true
 
-[node name="Sprite2D2" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D2" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3142, 825)
 scale = Vector2(0.0583776, 0.0583776)
 texture = ExtResource("4_hmdvc")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D3" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D3" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3952, 1485)
 scale = Vector2(0.0844971, 0.0844971)
 texture = ExtResource("4_jugfj")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D4" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D4" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(2282, 789)
 scale = Vector2(0.0554645, 0.0554645)
 texture = ExtResource("8_2uglc")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D5" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D5" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-397, 1083)
 scale = Vector2(0.05759, 0.05759)
 texture = ExtResource("9_th002")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D6" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D6" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1490, 234)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("10_nq607")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D7" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D7" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-2000, -38)
 scale = Vector2(0.036407, 0.036407)
 texture = ExtResource("11_34tfw")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D8" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D8" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(77.2849, 221.165)
 scale = Vector2(0.0494748, 0.0494748)
 texture = ExtResource("12_8adlo")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D9" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D9" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(542, -1589)
 rotation = 0.523599
 scale = Vector2(0.0596879, 0.0596879)
 texture = ExtResource("13_fny4u")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D10" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D10" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1466, -858)
 scale = Vector2(0.0452046, 0.0452046)
 texture = ExtResource("14_8ncog")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D11" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D11" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-94.0001, -2079)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("15_bmc15")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D12" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D12" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1195, -1563)
 scale = Vector2(0.0599541, 0.0599541)
 texture = ExtResource("16_bm4lq")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer11" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer11" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D13" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D13" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(2587, 923)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("17_61hub")
 flip_h = true
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer12" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer12" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D14" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D14" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(3694, 1328)
 scale = Vector2(0.0885509, 0.0885511)
 texture = ExtResource("18_shos5")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer13" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer13" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D15" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D15" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(608.5, 901.291)
 scale = Vector2(0.264693, 0.264693)
 texture = ExtResource("21_nipam")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer14" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer14" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D16" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D16" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(3713, -1898)
 scale = Vector2(0.0607258, 0.0607258)
 texture = ExtResource("19_wdhjn")
 flip_v = true
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer15" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer15" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D17" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D17" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(1575, -256)
 scale = Vector2(0.048053, 0.048053)
 texture = ExtResource("20_m8ltl")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer16" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer16" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D18" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D18" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(1264, 172)
 scale = Vector2(0.0529954, 0.0529954)
 texture = ExtResource("21_i456o")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer17" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer17" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D19" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D19" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-242, -1432)
 scale = Vector2(0.0326749, 0.0326749)
 texture = ExtResource("22_2q8c5")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer18" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer18" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D20" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D20" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1073, 630)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("23_8oyk5")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer19" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer19" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D21" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D21" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3346, -1861)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("24_7sn12")
 flip_v = true
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer20" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer20" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D22" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D22" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(522, 697)
 scale = Vector2(0.046357, 0.046357)
 texture = ExtResource("25_wn6sh")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer21" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer21" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D23" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D23" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-934, -32)
 scale = Vector2(0.0438934, 0.0438934)
 texture = ExtResource("26_q2dh0")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer22" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer22" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D24" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D24" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-242, -1977)
 scale = Vector2(0.0450405, 0.0450405)
 texture = ExtResource("27_ci355")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer23" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer23" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D25" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D25" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1613, -1690)
 scale = Vector2(0.0429527, 0.0429527)
 texture = ExtResource("28_l8rgt")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer24" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer24" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D26" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D26" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-606, -8)
 scale = Vector2(0.0431602, 0.0431602)
 texture = ExtResource("29_ea34f")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer25" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer25" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D27" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D27" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(1180, 411)
 scale = Vector2(0.0330503, 0.0330503)
 texture = ExtResource("30_7dhej")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer26" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer26" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D28" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D28" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-2340, 1660)
 scale = Vector2(0.0494748, 0.0494748)
 texture = ExtResource("31_ctn6l")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer27" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer27" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D29" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D29" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-385, -717)
 scale = Vector2(0.0385656, 0.0385657)
 texture = ExtResource("32_eb1u5")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer28" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer28" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D30" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D30" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-2482, 113)
 scale = Vector2(0.0316066, 0.0316066)
 texture = ExtResource("33_e0f0c")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer29" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer29" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D31" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D31" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3174, 1170)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("34_j1p2l")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer30" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer30" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D32" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D32" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3241, 181)
 scale = Vector2(0.0328141, 0.0328141)
 texture = ExtResource("35_4ywdu")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer31" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer31" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D33" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D33" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1548, -78)
 scale = Vector2(0.0569481, 0.0569481)
 texture = ExtResource("36_ppdav")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer32" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer32" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D34" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D34" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-2536, 1299)
 scale = Vector2(0.0534966, 0.0534967)
 texture = ExtResource("37_c6l7g")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer33" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer33" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D35" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D35" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(330, 1672)
 scale = Vector2(0.102075, 0.102075)
 texture = ExtResource("38_m7ju2")
 flip_h = true
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer34" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer34" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D36" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D36" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-294, -242)
 scale = Vector2(0.0457203, 0.0457203)
 texture = ExtResource("39_p6lk8")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer35" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer35" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D37" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D37" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(334, -346)
 scale = Vector2(0.0546326, 0.0546326)
 texture = ExtResource("40_j0aot")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer36" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer36" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D38" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D38" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(578, 441)
 scale = Vector2(0.0437417, 0.0437417)
 texture = ExtResource("41_182m2")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer37" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer37" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D39" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D39" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-609, 519)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("42_4chpr")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer38" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer38" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D40" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D40" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(3695, -798)
 scale = Vector2(0.0812731, 0.0812732)
 texture = ExtResource("43_deeur")
 flip_h = true
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer39" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer39" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D41" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D41" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1919, 1360)
 scale = Vector2(0.0584854, 0.0584854)
 texture = ExtResource("44_wc868")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer40" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer40" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D42" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D42" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(3789, 225)
 scale = Vector2(0.045052, 0.045052)
 texture = ExtResource("45_gdehx")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer41" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer41" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D43" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D43" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1520, 1566)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("46_r3c5m")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer42" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer42" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D44" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D44" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(760, 2120)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("47_aklxq")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer43" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer43" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D45" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D45" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(84.5175, 796.272)
 scale = Vector2(0.0794438, 0.0794438)
 texture = ExtResource("48_21jlo")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer44" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer44" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D46" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D46" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(3911, 1637)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("49_2wu6o")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer45" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer45" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D47" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D47" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(3301, 834)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("50_n6avu")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer46" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer46" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D48" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D48" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-614, -1048)
 rotation = -0.20944
 scale = Vector2(0.118407, 0.118407)
 texture = ExtResource("54_5qhlt")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer47" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer47" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D49" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D49" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(689, 104)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("48_21jlo")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer48" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer48" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D50" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D50" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3637, 863)
 scale = Vector2(0.221099, 0.221099)
 texture = ExtResource("55_mfkf7")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer49" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer49" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D51" type="Sprite2D" parent="Sprite2D"]
+[node name="Sprite2D51" type="Sprite2D" parent="HiddenPaw_Scene"]
 position = Vector2(-2418, -251)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("53_obqfn")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer50" type="AudioStreamPlayer" parent="Sprite2D" groups=["sprite_group"]]
+[node name="AudioStreamPlayer50" type="AudioStreamPlayer" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D52" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D52" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-312, 196)
 scale = Vector2(0.0420889, 0.0420889)
 texture = ExtResource("54_fl4no")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer51" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer51" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D53" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D53" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-2257, 2119)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("55_ynmgs")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer52" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer52" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D54" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D54" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-821, 896)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("56_1c2al")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer53" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer53" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D55" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D55" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(1019, -190)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("57_0cb68")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer54" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer54" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D56" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D56" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1274.35, 2182.7)
 scale = Vector2(0.0694555, 0.0694555)
 texture = ExtResource("58_hdb6j")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer55" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer55" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D57" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D57" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1985, -403)
 scale = Vector2(0.0543409, 0.0543409)
 texture = ExtResource("59_i67fr")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer56" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer56" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D58" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D58" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3620, 1082)
 scale = Vector2(0.169915, 0.169915)
 texture = ExtResource("63_21vy7")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer57" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer57" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D59" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D59" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1300, -2050)
 rotation = 0.523598
 scale = Vector2(0.0498706, 0.0498706)
 texture = ExtResource("60_815mu")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer58" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer58" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D60" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D60" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(1134, -1651)
 scale = Vector2(0.0481695, 0.0481695)
 texture = ExtResource("43_deeur")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer59" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer59" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D61" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D61" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(1553.76, -1339.3)
 scale = Vector2(0.0534819, 0.0534819)
 texture = ExtResource("40_j0aot")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer60" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer60" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D62" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D62" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(2517, -1138)
 rotation = 0.16057
 scale = Vector2(0.0404921, 0.0404921)
@@ -829,177 +838,177 @@ texture = ExtResource("36_ppdav")
 flip_h = true
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer61" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer61" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D63" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D63" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(1099, 878)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("61_lb0cy")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer62" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer62" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D64" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D64" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-708, -633)
 rotation = -0.0610865
 scale = Vector2(0.0766956, 0.0766956)
 texture = ExtResource("62_73xrv")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer63" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer63" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D65" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D65" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3354, -297)
 rotation = -0.322886
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("63_typgg")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer64" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer64" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D66" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D66" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1631, -477)
 scale = Vector2(0.122475, 0.122475)
 texture = ExtResource("64_iiu4n")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer65" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer65" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D67" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D67" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(1744, 1821)
 rotation = 0.261799
 scale = Vector2(0.393125, 0.437354)
 texture = ExtResource("69_q74tl")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer66" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer66" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D68" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D68" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(1130, -774)
 scale = Vector2(0.0866798, 0.0866799)
 texture = ExtResource("66_xjmqb")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer67" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer67" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D69" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D69" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1097, -440)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("67_cy70r")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer68" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer68" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D70" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D70" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(120, 539)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("68_pwbkj")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer69" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer69" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D71" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D71" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1273, -34)
 scale = Vector2(0.10889, 0.10889)
 texture = ExtResource("69_051pf")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer70" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer70" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D72" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D72" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-665, 170)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("70_gyauk")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer71" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer71" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D73" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D73" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3959, 521)
 rotation = -0.0463764
 scale = Vector2(0.115334, 0.115334)
 texture = ExtResource("71_61gdy")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer72" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer72" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D74" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D74" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1057, 992)
 scale = Vector2(0.0949511, 0.0949511)
 texture = ExtResource("72_hdrcw")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer73" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer73" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D75" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D75" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-2876.42, 962.642)
 scale = Vector2(0.0723981, 0.0723981)
 texture = ExtResource("73_rkef8")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer74" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer74" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D76" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D76" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(2044, -1882)
 rotation = 2.87979
 scale = Vector2(0.225015, 0.236309)
 texture = ExtResource("55_mfkf7")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer75" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer75" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D77" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D77" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-2707, -19)
 scale = Vector2(0.150561, 0.150561)
 texture = ExtResource("75_8j2dw")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer76" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer76" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D78" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D78" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-2819, -929)
 rotation = 0.122173
 scale = Vector2(0.0493479, 0.0493479)
 texture = ExtResource("76_6wth7")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer77" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer77" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D79" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D79" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3887, -50.0001)
 rotation = -0.21293
 scale = Vector2(0.174315, 0.179774)
@@ -1007,21 +1016,21 @@ skew = 0.235619
 texture = ExtResource("76_rtmnv")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer78" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer78" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D80" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D80" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-848, -368)
 scale = Vector2(0.353376, 0.353376)
 texture = ExtResource("77_0flo3")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer79" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer79" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D81" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D81" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(87, -1050)
 rotation = 0.261799
 scale = Vector2(0.173876, 0.173876)
@@ -1029,192 +1038,192 @@ skew = -0.244346
 texture = ExtResource("78_gxuki")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer80" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer80" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D82" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D82" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(3383, 1130)
 scale = Vector2(0.175738, 0.175738)
 texture = ExtResource("79_wyos0")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer81" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer81" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D83" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D83" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-107, 1914)
 scale = Vector2(0.0991894, 0.0991894)
 texture = ExtResource("80_rt3tl")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer82" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer82" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D84" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D84" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3184, -1176)
 scale = Vector2(0.176882, 0.176882)
 texture = ExtResource("81_imk5w")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer83" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer83" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D85" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D85" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-812, 1368)
 scale = Vector2(0.216015, 0.216015)
 texture = ExtResource("82_0qlns")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer84" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer84" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D86" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D86" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1018, -1154)
 scale = Vector2(0.271617, 0.271617)
 texture = ExtResource("83_2gbun")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer85" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer85" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D87" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D87" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-316, 711)
 scale = Vector2(0.191341, 0.191341)
 texture = ExtResource("84_mitvg")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer86" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer86" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D88" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D88" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3192, -835)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("85_x7a8n")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer87" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer87" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D89" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D89" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3575, 162)
 scale = Vector2(0.0975138, 0.0975138)
 texture = ExtResource("86_3fdxb")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer88" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer88" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D90" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D90" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-2202, -1628)
 scale = Vector2(0.15, 0.119068)
 texture = ExtResource("87_c5rfl")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer89" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer89" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D91" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D91" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(224, 1224)
 scale = Vector2(0.191182, 0.191182)
 texture = ExtResource("88_1mx4w")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer90" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer90" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D92" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D92" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(3517.72, 93.2777)
 scale = Vector2(0.18675, 0.18675)
 texture = ExtResource("89_68oyg")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer91" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer91" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D93" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D93" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(1275, 1650)
 scale = Vector2(0.267582, 0.267582)
 texture = ExtResource("90_m4pvn")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer92" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer92" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D94" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D94" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3092, 1454)
 scale = Vector2(0.2957, 0.2957)
 texture = ExtResource("91_mfyuw")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer93" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer93" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D95" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D95" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-2661, -1595)
 scale = Vector2(0.125738, 0.125738)
 texture = ExtResource("92_i8wsk")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer94" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer94" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D96" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D96" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-2652, -662)
 rotation = 0.261799
 scale = Vector2(0.0746284, 0.0746284)
 texture = ExtResource("93_7mxs7")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer95" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer95" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D97" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D97" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-2295, -1742)
 scale = Vector2(0.0587915, 0.0606457)
 texture = ExtResource("94_e8b4i")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer96" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer96" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D98" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D98" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(3242, 1353)
 scale = Vector2(0.233296, 0.233296)
 texture = ExtResource("95_1rop7")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer97" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer97" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D99" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D99" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-1214, -191)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("96_6bw5e")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer98" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer98" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D100" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D100" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3029, -356)
 rotation = -0.16057
 scale = Vector2(0.37111, 0.37111)
@@ -1222,27 +1231,27 @@ skew = 0.321141
 texture = ExtResource("97_uiylv")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer99" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer99" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D101" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D101" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(1842, -140)
 scale = Vector2(0.228649, 0.228649)
 texture = ExtResource("90_m4pvn")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer100" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer100" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite2D102" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
+[node name="Sprite2D102" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(2145, -400)
 scale = Vector2(0.175724, 0.158281)
 texture = ExtResource("104_w4vf7")
 script = ExtResource("5_j0mpy")
 
-[node name="AudioStreamPlayer101" type="AudioStreamPlayer" parent="Sprite2D"]
+[node name="AudioStreamPlayer101" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
@@ -1261,13 +1270,20 @@ stream = ExtResource("107_qku3q")
 volume_db = -20.0
 bus = &"Sfx "
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Chimney_Block" type="ColorRect" parent="."]
 offset_left = 1105.0
 offset_top = -2178.0
 offset_right = 1494.0
 offset_bottom = -1958.0
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+[node name="Fog" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_ipjb7")
+offset_left = -4010.0
+offset_top = -2283.0
+offset_right = 3990.0
+offset_bottom = -862.0
+
+[node name="Smoke" type="CPUParticles2D" parent="."]
 position = Vector2(1381, -1954)
 amount = 2000
 lifetime = 3.5
