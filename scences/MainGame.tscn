@@ -106,7 +106,7 @@
 [ext_resource type="AudioStream" uid="uid://b5nwt8ce6k68f" path="res://assets/Sfx_Music/EndGame_Sound.mp3" id="104_mwavp"]
 [ext_resource type="Texture2D" uid="uid://ulcgx45wi4xy" path="res://assets/catsp3/c5b1d2d42f22550ef25b9e02dfdae327.png" id="104_w4vf7"]
 [ext_resource type="AudioStream" uid="uid://5a45u7dnkyim" path="res://assets/Sfx_Music/Fireworks Sound Effect with the crowd cheering. (Free to use).mp3" id="107_qku3q"]
-[ext_resource type="PackedScene" uid="uid://cnc4535rdo5yh" path="res://scences/Fireworks.tscn" id="107_yp3rx"]
+[ext_resource type="PackedScene" uid="uid://3c5dvluqlxfp" path="res://scences/Fireworks.tscn" id="107_yp3rx"]
 [ext_resource type="Texture2D" uid="uid://gd5p3cde2vmq" path="res://toppng.com-smoke-particle-texture-399x385.png" id="108_6p3bw"]
 
 [sub_resource type="Curve" id="Curve_ovdql"]

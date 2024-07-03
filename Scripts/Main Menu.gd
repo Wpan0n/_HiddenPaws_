@@ -27,3 +27,6 @@ func _on_quit_button_pressed():
 func _on_start_button_pressed():
 	# Change the current scene to the preloaded start level scene.
 	get_tree().change_scene_to_packed(start_level)
+
+func _on_Button_pressed():
+	
