@@ -1296,7 +1296,7 @@ mouse_filter = 1
 position = Vector2(1381, -1954)
 amount = 2000
 lifetime = 3.5
-speed_scale = 0.3
+speed_scale = 0.1
 texture = ExtResource("108_6p3bw")
 emission_shape = 2
 emission_sphere_radius = 28.0
@@ -1324,10 +1324,10 @@ rotation = -0.523599
 mouse_filter = 1
 
 [node name="Smoke2" type="CPUParticles2D" parent="."]
-position = Vector2(967, -1596)
+position = Vector2(973, -1595)
 amount = 1000
 lifetime = 2.0
-speed_scale = 0.3
+speed_scale = 0.05
 texture = ExtResource("108_6p3bw")
 emission_shape = 2
 emission_sphere_radius = 28.0
