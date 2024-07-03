@@ -1,7 +1,7 @@
 extends Control
 
 var score = 0
-var max_score = 3 
+var max_score = 100 
 @onready var scoreLabel = $Score
 @onready var score_sound_player = $"../../ScoreSoundPlayer" 
 @onready var colorRect = $"../../Fireworks"  # Reference to your ColorRect node
@@ -32,7 +32,7 @@ func _on_sprite_color_changed():
 		play_score_sound()
 
 	# Toggle ColorRect visibility when score reaches 100
-	if score == 3:
+	if score == 100:
 		colorRect.visible = true
 		# Call the function to turn off visibility after 15 seconds
 		call_deferred("turn_off_color_rect_after_delay")
