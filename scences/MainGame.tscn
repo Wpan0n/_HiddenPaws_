@@ -559,7 +559,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D36" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-289, -242)
+position = Vector2(-294, -242)
 scale = Vector2(0.0457203, 0.0457203)
 texture = ExtResource("39_p6lk8")
 script = ExtResource("5_j0mpy")
@@ -1268,7 +1268,7 @@ offset_right = 1494.0
 offset_bottom = -1958.0
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(1382, -1953)
+position = Vector2(1381, -1954)
 amount = 2000
 lifetime = 3.5
 speed_scale = 0.3
