@@ -264,7 +264,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D7" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-1985, -43)
+position = Vector2(-2000, -38)
 scale = Vector2(0.036407, 0.036407)
 texture = ExtResource("11_34tfw")
 script = ExtResource("5_j0mpy")
@@ -346,7 +346,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D15" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(607.5, 900.291)
+position = Vector2(608.5, 901.291)
 scale = Vector2(0.264693, 0.264693)
 texture = ExtResource("21_nipam")
 script = ExtResource("5_j0mpy")
@@ -438,7 +438,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D24" type="Sprite2D" parent="Sprite2D" groups=["sprite_group"]]
-position = Vector2(-2074, 387)
+position = Vector2(-242, -1977)
 scale = Vector2(0.0450405, 0.0450405)
 texture = ExtResource("27_ci355")
 script = ExtResource("5_j0mpy")
