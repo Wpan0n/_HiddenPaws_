@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://bgjarfy7n4o2q"]
+[gd_scene load_steps=116 format=3 uid="uid://bgjarfy7n4o2q"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
@@ -59,6 +59,8 @@
 [ext_resource type="Texture2D" uid="uid://c6sqerlycobl" path="res://Cat_Sprites/Layer 96.svg" id="55_ynmgs"]
 [ext_resource type="Texture2D" uid="uid://01jtsuxbeoge" path="res://Cat_Sprites/Layer 97.svg" id="56_1c2al"]
 [ext_resource type="Texture2D" uid="uid://ftwnivxupqf1" path="res://Cat_Sprites/Layer 98.svg" id="57_0cb68"]
+[ext_resource type="Script" path="res://Cat_Sprites/Cat_Scripts/Sprite2D48.gd" id="57_thmmy"]
+[ext_resource type="AudioStream" uid="uid://dn2yk4aax73ea" path="res://assets/Sfx_Music/deep-meow-made-with-Voicemod.mp3" id="57_x1dnd"]
 [ext_resource type="Texture2D" uid="uid://ikakqvp4ohwe" path="res://Cat_Sprites/Layer 100.svg" id="58_hdb6j"]
 [ext_resource type="Texture2D" uid="uid://bt8f732ol14y3" path="res://Cat_Sprites/Layer 104.svg" id="59_i67fr"]
 [ext_resource type="Texture2D" uid="uid://cwi4rdt4hrfdy" path="res://Cat_Sprites/Layer 99.svg" id="60_815mu"]
@@ -693,10 +695,10 @@ position = Vector2(-614, -1048)
 rotation = -0.20944
 scale = Vector2(0.118407, 0.118407)
 texture = ExtResource("54_5qhlt")
-script = ExtResource("5_j0mpy")
+script = ExtResource("57_thmmy")
 
 [node name="AudioStreamPlayer47" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
-stream = ExtResource("6_pm1xx")
+stream = ExtResource("57_x1dnd")
 volume_db = -30.0
 
 [node name="Sprite2D49" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
