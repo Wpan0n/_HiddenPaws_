@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://bgjarfy7n4o2q"]
+[gd_scene load_steps=117 format=3 uid="uid://bgjarfy7n4o2q"]
 
 [ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
@@ -125,11 +125,17 @@ noise = SubResource("FastNoiseLite_bwc7e")
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ipjb7"]
 shader = ExtResource("108_kkxhd")
 shader_parameter/density = 1.0
-shader_parameter/speed = Vector2(0.004, 0.02)
+shader_parameter/speed = Vector2(-0.004, 0.02)
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_vneeo")
 
 [sub_resource type="Curve" id="Curve_ovdql"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.637424), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_tswtp"]
+min_value = -1.0
+max_value = 74.14
+_data = [Vector2(0, 1.49012e-08), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="Main Game" type="Node2D"]
@@ -1301,3 +1307,98 @@ scale_amount_min = 0.1
 scale_amount_max = 0.1
 scale_amount_curve = SubResource("Curve_ovdql")
 color = Color(0.866667, 0.866667, 0.866667, 0.14902)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = 904.0
+offset_top = -1647.0
+offset_right = 1106.0
+offset_bottom = -1568.0
+rotation = -0.523599
+mouse_filter = 1
+
+[node name="ColorRect10" type="ColorRect" parent="."]
+offset_left = 986.0
+offset_top = -1618.0
+offset_right = 1116.0
+offset_bottom = -1597.0
+rotation = -0.523599
+mouse_filter = 1
+
+[node name="Smoke2" type="CPUParticles2D" parent="."]
+position = Vector2(967, -1596)
+amount = 1000
+lifetime = 2.0
+speed_scale = 0.3
+texture = ExtResource("108_6p3bw")
+emission_shape = 2
+emission_sphere_radius = 28.0
+gravity = Vector2(0, -100)
+orbit_velocity_min = -0.2
+orbit_velocity_curve = SubResource("Curve_tswtp")
+scale_amount_min = 0.01
+scale_amount_max = 0.03
+scale_amount_curve = SubResource("Curve_ovdql")
+color = Color(0.866667, 0.866667, 0.866667, 0.14902)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = 1038.0
+offset_top = -1647.0
+offset_right = 1082.0
+offset_bottom = -1620.0
+rotation = -0.523599
+mouse_filter = 1
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+offset_left = 1093.0
+offset_top = -1679.0
+offset_right = 1137.0
+offset_bottom = -1652.0
+rotation = -0.523599
+mouse_filter = 1
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+offset_left = 1152.0
+offset_top = -1703.0
+offset_right = 1196.0
+offset_bottom = -1676.0
+rotation = -0.523599
+mouse_filter = 1
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+offset_left = 1152.0
+offset_top = -1703.0
+offset_right = 1196.0
+offset_bottom = -1676.0
+rotation = -0.523599
+mouse_filter = 1
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+offset_left = 1226.0
+offset_top = -1747.0
+offset_right = 1297.0
+offset_bottom = -1711.0
+mouse_filter = 1
+
+[node name="ColorRect9" type="ColorRect" parent="."]
+offset_left = 1312.0
+offset_top = -1726.0
+offset_right = 1329.0
+offset_bottom = -1697.0
+rotation = 2.35619
+mouse_filter = 1
+
+[node name="ColorRect8" type="ColorRect" parent="."]
+offset_left = 1177.0
+offset_top = -1742.0
+offset_right = 1273.0
+offset_bottom = -1693.0
+rotation = -0.261799
+mouse_filter = 1
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+offset_left = 1093.0
+offset_top = -1709.0
+offset_right = 1232.0
+offset_bottom = -1658.0
+rotation = -0.523599
+mouse_filter = 1
