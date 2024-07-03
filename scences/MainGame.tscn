@@ -1289,7 +1289,7 @@ material = SubResource("ShaderMaterial_ipjb7")
 offset_left = -4010.0
 offset_top = -2283.0
 offset_right = 3990.0
-offset_bottom = -584.0
+offset_bottom = -573.0
 mouse_filter = 1
 
 [node name="Smoke" type="CPUParticles2D" parent="."]
