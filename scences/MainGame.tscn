@@ -129,13 +129,12 @@ shader_parameter/speed = Vector2(-0.004, 0.02)
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_vneeo")
 
 [sub_resource type="Curve" id="Curve_ovdql"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.637424), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.732877), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_tswtp"]
 min_value = -1.0
-max_value = 74.14
-_data = [Vector2(0, 1.49012e-08), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.981579, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [node name="Main Game" type="Node2D"]
