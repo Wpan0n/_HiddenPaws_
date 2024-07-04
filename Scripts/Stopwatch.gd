@@ -1,11 +1,16 @@
 extends Label
 
 var time_elapsed := 0.0  # Initialize a variable to keep track of the total elapsed time in seconds
+var max_score := 3  # Set your maximum score here
+var current_score := 0  # Initialize the current score
 
-# This function is called every frame and receives the delta time (time elapsed since the last frame)
 func _process(delta: float) -> void:
-	time_elapsed += delta  # Add the delta time to the total elapsed time
-	update_timer_display()  # Call the function to update the timer display
+	if current_score < max_score:
+		time_elapsed += delta  # Add the delta time to the total elapsed time
+		update_timer_display()  # Call the function to update the timer display
+	else:
+		set_process(false)  # Stop processing the _process function
+		print("Maximum score reached. Stopping timer.")
 
 # Function to update the displayed time on the label
 func update_timer_display() -> void:
@@ -17,3 +22,7 @@ func update_timer_display() -> void:
 	# Format the time string as "hh:mm:ss:ms" (hours:minutes:seconds:milliseconds)
 	var time_string = String("%02d:%02d:%02d:%02d" % [hours, minutes, seconds, milliseconds])
 	text = time_string  # Set the text of the label to the formatted time string
+
+func stop_timer() -> void:
+	set_process(false)  # Stop processing the _process function
+	print("Timer stopped.")
