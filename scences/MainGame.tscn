@@ -1286,7 +1286,7 @@ mouse_filter = 1
 
 [node name="Fog" type="ColorRect" parent="."]
 material = SubResource("ShaderMaterial_ipjb7")
-offset_left = -4001.0
+offset_left = -4000.0
 offset_top = -2285.0
 offset_right = 4000.0
 offset_bottom = -573.0
