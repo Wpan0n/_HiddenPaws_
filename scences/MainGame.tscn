@@ -250,7 +250,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D4" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(2282, 789)
+position = Vector2(2073, -761)
 scale = Vector2(0.0554645, 0.0554645)
 texture = ExtResource("8_2uglc")
 script = ExtResource("5_j0mpy")
@@ -270,8 +270,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D6" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-1490, 234)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-248, -1426)
+scale = Vector2(0.0362706, 0.0362706)
 texture = ExtResource("10_nq607")
 script = ExtResource("5_j0mpy")
 
@@ -290,8 +290,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D8" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(77.2849, 221.165)
-scale = Vector2(0.0494748, 0.0494748)
+position = Vector2(189.106, 224.165)
+scale = Vector2(0.0450108, 0.0450108)
 texture = ExtResource("12_8adlo")
 script = ExtResource("5_j0mpy")
 
@@ -321,7 +321,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D11" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-94.0001, -2079)
+position = Vector2(276, -2167)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("15_bmc15")
 script = ExtResource("5_j0mpy")
@@ -403,7 +403,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D19" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-242, -1432)
+position = Vector2(-1431, 230)
 scale = Vector2(0.0326749, 0.0326749)
 texture = ExtResource("22_2q8c5")
 script = ExtResource("5_j0mpy")
@@ -444,7 +444,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D23" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-934, -32)
+position = Vector2(1827, -1010)
 scale = Vector2(0.0438934, 0.0438934)
 texture = ExtResource("26_q2dh0")
 script = ExtResource("5_j0mpy")
@@ -474,7 +474,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D26" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-606, -8)
+position = Vector2(-1916, -1300)
 scale = Vector2(0.0431602, 0.0431602)
 texture = ExtResource("29_ea34f")
 script = ExtResource("5_j0mpy")
@@ -544,8 +544,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D33" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-1548, -78)
-scale = Vector2(0.0569481, 0.0569481)
+position = Vector2(-1552.83, -74.7528)
+scale = Vector2(0.0487272, 0.0487272)
 texture = ExtResource("36_ppdav")
 script = ExtResource("5_j0mpy")
 
@@ -575,8 +575,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D36" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-294, -242)
-scale = Vector2(0.0457203, 0.0457203)
+position = Vector2(-296.915, -237.84)
+scale = Vector2(0.0382448, 0.0382448)
 texture = ExtResource("39_p6lk8")
 script = ExtResource("5_j0mpy")
 
@@ -1110,7 +1110,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D88" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-3192, -835)
+position = Vector2(-3192, -833)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("85_x7a8n")
 script = ExtResource("5_j0mpy")
@@ -1221,7 +1221,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite2D99" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-1214, -191)
+position = Vector2(-1275, -245)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("96_6bw5e")
 script = ExtResource("5_j0mpy")
@@ -1285,15 +1285,16 @@ offset_bottom = -1958.0
 mouse_filter = 1
 
 [node name="Fog" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_ipjb7")
-offset_left = -4000.0
-offset_top = -2285.0
-offset_right = 4000.0
-offset_bottom = -573.0
+offset_left = -4010.0
+offset_top = -2274.0
+offset_right = 3990.0
+offset_bottom = -562.0
 mouse_filter = 1
 
 [node name="Smoke" type="CPUParticles2D" parent="."]
-position = Vector2(1381, -1954)
+position = Vector2(1381, -1956)
 amount = 2000
 lifetime = 3.5
 speed_scale = 0.2
