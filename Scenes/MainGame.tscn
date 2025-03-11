@@ -1,11 +1,11 @@
 [gd_scene load_steps=117 format=3 uid="uid://bgjarfy7n4o2q"]
 
-[ext_resource type="Script" path="res://Scripts/MainGame.gd" id="1_8h63c"]
-[ext_resource type="Script" path="res://Scripts/Camera.gd" id="1_ei4ws"]
+[ext_resource type="Script" uid="uid://dgpe2s54uxkhc" path="res://Scripts/MainGame.gd" id="1_8h63c"]
+[ext_resource type="Script" uid="uid://ck7mmha34oyhs" path="res://Scripts/Camera.gd" id="1_ei4ws"]
 [ext_resource type="Texture2D" uid="uid://bbmssowsvvlmt" path="res://assets/MainGame/HiddenPaws.png" id="1_j1k4u"]
 [ext_resource type="Texture2D" uid="uid://t2jvl5ap7b5l" path="res://Cat_Sprites/Layer 2.svg" id="4_hmdvc"]
 [ext_resource type="Texture2D" uid="uid://1ho361nxnbmd" path="res://Cat_Sprites/Layer 103.svg" id="4_jugfj"]
-[ext_resource type="Script" path="res://Scripts/Cat_Sprite.gd" id="5_j0mpy"]
+[ext_resource type="Script" uid="uid://ckjkredhpjkem" path="res://Scripts/Cat_Sprite.gd" id="5_j0mpy"]
 [ext_resource type="AudioStream" uid="uid://dk6fli64uewdk" path="res://assets/Sfx_Music/kitty-meow-85182.mp3" id="6_pm1xx"]
 [ext_resource type="Texture2D" uid="uid://da5h2l33v5nxw" path="res://assets/image-256x254-removebg-preview (1) (2).png" id="7_r6a0e"]
 [ext_resource type="Texture2D" uid="uid://dmibvpcq8ywh7" path="res://Cat_Sprites/Layer 3.svg" id="8_2uglc"]
@@ -59,13 +59,13 @@
 [ext_resource type="Texture2D" uid="uid://c6sqerlycobl" path="res://Cat_Sprites/Layer 96.svg" id="55_ynmgs"]
 [ext_resource type="Texture2D" uid="uid://01jtsuxbeoge" path="res://Cat_Sprites/Layer 97.svg" id="56_1c2al"]
 [ext_resource type="Texture2D" uid="uid://ftwnivxupqf1" path="res://Cat_Sprites/Layer 98.svg" id="57_0cb68"]
-[ext_resource type="Script" path="res://Cat_Sprites/Cat_Scripts/Sprite2D48.gd" id="57_thmmy"]
+[ext_resource type="Script" uid="uid://ci6g5p7y4jnfp" path="res://Cat_Sprites/Cat_Scripts/Sprite2D48.gd" id="57_thmmy"]
 [ext_resource type="AudioStream" uid="uid://dn2yk4aax73ea" path="res://assets/Sfx_Music/deep-meow-made-with-Voicemod.mp3" id="57_x1dnd"]
 [ext_resource type="Texture2D" uid="uid://ikakqvp4ohwe" path="res://Cat_Sprites/Layer 100.svg" id="58_hdb6j"]
 [ext_resource type="Texture2D" uid="uid://bt8f732ol14y3" path="res://Cat_Sprites/Layer 104.svg" id="59_i67fr"]
 [ext_resource type="Texture2D" uid="uid://cwi4rdt4hrfdy" path="res://Cat_Sprites/Layer 99.svg" id="60_815mu"]
 [ext_resource type="Texture2D" uid="uid://b4x6rabqgscoc" path="res://assets/40 cats sprites/2f010980a035d7562974e57a08b31a94.png" id="61_lb0cy"]
-[ext_resource type="Script" path="res://Scripts/GameUI.gd" id="61_qf1fh"]
+[ext_resource type="Script" uid="uid://cvk5lsurr2e28" path="res://Scripts/GameUI.gd" id="61_qf1fh"]
 [ext_resource type="FontFile" uid="uid://c2ep0aaegexyu" path="res://assets/fonts/Nabana-ShadowBold - DEMO.ttf" id="62_3nfgi"]
 [ext_resource type="Texture2D" uid="uid://c4fs1v8in178n" path="res://assets/40 cats sprites/5b308a07f3097f90c3fae72e4c3d799d.png" id="62_73xrv"]
 [ext_resource type="Texture2D" uid="uid://bp7etuecj3t3i" path="res://assets/catsp3/a0bdfbd88f26ed24b0f1a349c6a6af2b.png" id="63_21vy7"]
@@ -104,13 +104,13 @@
 [ext_resource type="Texture2D" uid="uid://dxyan4oxpepgg" path="res://assets/40 cat sprites p2/e96f0e23b57181a9455a8b5d03df1b8e.png" id="95_1rop7"]
 [ext_resource type="Texture2D" uid="uid://coqne4ktcciql" path="res://assets/40 cat sprites p2/efeaebd05bd507f7c409c6546bdd2512.png" id="96_6bw5e"]
 [ext_resource type="Texture2D" uid="uid://bt6slhf7lv57k" path="res://assets/40 cat sprites p2/fa6cb58bea4a21b8852d117969d451ee.png" id="97_uiylv"]
-[ext_resource type="Script" path="res://Scripts/Stopwatch.gd" id="103_7xdmb"]
+[ext_resource type="Script" uid="uid://b585u205le3ib" path="res://Scripts/Stopwatch.gd" id="103_7xdmb"]
 [ext_resource type="AudioStream" uid="uid://b5nwt8ce6k68f" path="res://assets/Sfx_Music/EndGame_Sound.mp3" id="104_mwavp"]
 [ext_resource type="Texture2D" uid="uid://ulcgx45wi4xy" path="res://assets/catsp3/c5b1d2d42f22550ef25b9e02dfdae327.png" id="104_w4vf7"]
 [ext_resource type="AudioStream" uid="uid://5a45u7dnkyim" path="res://assets/Sfx_Music/Fireworks Sound Effect with the crowd cheering. (Free to use).mp3" id="107_qku3q"]
-[ext_resource type="PackedScene" uid="uid://3c5dvluqlxfp" path="res://scences/Fireworks.tscn" id="107_yp3rx"]
+[ext_resource type="PackedScene" uid="uid://3c5dvluqlxfp" path="res://Scenes/Fireworks.tscn" id="107_yp3rx"]
 [ext_resource type="Texture2D" uid="uid://gd5p3cde2vmq" path="res://toppng.com-smoke-particle-texture-399x385.png" id="108_6p3bw"]
-[ext_resource type="Shader" path="res://shader/fog.gdshader" id="108_kkxhd"]
+[ext_resource type="Shader" uid="uid://cw312nwh6dkci" path="res://shader/fog.gdshader" id="108_kkxhd"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_bwc7e"]
 frequency = 0.003
@@ -124,16 +124,16 @@ noise = SubResource("FastNoiseLite_bwc7e")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ipjb7"]
 shader = ExtResource("108_kkxhd")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_vneeo")
 shader_parameter/density = 1.0
 shader_parameter/speed = Vector2(-0.004, 0.02)
-shader_parameter/noise_texture = SubResource("NoiseTexture2D_vneeo")
 
 [sub_resource type="Curve" id="Curve_ovdql"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 0.732877), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_tswtp"]
-min_value = -1.0
+_limits = [-1.0, 1.0, 0.0, 1.0]
 _data = [Vector2(0, -1), 0.0, 0.0, 0, 0, Vector2(0.981579, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
@@ -1295,9 +1295,9 @@ mouse_filter = 1
 [node name="Smoke" type="CPUParticles2D" parent="."]
 position = Vector2(1381, -1956)
 amount = 2000
+texture = ExtResource("108_6p3bw")
 lifetime = 3.5
 speed_scale = 0.2
-texture = ExtResource("108_6p3bw")
 emission_shape = 2
 emission_sphere_radius = 28.0
 gravity = Vector2(0, -100)
@@ -1326,9 +1326,9 @@ mouse_filter = 1
 [node name="Smoke2" type="CPUParticles2D" parent="."]
 position = Vector2(973, -1595)
 amount = 1000
+texture = ExtResource("108_6p3bw")
 lifetime = 2.0
 speed_scale = 0.15
-texture = ExtResource("108_6p3bw")
 emission_shape = 2
 emission_sphere_radius = 28.0
 gravity = Vector2(0, -100)

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://beo8dbmvqir2k"]
 
-[ext_resource type="Theme" uid="uid://bbvq4quc60gam" path="res://assets/themes/Default_Theme.tres" id="1_f0spm"]
-[ext_resource type="Script" path="res://Scripts/Main Menu.gd" id="2_v3g6i"]
-[ext_resource type="FontFile" uid="uid://c2ep0aaegexyu" path="res://assets/fonts/Nabana-ShadowBold - DEMO.ttf" id="3_8gvk6"]
-[ext_resource type="Texture2D" uid="uid://bj74ihceuxwln" path="res://assets/HiddenPaws Logo.png" id="4_lkhfy"]
+[ext_resource type="Theme" uid="uid://bbvq4quc60gam" path="res://assets/themes/Default_Theme.tres" id="1_ce3w2"]
+[ext_resource type="Script" uid="uid://cqfc6khixvhee" path="res://Scripts/Main Menu.gd" id="2_n45e2"]
+[ext_resource type="FontFile" uid="uid://c2ep0aaegexyu" path="res://assets/fonts/Nabana-ShadowBold - DEMO.ttf" id="3_opfnp"]
+[ext_resource type="Texture2D" uid="uid://bj74ihceuxwln" path="res://assets/HiddenPaws Logo.png" id="4_cp0ys"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -12,8 +12,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("1_f0spm")
-script = ExtResource("2_v3g6i")
+theme = ExtResource("1_ce3w2")
+script = ExtResource("2_n45e2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -49,7 +49,7 @@ focus_neighbor_bottom = NodePath("../Settings_Button")
 focus_next = NodePath("../Settings_Button")
 focus_previous = NodePath("../Quit_Button")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_8gvk6")
+theme_override_fonts/font = ExtResource("3_opfnp")
 theme_override_font_sizes/font_size = 75
 text = "Start"
 
@@ -60,7 +60,7 @@ focus_neighbor_bottom = NodePath("../Quit_Button")
 focus_next = NodePath("../Quit_Button")
 focus_previous = NodePath("../Start_Button")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_8gvk6")
+theme_override_fonts/font = ExtResource("3_opfnp")
 theme_override_font_sizes/font_size = 50
 text = "Settings"
 
@@ -71,14 +71,14 @@ focus_neighbor_bottom = NodePath("../Start_Button")
 focus_next = NodePath("../Start_Button")
 focus_previous = NodePath("../Settings_Button")
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("3_8gvk6")
+theme_override_fonts/font = ExtResource("3_opfnp")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(960, 219)
 scale = Vector2(0.422056, 0.422056)
-texture = ExtResource("4_lkhfy")
+texture = ExtResource("4_cp0ys")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Settings_Button" to="." method="_on_settings_button_pressed"]

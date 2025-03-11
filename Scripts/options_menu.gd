@@ -36,7 +36,7 @@ func _on_apply_pressed():
 # Method called when the back button is pressed.
 func _on_back_button_pressed():
 	# Change the scene to the main menu scene.
-	get_tree().change_scene_to_file("res://scences/main_menu.tscn")
+	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 
 # Method called when the volume sliders' values change.
 func _on_volume_slider_value_changed(slider: Slider, value: float) -> void:

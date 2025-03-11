@@ -1,13 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://cdva6kek8dtcx"]
 
 [ext_resource type="FontFile" uid="uid://c2ep0aaegexyu" path="res://assets/fonts/Nabana-ShadowBold - DEMO.ttf" id="1_3yxio"]
-[ext_resource type="Script" path="res://Scripts/options_menu.gd" id="1_s0d8h"]
+[ext_resource type="Script" uid="uid://wgyotm4x0a8p" path="res://Scripts/options_menu.gd" id="1_s0d8h"]
 [ext_resource type="Theme" uid="uid://bbvq4quc60gam" path="res://assets/themes/Default_Theme.tres" id="5_ugnno"]
 [ext_resource type="Texture2D" uid="uid://bj74ihceuxwln" path="res://assets/HiddenPaws Logo.png" id="6_7rbxh"]
 [ext_resource type="ButtonGroup" uid="uid://d2rqon4ux2cd7" path="res://button_group_video.tres" id="7_twvdu"]
 
 [sub_resource type="SystemFont" id="SystemFont_vh322"]
 font_names = PackedStringArray("Impact")
+subpixel_positioning = 0
 
 [node name="Options_Menu" type="Control"]
 layout_mode = 3
@@ -246,6 +247,6 @@ texture = ExtResource("6_7rbxh")
 [connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]
 [connection signal="toggled" from="Checks/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="toggled" from="Checks/Borderless" to="." method="_on_borderless_toggled"]
-[connection signal="toggled" from="Checks/Windowed" to="." method="_on_borderless_toggled"]
 [connection signal="toggled" from="Checks/Windowed" to="." method="_on_windowed_toggled"]
+[connection signal="toggled" from="Checks/Windowed" to="." method="_on_borderless_toggled"]
 [connection signal="toggled" from="Checks/VSync" to="." method="_on_v_sync_toggled"]

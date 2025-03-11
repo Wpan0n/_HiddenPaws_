@@ -1,28 +1,21 @@
 extends Label
 
-var time_elapsed := 0.0  # Initialize a variable to keep track of the total elapsed time in seconds
-var max_score := 3  # Set your maximum score here
-var current_score := 0  # Initialize the current score
+var time_elapsed = 0.0
+var max_score = 100
+var current_score = 0
 
-func _process(delta: float) -> void:
-	if current_score < max_score:
-		time_elapsed += delta  # Add the delta time to the total elapsed time
-		update_timer_display()  # Call the function to update the timer display
-	else:
-		set_process(false)  # Stop processing the _process function
-		print("Maximum score reached. Stopping timer.")
-
-# Function to update the displayed time on the label
 func update_timer_display() -> void:
-	var hours = int(time_elapsed / 3600)  # Calculate the number of hours by dividing the total seconds by 3600 (number of seconds in an hour)
-	var minutes = int(time_elapsed) % 3600 / 60.0  # Calculate the number of minutes by first taking the integer part of time_elapsed, then using modulo 3600 to get the remaining seconds after hours, and dividing by 60.0 for float division
-	var seconds = int(time_elapsed) % 60  # Calculate the number of seconds by taking the remainder of total seconds divided by 60
-	var milliseconds = int((time_elapsed - int(time_elapsed)) * 100)  # Calculate the number of milliseconds by taking the fractional part of time_elapsed and multiplying by 100
-
-	# Format the time string as "hh:mm:ss:ms" (hours:minutes:seconds:milliseconds)
-	var time_string = String("%02d:%02d:%02d:%02d" % [hours, minutes, seconds, milliseconds])
-	text = time_string  # Set the text of the label to the formatted time string
+	var total_seconds = int(time_elapsed)
+	var minutes = total_seconds / 60
+	var seconds = total_seconds % 60
+	var time_string = "%02d:%02d" % [minutes, seconds]
+	text = time_string
 
 func stop_timer() -> void:
-	set_process(false)  # Stop processing the _process function
-	print("Timer stopped.")
+	pass
+
+func set_time_elapsed(time: float) -> void:
+	time_elapsed = time
+
+func get_time_elapsed() -> float:
+	return time_elapsed
