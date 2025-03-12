@@ -13,7 +13,10 @@ config_version=5
 config/name="_Hidden Paws_"
 run/main_scene="res://Scenes/MainGame.tscn"
 config/features=PackedStringArray("4.4", "Forward Plus")
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/image="uid://bj74ihceuxwln"
 config/icon="res://icon.svg"
+boot_splash/minimum_display_time=3000
 
 [autoload]
 
@@ -25,7 +28,6 @@ SaveGame="*res://SaveGame.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
-window/size/mode=3
 window/size/initial_position_type=0
 window/stretch/aspect="ignore"
 window/stretch/scale_mode="integer"
