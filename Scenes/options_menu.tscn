@@ -248,6 +248,6 @@ texture = ExtResource("6_7rbxh")
 [connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]
 [connection signal="toggled" from="Checks/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="toggled" from="Checks/Borderless" to="." method="_on_borderless_toggled"]
-[connection signal="toggled" from="Checks/Windowed" to="." method="_on_borderless_toggled"]
 [connection signal="toggled" from="Checks/Windowed" to="." method="_on_windowed_toggled"]
+[connection signal="toggled" from="Checks/Windowed" to="." method="_on_borderless_toggled"]
 [connection signal="toggled" from="Checks/VSync" to="." method="_on_v_sync_toggled"]
