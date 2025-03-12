@@ -12,7 +12,7 @@ func update_timer_display() -> void:
 	text = time_string
 
 func stop_timer() -> void:
-	pass
+	set_process(false)  # Stop updating time
 
 func set_time_elapsed(time: float) -> void:
 	time_elapsed = time

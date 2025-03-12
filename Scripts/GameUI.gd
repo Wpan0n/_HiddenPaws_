@@ -16,13 +16,16 @@ func _ready():
 	print("GameUI ready called")
 	if not is_inside_tree():
 		print("Error: Node is not in the scene tree!")
-	if SaveGame:
-		score = SaveGame.get_high_score()
-		time_elapsed = SaveGame.get_best_time()
-		clicked_cats = SaveGame.get_clicked_cats()  # Load clicked cats
-		if stopwatch and stopwatch.has_method("set_time_elapsed"):
-			stopwatch.set_time_elapsed(time_elapsed)
+	
+	# Load saved game data
+	score = SaveGame.get_high_score()
+	time_elapsed = SaveGame.get_best_time()
+	clicked_cats = SaveGame.get_clicked_cats()
+	
+	if stopwatch and stopwatch.has_method("set_time_elapsed"):
+		stopwatch.set_time_elapsed(time_elapsed)
 	update_score_label()
+	
 	for child in get_tree().get_nodes_in_group("sprite_group"):
 		if child is Sprite2D:
 			child.sprite_color_changed.connect(_on_sprite_color_changed.bind(child))
@@ -42,13 +45,9 @@ func _process(delta: float) -> void:
 			update_stopwatch_display()
 	
 	if Input.is_action_just_pressed("ui_cancel"):
+		accept_event()  # Prevent further propagation
 		print("Escape key pressed, attempting to change scene to: ", "res://Scenes/main_menu.tscn")
 		save_and_exit()
-		var viewport = get_viewport()
-		if viewport:
-			viewport.set_input_as_handled()
-		else:
-			print("Warning: Viewport is null")
 		var err = get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
 		if err != OK:
 			print("Failed to change scene, error code: ", err)
@@ -84,7 +83,7 @@ func _on_sprite_color_changed(sprite: Sprite2D):
 
 func update_score_label():
 	if scoreLabel:
-		scoreLabel.text = "%d/%d" % [score, max_score]  # Modified: Use %d for integers
+		scoreLabel.text = "%d/%d" % [score, max_score]
 
 func update_stopwatch_display():
 	if stopwatch:
@@ -118,5 +117,4 @@ func play_hooray_sfx():
 
 func save_and_exit():
 	is_game_running = false
-	if SaveGame:
-		SaveGame.save_game(time_elapsed, score, clicked_cats)  # Assumes SaveGame updated
+	SaveGame.save_game(time_elapsed, score, clicked_cats)

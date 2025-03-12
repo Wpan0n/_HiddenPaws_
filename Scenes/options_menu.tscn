@@ -241,12 +241,13 @@ scale = Vector2(0.234436, 0.234436)
 texture = ExtResource("6_7rbxh")
 
 [connection signal="mouse_exited" from="AudioOptions/VBoxContainer/MasterSlider" to="AudioOptions" method="_on_master_slider_mouse_exited"]
+[connection signal="value_changed" from="AudioOptions/VBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="mouse_exited" from="AudioOptions/VBoxContainer/SfxSlider" to="AudioOptions" method="_on_sfx_slider_mouse_exited"]
 [connection signal="value_changed" from="AudioOptions/VBoxContainer/BrightnessSlider" to="." method="_on_brightness_slider_value_changed"]
 [connection signal="pressed" from="AudioOptions/Apply" to="." method="_on_apply_pressed"]
 [connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]
 [connection signal="toggled" from="Checks/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="toggled" from="Checks/Borderless" to="." method="_on_borderless_toggled"]
-[connection signal="toggled" from="Checks/Windowed" to="." method="_on_windowed_toggled"]
 [connection signal="toggled" from="Checks/Windowed" to="." method="_on_borderless_toggled"]
+[connection signal="toggled" from="Checks/Windowed" to="." method="_on_windowed_toggled"]
 [connection signal="toggled" from="Checks/VSync" to="." method="_on_v_sync_toggled"]
