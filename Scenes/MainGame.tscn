@@ -1,4 +1,4 @@
-[gd_scene load_steps=117 format=3 uid="uid://bgjarfy7n4o2q"]
+[gd_scene load_steps=118 format=3 uid="uid://bgjarfy7n4o2q"]
 
 [ext_resource type="Script" uid="uid://dgpe2s54uxkhc" path="res://Scripts/MainGame.gd" id="1_8h63c"]
 [ext_resource type="Script" uid="uid://ck7mmha34oyhs" path="res://Scripts/Camera.gd" id="1_ei4ws"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://1ho361nxnbmd" path="res://Cat_Sprites/Layer 103.svg" id="4_jugfj"]
 [ext_resource type="Script" uid="uid://ckjkredhpjkem" path="res://Scripts/Cat_Sprite.gd" id="5_j0mpy"]
 [ext_resource type="AudioStream" uid="uid://dk6fli64uewdk" path="res://assets/Sfx_Music/kitty-meow-85182.mp3" id="6_pm1xx"]
+[ext_resource type="PackedScene" uid="uid://b4pqhyja1h6ut" path="res://Scenes/pause_menu.tscn" id="7_et12g"]
 [ext_resource type="Texture2D" uid="uid://da5h2l33v5nxw" path="res://assets/image-256x254-removebg-preview (1) (2).png" id="7_r6a0e"]
 [ext_resource type="Texture2D" uid="uid://dmibvpcq8ywh7" path="res://Cat_Sprites/Layer 3.svg" id="8_2uglc"]
 [ext_resource type="Texture2D" uid="uid://chbklughc6ioa" path="res://Cat_Sprites/Layer 4.svg" id="9_th002"]
@@ -1401,3 +1402,12 @@ offset_right = 1232.0
 offset_bottom = -1658.0
 rotation = -0.523599
 mouse_filter = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_et12g")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5

@@ -43,16 +43,6 @@ func _process(delta: float) -> void:
 		if stopwatch and stopwatch.has_method("update_timer_display"):
 			stopwatch.set_time_elapsed(time_elapsed)
 			update_stopwatch_display()
-	
-	if Input.is_action_just_pressed("ui_cancel"):
-		accept_event()  # Prevent further propagation
-		print("Escape key pressed, attempting to change scene to: ", "res://Scenes/main_menu.tscn")
-		save_and_exit()
-		var err = get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
-		if err != OK:
-			print("Failed to change scene, error code: ", err)
-		else:
-			print("Scene change successful")
 
 func _on_sprite_color_changed(sprite: Sprite2D):
 	print("Color change detected on: ", sprite.name)
