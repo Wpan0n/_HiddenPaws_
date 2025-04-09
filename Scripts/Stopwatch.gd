@@ -6,7 +6,7 @@ var current_score = 0
 
 func update_timer_display() -> void:
 	var total_seconds = int(time_elapsed)
-	var minutes = total_seconds / 60
+	var minutes = int(total_seconds / 60)  # Explicitly convert to int to clarify intent
 	var seconds = total_seconds % 60
 	var time_string = "%02d:%02d" % [minutes, seconds]
 	text = time_string
