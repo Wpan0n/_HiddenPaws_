@@ -140,42 +140,6 @@ theme_override_font_sizes/font_size = 32
 action_mode = 0
 text = "Back"
 
-[node name="Checks" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -672.0
-offset_top = 69.0
-offset_right = -656.0
-offset_bottom = 176.0
-grow_horizontal = 0
-grow_vertical = 2
-scale = Vector2(2, 2)
-theme_override_constants/separation = 10
-
-[node name="Fullscreen" type="CheckBox" parent="Checks"]
-layout_mode = 2
-theme = ExtResource("5_ugnno")
-button_group = ExtResource("7_twvdu")
-
-[node name="Borderless" type="CheckBox" parent="Checks"]
-layout_mode = 2
-theme = ExtResource("5_ugnno")
-button_group = ExtResource("7_twvdu")
-
-[node name="Windowed" type="CheckBox" parent="Checks"]
-layout_mode = 2
-theme = ExtResource("5_ugnno")
-button_group = ExtResource("7_twvdu")
-
-[node name="VSync" type="CheckBox" parent="Checks"]
-layout_mode = 2
-theme = ExtResource("5_ugnno")
-button_pressed = true
-
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 4
@@ -195,6 +159,16 @@ theme_override_font_sizes/font_size = 32
 text = "Fullscreen
 "
 
+[node name="Fullscreen" type="CheckBox" parent="VBoxContainer/FullScreenLabel"]
+layout_mode = 2
+offset_left = 707.0
+offset_top = 4.0
+offset_right = 723.0
+offset_bottom = 28.0
+scale = Vector2(2, 2)
+theme = ExtResource("5_ugnno")
+button_group = ExtResource("7_twvdu")
+
 [node name="BorderlessLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -203,12 +177,32 @@ theme_override_font_sizes/font_size = 32
 text = "Borderless
 "
 
+[node name="Borderless" type="CheckBox" parent="VBoxContainer/BorderlessLabel"]
+layout_mode = 2
+offset_left = 707.0
+offset_top = 4.0
+offset_right = 723.0
+offset_bottom = 28.0
+scale = Vector2(2, 2)
+theme = ExtResource("5_ugnno")
+button_group = ExtResource("7_twvdu")
+
 [node name="WindowedLabel" type="Label" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("1_3yxio")
 theme_override_font_sizes/font_size = 32
 text = "Windowed"
+
+[node name="Windowed" type="CheckBox" parent="VBoxContainer/WindowedLabel"]
+layout_mode = 2
+offset_left = 707.0
+offset_top = -2.0
+offset_right = 723.0
+offset_bottom = 22.0
+scale = Vector2(2, 2)
+theme = ExtResource("5_ugnno")
+button_group = ExtResource("7_twvdu")
 
 [node name="VSyncLabel2" type="Label" parent="VBoxContainer"]
 layout_mode = 2
@@ -217,6 +211,16 @@ theme_override_fonts/font = ExtResource("1_3yxio")
 theme_override_font_sizes/font_size = 32
 text = "VSync
 "
+
+[node name="VSync" type="CheckBox" parent="VBoxContainer/VSyncLabel2"]
+layout_mode = 2
+offset_left = 707.0
+offset_top = 4.0
+offset_right = 723.0
+offset_bottom = 28.0
+scale = Vector2(2, 2)
+theme = ExtResource("5_ugnno")
+button_pressed = true
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(963, 118.811)
@@ -228,8 +232,7 @@ texture = ExtResource("6_7rbxh")
 [connection signal="mouse_exited" from="AudioOptions/VBoxContainer/SfxSlider" to="AudioOptions" method="_on_sfx_slider_mouse_exited"]
 [connection signal="value_changed" from="AudioOptions/VBoxContainer/BrightnessSlider" to="." method="_on_brightness_slider_value_changed"]
 [connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]
-[connection signal="toggled" from="Checks/Fullscreen" to="." method="_on_fullscreen_toggled"]
-[connection signal="toggled" from="Checks/Borderless" to="." method="_on_borderless_toggled"]
-[connection signal="toggled" from="Checks/Windowed" to="." method="_on_windowed_toggled"]
-[connection signal="toggled" from="Checks/Windowed" to="." method="_on_borderless_toggled"]
-[connection signal="toggled" from="Checks/VSync" to="." method="_on_v_sync_toggled"]
+[connection signal="toggled" from="VBoxContainer/FullScreenLabel/Fullscreen" to="." method="_on_fullscreen_toggled"]
+[connection signal="toggled" from="VBoxContainer/BorderlessLabel/Borderless" to="." method="_on_borderless_toggled"]
+[connection signal="toggled" from="VBoxContainer/WindowedLabel/Windowed" to="." method="_on_windowed_toggled"]
+[connection signal="toggled" from="VBoxContainer/VSyncLabel2/VSync" to="." method="_on_v_sync_toggled"]

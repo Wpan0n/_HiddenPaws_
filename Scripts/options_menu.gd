@@ -10,7 +10,8 @@ var settings = {
 	"fullscreen": false,
 	"borderless": false,
 	"vsync": false,
-	"brightness": 1.0
+	"brightness": 1.0,
+	"windowed": false
 }
 
 # UI State Tracking
@@ -21,16 +22,16 @@ var ui_state = {
 	}
 }
 
-const level_music = preload("res://assets/Sfx_Music/inspiring-technology-143299.mp3")
+#const level_music = preload("res://assets/Sfx_Music/inspiring-technology-143299.mp3") # REMOVED
 
 @onready var master_slider = $AudioOptions/VBoxContainer/MasterSlider
 @onready var brightness_slider = $AudioOptions/VBoxContainer/BrightnessSlider
-@onready var fullscreen_button = $Checks/Fullscreen
-@onready var borderless_button = $Checks/Borderless
-@onready var windowed_button = $Checks/Windowed
-@onready var vsync_button = $Checks/VSync
+@onready var fullscreen_button = $VBoxContainer/Fullscreen
+@onready var borderless_button = $VBoxContainer/Borderless
+@onready var windowed_button = $VBoxContainer/Windowed
+@onready var vsync_button = $VBoxContainer/VSync
 @onready var back_button = $Back_Button
-@onready var level_music_player = $AudioStreamPlayer
+#@onready var level_music_player = $Sprite2D # REMOVED
 
 func _ready():
 	print("Options menu ready, loading settings...")
@@ -53,7 +54,7 @@ func save_settings():
 	config.set_value("display", "borderless", settings["borderless"])
 	config.set_value("display", "vsync", settings["vsync"])
 	config.set_value("display", "brightness", settings["brightness"])
-	config.set_value("ui_state", "slider_positions", ui_state["slider_positions"])  # Save UI state
+	config.set_value("display", "ui_state", ui_state["slider_positions"])  # Save UI state
 	var err = config.save(SAVE_PATH)
 	if err != OK:
 		print("Error saving settings: ", err)
@@ -69,7 +70,8 @@ func load_settings():
 		settings["borderless"] = config.get_value("display", "borderless", false)
 		settings["vsync"] = config.get_value("display", "vsync", false)
 		settings["brightness"] = config.get_value("display", "brightness", 1.0)
-		ui_state["slider_positions"] = config.get_value("ui_state", "slider_positions", {  # Load UI state
+		settings["windowed"] = config.get_value("display", "windowed", false)
+		ui_state["slider_positions"] = config.get_value("display", "ui_state", {  # Load UI state
 			"master": settings["audio_master_volume"],
 			"brightness": settings["brightness"]
 		})
@@ -86,12 +88,16 @@ func apply_settings():
 	
 	var master_db = linear_to_db(settings["audio_master_volume"])
 	AudioServer.set_bus_volume_db(0, master_db)
-	if level_music_player:
-		level_music_player.volume_db = master_db
+	#if level_music_player: # REMOVED
+	#	level_music_player.volume_db = master_db # REMOVED
 	
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if settings["fullscreen"] else DisplayServer.WINDOW_MODE_WINDOWED)
-	if settings["borderless"]:
+	if settings["fullscreen"]:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	elif settings["borderless"]:
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+	elif settings["windowed"]:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if settings["vsync"] else DisplayServer.VSYNC_DISABLED)
 	GlobalWorldEnvironment.environment.adjustment_brightness = settings["brightness"]
 
@@ -101,8 +107,8 @@ func _on_master_slider_value_changed(value):
 	settings["audio_master_volume"] = value         # Update functional value
 	var master_db = linear_to_db(value)
 	AudioServer.set_bus_volume_db(0, master_db)
-	if level_music_player:
-		level_music_player.volume_db = master_db
+	#if level_music_player: # REMOVED
+	#	level_music_player.volume_db = master_db # REMOVED
 	save_settings()  # Autosave
 
 func _on_brightness_slider_value_changed(value):
@@ -113,15 +119,30 @@ func _on_brightness_slider_value_changed(value):
 
 func _on_fullscreen_toggled(button_pressed):
 	settings["fullscreen"] = button_pressed
-	save_settings()  # Autosave
+	settings["borderless"] = false  # Ensure mutual exclusivity
+	settings["windowed"] = false
+	apply_settings()
+	save_settings()
 
 func _on_borderless_toggled(button_pressed):
 	settings["borderless"] = button_pressed
-	save_settings()  # Autosave
+	settings["fullscreen"] = false
+	settings["windowed"] = false
+	apply_settings()
+	save_settings()
+
+func _on_windowed_toggled(button_pressed):
+	settings["windowed"] = button_pressed
+	settings["fullscreen"] = false
+	settings["borderless"] = false
+	apply_settings()
+	save_settings()
 
 func _on_v_sync_toggled(button_pressed):
 	settings["vsync"] = button_pressed
-	save_settings()  # Autosave
+	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if settings["vsync"] else DisplayServer.VSYNC_DISABLED)
+	apply_settings()
+	save_settings()
 
 func _on_back_button_pressed():
 	print("Back button pressed, changing scene to main menu")
