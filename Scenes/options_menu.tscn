@@ -120,23 +120,6 @@ step = 0.01
 value = 0.5
 tick_count = 15
 
-[node name="Apply" type="Button" parent="AudioOptions"]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -102.0
-offset_top = -111.0
-offset_right = -50.0
-offset_bottom = -79.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("1_3yxio")
-theme_override_font_sizes/font_size = 20
-text = "Apply"
-
 [node name="Back_Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7
@@ -244,10 +227,9 @@ texture = ExtResource("6_7rbxh")
 [connection signal="value_changed" from="AudioOptions/VBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
 [connection signal="mouse_exited" from="AudioOptions/VBoxContainer/SfxSlider" to="AudioOptions" method="_on_sfx_slider_mouse_exited"]
 [connection signal="value_changed" from="AudioOptions/VBoxContainer/BrightnessSlider" to="." method="_on_brightness_slider_value_changed"]
-[connection signal="pressed" from="AudioOptions/Apply" to="." method="_on_apply_pressed"]
 [connection signal="pressed" from="Back_Button" to="." method="_on_back_button_pressed"]
 [connection signal="toggled" from="Checks/Fullscreen" to="." method="_on_fullscreen_toggled"]
 [connection signal="toggled" from="Checks/Borderless" to="." method="_on_borderless_toggled"]
-[connection signal="toggled" from="Checks/Windowed" to="." method="_on_borderless_toggled"]
 [connection signal="toggled" from="Checks/Windowed" to="." method="_on_windowed_toggled"]
+[connection signal="toggled" from="Checks/Windowed" to="." method="_on_borderless_toggled"]
 [connection signal="toggled" from="Checks/VSync" to="." method="_on_v_sync_toggled"]
