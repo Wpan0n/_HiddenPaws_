@@ -26,10 +26,10 @@ var ui_state = {
 
 @onready var master_slider = $AudioOptions/VBoxContainer/MasterSlider
 @onready var brightness_slider = $AudioOptions/VBoxContainer/BrightnessSlider
-@onready var fullscreen_button = $VBoxContainer/Fullscreen
-@onready var borderless_button = $VBoxContainer/Borderless
-@onready var windowed_button = $VBoxContainer/Windowed
-@onready var vsync_button = $VBoxContainer/VSync
+@onready var fullscreen = $VBoxContainer/FullScreenLabel/Fullscreen
+@onready var borderless = $VBoxContainer/BorderlessLabel/Borderless
+@onready var windowed = $VBoxContainer/WindowedLabel/Windowed
+@onready var v_sync = $VBoxContainer/VSyncLabel2/VSync
 @onready var back_button = $Back_Button
 #@onready var level_music_player = $Sprite2D # REMOVED
 
