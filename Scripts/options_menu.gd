@@ -31,7 +31,6 @@ var ui_state = {
 @onready var windowed = $VBoxContainer/WindowedLabel/Windowed
 @onready var v_sync = $VBoxContainer/VSyncLabel2/VSync
 @onready var back_button = $Back_Button
-#@onready var level_music_player = $Sprite2D # REMOVED
 
 func _ready():
 	print("Options menu ready, loading settings...")
@@ -39,6 +38,9 @@ func _ready():
 	apply_settings()
 	restore_ui_state()  # Restore slider positions visually
 	print("Initial settings applied: ", settings)
+	
+	# Set button states based on loaded settings
+	update_button_states()
 
 # Restore slider visuals from saved UI state
 func restore_ui_state():
@@ -54,7 +56,8 @@ func save_settings():
 	config.set_value("display", "borderless", settings["borderless"])
 	config.set_value("display", "vsync", settings["vsync"])
 	config.set_value("display", "brightness", settings["brightness"])
-	config.set_value("display", "ui_state", ui_state["slider_positions"])  # Save UI state
+	config.set_value("windowed", "windowed", settings["windowed"])
+	config.set_value("ui_state", "slider_positions", ui_state["slider_positions"])  # Save UI state
 	var err = config.save(SAVE_PATH)
 	if err != OK:
 		print("Error saving settings: ", err)
@@ -71,7 +74,7 @@ func load_settings():
 		settings["vsync"] = config.get_value("display", "vsync", false)
 		settings["brightness"] = config.get_value("display", "brightness", 1.0)
 		settings["windowed"] = config.get_value("display", "windowed", false)
-		ui_state["slider_positions"] = config.get_value("display", "ui_state", {  # Load UI state
+		ui_state["slider_positions"] = config.get_value("ui_state", "slider_positions", {  # Load UI state
 			"master": settings["audio_master_volume"],
 			"brightness": settings["brightness"]
 		})
@@ -101,6 +104,16 @@ func apply_settings():
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if settings["vsync"] else DisplayServer.VSYNC_DISABLED)
 	GlobalWorldEnvironment.environment.adjustment_brightness = settings["brightness"]
 
+func update_button_states():
+	if is_instance_valid(fullscreen):
+		fullscreen.button_pressed = settings["fullscreen"]
+	if is_instance_valid(borderless):
+		borderless.button_pressed = settings["borderless"]
+	if is_instance_valid(windowed):
+		windowed.button_pressed = settings["windowed"]
+	if is_instance_valid(v_sync):
+		v_sync.button_pressed = settings["vsync"]
+
 # Signal handlers now autosave immediately after changes
 func _on_master_slider_value_changed(value):
 	ui_state["slider_positions"]["master"] = value  # Track slider position visually
@@ -123,6 +136,7 @@ func _on_fullscreen_toggled(button_pressed):
 	settings["windowed"] = false
 	apply_settings()
 	save_settings()
+	update_button_states() # Update button UI
 
 func _on_borderless_toggled(button_pressed):
 	settings["borderless"] = button_pressed
@@ -130,6 +144,7 @@ func _on_borderless_toggled(button_pressed):
 	settings["windowed"] = false
 	apply_settings()
 	save_settings()
+	update_button_states() # Update button UI
 
 func _on_windowed_toggled(button_pressed):
 	settings["windowed"] = button_pressed
@@ -137,12 +152,14 @@ func _on_windowed_toggled(button_pressed):
 	settings["borderless"] = false
 	apply_settings()
 	save_settings()
+	update_button_states() # Update button UI
 
 func _on_v_sync_toggled(button_pressed):
 	settings["vsync"] = button_pressed
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if settings["vsync"] else DisplayServer.VSYNC_DISABLED)
 	apply_settings()
 	save_settings()
+	update_button_states() # Update button UI
 
 func _on_back_button_pressed():
 	print("Back button pressed, changing scene to main menu")
