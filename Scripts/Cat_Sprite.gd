@@ -10,7 +10,7 @@ func _input(event):
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			if is_pixel_opaque(get_local_mouse_position()):
 				print("sprite clicked")  # Print message to the console
-				modulate = Color(1, 0, 0)  # Change the sprite color to red
+				modulate = Color(0.5, 0.5, 0.5)  # Changed to grey (RGB 0.5, 0.5, 0.5)
 				if audio_player:
 					audio_player.play()  # Play the sound effect
 				else:

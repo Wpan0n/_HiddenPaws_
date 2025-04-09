@@ -19,7 +19,7 @@ config/icon="res://icon.svg"
 
 AudioPlayer="*res://Global/audio_player.tscn"
 GlobalWorldEnvironment="*res://global/world_environment.tscn"
-SaveGame="*res://SaveGame.gd"
+SaveGame="*res://Scripts/SaveGame.gd"
 
 [display]
 
