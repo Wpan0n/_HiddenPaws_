@@ -166,33 +166,12 @@ func save_and_exit():
 	save_game_state()
 
 func save_game_state():
+	is_game_running = false
+	if stopwatch and stopwatch.has_method("stop_timer"):
+		stopwatch.stop_timer()
+		update_stopwatch_display()
 	if SaveGame:
 		SaveGame.save_game(time_elapsed, score, clicked_cats)
+		print("GameUI: Game state saved before scene change, time_elapsed=", time_elapsed, " score=", score)
 	else:
 		printerr("Error: SaveGame singleton not found!")
-
-func reset_game_state():
-	score = 0
-	time_elapsed = 0.0
-	clicked_cats = []
-	
-	update_score_label()
-	if stopwatch:
-		if stopwatch.has_method("set_time_elapsed"):
-			stopwatch.set_time_elapsed(time_elapsed)
-			update_stopwatch_display()
-		else:
-			printerr("Error: Stopwatch missing set_time_elapsed method")
-	else:
-		printerr("Error: Stopwatch node not found")
-	
-	for child in get_tree().get_nodes_in_group("sprite_group"):
-		if child is Sprite2D:
-			child.modulate = Color.WHITE
-	
-	SaveGame.set_game_completed(false)
-	SaveGame.set_stopwatch_running(true)
-	is_game_running = true
-	if stopwatch and stopwatch.has_method("start_timer"):
-		stopwatch.start_timer()
-		print("GameUI: Stopwatch started after reset")

@@ -30,6 +30,8 @@ func _ready():
 
 func save_game(time: float, score: int, clicked_cats: Array):
 	var data = {}
+	var write_file  # Declare once at the function scope
+
 	if FileAccess.file_exists(SAVE_PATH):
 		var read_file = FileAccess.open(SAVE_PATH, FileAccess.READ)
 		if read_file:
@@ -52,15 +54,15 @@ func save_game(time: float, score: int, clicked_cats: Array):
 		else:
 			printerr("Error: Could not open save file for reading")
 	else:
-		var write_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+		data = {
+			"best_time": time,
+			"high_score": score,
+			"clicked_cats": clicked_cats,
+			"game_completed": false,
+			"stopwatch_running": true
+		}
+		write_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 		if write_file:
-			data = {
-				"best_time": time,
-				"high_score": score,
-				"clicked_cats": clicked_cats,
-				"game_completed": false,
-				"stopwatch_running": true
-			}
 			write_file.store_string(JSON.stringify(data, "\t"))
 			write_file.close()
 			return
@@ -74,7 +76,7 @@ func save_game(time: float, score: int, clicked_cats: Array):
 	data["game_completed"] = data.get("game_completed", false)
 	data["stopwatch_running"] = data.get("stopwatch_running", data.get("game_completed", false) == false)
 
-	var write_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	write_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)  # Reuse the variable
 	if write_file:
 		write_file.store_string(JSON.stringify(data, "\t"))
 		write_file.close()
