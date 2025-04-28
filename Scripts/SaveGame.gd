@@ -30,7 +30,7 @@ func _ready():
 
 func save_game(time: float, score: int, clicked_cats: Array):
 	var data = {}
-	var write_file  # Declare once at the function scope
+	var write_file
 
 	if FileAccess.file_exists(SAVE_PATH):
 		var read_file = FileAccess.open(SAVE_PATH, FileAccess.READ)
@@ -53,6 +53,13 @@ func save_game(time: float, score: int, clicked_cats: Array):
 					}
 		else:
 			printerr("Error: Could not open save file for reading")
+			data = {
+				"best_time": 0.0,
+				"high_score": 0,
+				"clicked_cats": [],
+				"game_completed": false,
+				"stopwatch_running": true
+			}
 	else:
 		data = {
 			"best_time": time,
@@ -61,22 +68,16 @@ func save_game(time: float, score: int, clicked_cats: Array):
 			"game_completed": false,
 			"stopwatch_running": true
 		}
-		write_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-		if write_file:
-			write_file.store_string(JSON.stringify(data, "\t"))
-			write_file.close()
-			return
-		else:
-			printerr("Error: Could not create save file at %s" % SAVE_PATH)
-			return
 
+	# Update data
 	data["best_time"] = time
 	data["high_score"] = max(data.get("high_score", score), score)
 	data["clicked_cats"] = clicked_cats
 	data["game_completed"] = data.get("game_completed", false)
-	data["stopwatch_running"] = data.get("stopwatch_running", data.get("game_completed", false) == false)
+	data["stopwatch_running"] = data.get("stopwatch_running", not data.get("game_completed", false))
 
-	write_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)  # Reuse the variable
+	# Write to file
+	write_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	if write_file:
 		write_file.store_string(JSON.stringify(data, "\t"))
 		write_file.close()
@@ -182,28 +183,29 @@ func set_game_completed(completed: bool):
 					}
 		else:
 			printerr("Error: Could not open save file for reading")
-		
-		data["game_completed"] = completed
-		var write_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-		if write_file:
-			write_file.store_string(JSON.stringify(data, "\t"))
-			write_file.close()
-		else:
-			printerr("Error: Could not open save file for writing at %s" % SAVE_PATH)
-	else:
-		var write_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-		if write_file:
 			data = {
 				"best_time": 0.0,
 				"high_score": 0,
 				"clicked_cats": [],
-				"game_completed": completed,
+				"game_completed": false,
 				"stopwatch_running": true
 			}
-			write_file.store_string(JSON.stringify(data, "\t"))
-			write_file.close()
-		else:
-			printerr("Error: Could not create save file at %s" % SAVE_PATH)
+	else:
+		data = {
+			"best_time": 0.0,
+			"high_score": 0,
+			"clicked_cats": [],
+			"game_completed": false,
+			"stopwatch_running": true
+		}
+	
+	data["game_completed"] = completed
+	var write_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	if write_file:
+		write_file.store_string(JSON.stringify(data, "\t"))
+		write_file.close()
+	else:
+		printerr("Error: Could not open save file for writing at %s" % SAVE_PATH)
 
 func get_stopwatch_running() -> bool:
 	if FileAccess.file_exists(SAVE_PATH):
@@ -247,28 +249,29 @@ func set_stopwatch_running(running: bool):
 					}
 		else:
 			printerr("Error: Could not open save file for reading")
-		
-		data["stopwatch_running"] = running
-		var write_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-		if write_file:
-			write_file.store_string(JSON.stringify(data, "\t"))
-			write_file.close()
-		else:
-			printerr("Error: Could not open save file for writing at %s" % SAVE_PATH)
-	else:
-		var write_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
-		if write_file:
 			data = {
 				"best_time": 0.0,
 				"high_score": 0,
 				"clicked_cats": [],
 				"game_completed": false,
-				"stopwatch_running": running
+				"stopwatch_running": true
 			}
-			write_file.store_string(JSON.stringify(data, "\t"))
-			write_file.close()
-		else:
-			printerr("Error: Could not create save file at %s" % SAVE_PATH)
+	else:
+		data = {
+			"best_time": 0.0,
+			"high_score": 0,
+			"clicked_cats": [],
+			"game_completed": false,
+			"stopwatch_running": true
+		}
+	
+	data["stopwatch_running"] = running
+	var write_file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	if write_file:
+		write_file.store_string(JSON.stringify(data, "\t"))
+		write_file.close()
+	else:
+		printerr("Error: Could not open save file for writing at %s" % SAVE_PATH)
 
 func reset_game():
 	var default_data = {

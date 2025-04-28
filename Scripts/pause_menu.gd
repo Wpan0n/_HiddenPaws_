@@ -54,9 +54,9 @@ func _on_reset_pressed():
 		var game_ui = get_tree().get_first_node_in_group("game_ui")
 		if game_ui and game_ui.has_method("reset_game_state"):
 			game_ui.reset_game_state()
+			resume()
 		else:
 			printerr("Error: GameUI node not found or missing reset_game_state method")
-		resume()
 	else:
 		printerr("Error: SaveGame singleton not found!")
 
