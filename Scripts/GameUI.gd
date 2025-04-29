@@ -4,22 +4,26 @@ extends Control
 # This script controls the game’s user interface (UI), like the score display and stopwatch.
 # It keeps track of how many cats (sprites) the player has clicked, updates the score,
 # plays sounds when the game is won, and saves the game progress.
-# It also checks that there are exactly 100 clickable cats in the game.
+# It also manages a hint button that makes an unclicked sprite flash for a second.
 
 # --- Game State Variables ---
 # These keep track of the game’s progress.
 var score = 0  # How many cats the player has clicked.
-var max_score = 100  # The total number of cats the player needs to click to win (should be 100).
+var max_score = 100  # The total number of cats to click to win (100 cat sprites).
 var time_elapsed = 0.0  # How much time has passed (in seconds) while the game is running.
 var is_game_running = false  # True when the game is active, False when paused or finished.
 var clicked_cats = []  # A list of the names of cats that have been clicked.
 var is_fireworks_active = false  # True when the fireworks animation is playing (after winning).
 var last_displayed_time = -1.0  # Helps reduce how often the stopwatch updates to improve performance.
 
+# --- Hint Variables ---
+# These manage the hint functionality.
+var hint_timer: Timer = null  # A timer to control how long a sprite flashes.
+var hinted_sprite: Sprite2D = null  # The sprite currently being hinted.
+
 # --- Non-Interactive Sprites ---
-# These are sprites that shouldn’t be clickable (like background images).
-# We exclude them from the score and clicking logic.
-var non_interactive_sprites = ["Sprite2D101", "Sprite2D102"]  # Adjust these names if needed.
+# These are sprites that shouldn’t be clickable (like the stopwatch icon).
+var non_interactive_sprites = ["Sprite101"]  # Sprite101 is the stopwatch icon, not a cat.
 
 # --- Node References ---
 # These are connections to other parts of the game (like the score text and sound effects).
@@ -29,6 +33,7 @@ var non_interactive_sprites = ["Sprite2D101", "Sprite2D102"]  # Adjust these nam
 @onready var hooray_sfx = $"../../Hooray_EndGame"  # The "hooray" sound that plays when you win.
 @onready var stopwatch = $Score/Stopwatch  # The stopwatch that shows how much time has passed.
 @onready var fireworks_timer = Timer.new()  # A timer that controls how long the fireworks play.
+@onready var hint_button = $HintButton  # The hint button in the top-right corner.
 
 # --- How This Works When the Game Starts ---
 func _ready():
@@ -42,6 +47,13 @@ func _ready():
 	fireworks_timer.name = "FireworksTimer"
 	add_child(fireworks_timer)  # Add the timer to the game.
 	fireworks_timer.timeout.connect(_on_fireworks_timer_timeout)  # When the timer finishes, run _on_fireworks_timer_timeout.
+	
+	# Set up the hint timer (it will control the flashing duration).
+	hint_timer = Timer.new()
+	hint_timer.one_shot = true  # The timer only runs once.
+	hint_timer.name = "HintTimer"
+	add_child(hint_timer)  # Add the timer to the game.
+	hint_timer.timeout.connect(_on_hint_timer_timeout)  # When the timer finishes, reset the sprite color.
 	
 	# Load the saved game progress (like the score and time).
 	if SaveGame:
@@ -80,25 +92,35 @@ func _ready():
 	update_score_label()
 	
 	# Check how many sprites (cats) are in the "sprite_group".
-	# We only count the ones that are clickable (not background sprites).
+	# We only count the ones that are clickable (not background sprites or the stopwatch icon).
 	var sprites = get_tree().get_nodes_in_group("sprite_group")
 	# Make a list of only the clickable sprites.
 	var interactive_sprites = []
+	var sprite_names = []
 	for sprite in sprites:
-		if sprite is Sprite2D and sprite.name not in non_interactive_sprites:
-			# Add clickable sprites to the list.
-			interactive_sprites.append(sprite)
+		if sprite is Sprite2D:
+			if sprite.name not in non_interactive_sprites:
+				# Add clickable sprites to the list.
+				interactive_sprites.append(sprite)
+			# Keep track of all sprite names for debugging.
+			sprite_names.append(sprite.name)
 	
 	# Check if the number of clickable sprites matches max_score (should be 100).
 	if interactive_sprites.size() != max_score:
 		# If there aren’t exactly 100 clickable sprites, show a warning.
 		printerr("Warning: Found ", interactive_sprites.size(), " interactive sprites in sprite_group, expected ", max_score)
 		# List all sprites in the group to help find the problem.
-		var sprite_names = []
-		for sprite in sprites:
-			if sprite is Sprite2D:
-				sprite_names.append(sprite.name)
 		printerr("All sprites in sprite_group: ", sprite_names)
+		# Check for missing sprites in the range Sprite1 to Sprite100.
+		var expected_sprites = []
+		for i in range(1, 101):  # From Sprite1 to Sprite100.
+			expected_sprites.append("Sprite" + str(i))
+		var missing_sprites = []
+		for expected_sprite in expected_sprites:
+			if expected_sprite not in sprite_names:
+				missing_sprites.append(expected_sprite)
+		if missing_sprites.size() > 0:
+			printerr("Missing sprites: ", missing_sprites)
 	else:
 		# If there are exactly 100 clickable sprites, print a success message.
 		print("GameUI: Found ", interactive_sprites.size(), " interactive sprites in sprite_group as expected (total sprites: ", sprites.size(), ")")
@@ -185,6 +207,45 @@ func _on_sprite_color_changed(sprite: Sprite2D):
 	else:
 		# Hide the fireworks if they shouldn’t be playing.
 		colorRect.visible = false
+
+# --- When the Hint Button Is Pressed ---
+func _on_hint_button_pressed():
+	# This runs when the player clicks the Hint button.
+	
+	# If a hint is already active, don’t start another one.
+	if hint_timer.time_left > 0:
+		return
+	
+	# Get all sprites in the "sprite_group".
+	var sprites = get_tree().get_nodes_in_group("sprite_group")
+	var unclicked_sprites = []
+	
+	# Find all unclicked sprites (not in clicked_cats and not non-interactive).
+	for sprite in sprites:
+		if sprite is Sprite2D and sprite.name not in clicked_cats and sprite.name not in non_interactive_sprites:
+			unclicked_sprites.append(sprite)
+	
+	# If there are unclicked sprites, pick one to hint.
+	if unclicked_sprites.size() > 0:
+		# Pick a random unclicked sprite.
+		hinted_sprite = unclicked_sprites[randi() % unclicked_sprites.size()]
+		# Make the sprite flash yellow.
+		hinted_sprite.modulate = Color.YELLOW
+		# Start the hint timer (1 second).
+		hint_timer.start(1.0)
+	else:
+		# If all sprites are clicked, do nothing.
+		print("No unclicked sprites available for hint.")
+
+# --- When the Hint Timer Finishes ---
+func _on_hint_timer_timeout():
+	# This runs when the hint timer (1 second) finishes.
+	
+	# Reset the hinted sprite’s color to white (if it hasn’t been clicked).
+	if hinted_sprite and hinted_sprite.name not in clicked_cats:
+		hinted_sprite.modulate = Color.WHITE
+	# Clear the hinted sprite reference.
+	hinted_sprite = null
 
 # --- Update the Score Text ---
 func update_score_label():
@@ -294,20 +355,14 @@ func reset_game_state():
 			sprite.modulate = Color.WHITE
 
 # --- How to Fix Common Issues ---
-# 1. If the game says "Found 102 sprites in sprite_group, expected 100":
-#    - This means there are too many clickable sprites in the "sprite_group".
-#    - The script already skips "Sprite2D101" and "Sprite2D102" (listed in non_interactive_sprites).
-#    - Open the game scene in the Godot editor (File > Open > res://Scenes/MainGame.tscn).
-#    - Look at the list of sprite names in the warning (e.g., "Sprite2D2" to "Sprite2D102").
-#    - Check if "Sprite2D1" is in the Scene tree. If it’s there but not in the list, add it to "sprite_group":
-#      - Click "Sprite2D1", go to Node dock > Groups tab, type "sprite_group", and click "+".
-#    - If "Sprite2D1" is missing, add a new Sprite2D node (right-click in Scene tree > Add Node > Sprite2D).
-#      Name it "Sprite2D1", set its texture to the same cat image, and add it to "sprite_group".
-#    - If there are other extra sprites, add their names to the "non_interactive_sprites" list at the top of this script.
-# 2. If the score doesn’t update when you click a cat:
-#    - Make sure the sprite has the Cat_Sprite.gd script attached (click the sprite in the Scene tree, check the script in the Inspector).
-#    - Make sure the sprite is in the "sprite_group" (Node dock > Groups tab > Check for "sprite_group").
-#    - Make sure the sprite isn’t in the "non_interactive_sprites" list (if it is, remove it from that list).
+# 1. If the hint button doesn’t work:
+#    - Make sure the HintButton node exists in the scene (path: GameUI/HintButton).
+#      Open the scene (res://Scenes/MainGame.tscn), find the HintButton node under GameUI, and check its path.
+#    - Make sure the button’s "pressed" signal is connected to _on_hint_button_pressed.
+#      In the editor, select HintButton, go to Node dock > Signals tab, and check that "pressed" is connected.
+# 2. If the sprite doesn’t flash when using the hint:
+#    - Make sure the sprites are in the "sprite_group" (Node dock > Groups tab > Check for "sprite_group").
+#    - Make sure the sprite hasn’t already been clicked (it should be white, not gray).
 # 3. If the fireworks don’t play when you win:
 #    - Make sure the Fireworks node exists in the scene (path: "../../Fireworks").
 #      Open the scene, find the Fireworks node (likely a ColorRect), and check its path.
