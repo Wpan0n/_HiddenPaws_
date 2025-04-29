@@ -11,9 +11,11 @@ config_version=5
 [application]
 
 config/name="_Hidden Paws_"
-run/main_scene="uid://bgjarfy7n4o2q"
+run/main_scene="uid://beo8dbmvqir2k"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(1, 1, 1, 1)
+boot_splash/image="uid://dqv63ftdm1cyi"
+config/icon="uid://6iqtcmfqrlfa"
 
 [autoload]
 
@@ -26,7 +28,6 @@ SaveGame="*res://Scripts/SaveGame.gd"
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=3
-window/size/initial_position_type=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
