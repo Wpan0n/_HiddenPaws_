@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq1e6mjcng43p"]
+
+[ext_resource type="Script" uid="uid://pgw83ob50laj" path="res://Confetti.gd" id="1_ypucl"]
+
+[sub_resource type="Gradient" id="Gradient_3ivfx"]
+interpolation_mode = 1
+offsets = PackedFloat32Array(0, 0.142857, 0.291667, 0.520408, 0.72449, 0.854167, 0.958333)
+colors = PackedColorArray(1, 0, 1, 1, 1, 0, 0, 1, 0, 0, 0.501961, 1, 0, 1, 0, 1, 1, 0.238336, 0.945568, 1, 0, 1, 1, 1, 1, 1, 0, 1)
+
+[node name="Confetti" type="Node2D"]
+script = ExtResource("1_ypucl")
+
+[node name="ConfettiParticles" type="CPUParticles2D" parent="."]
+emitting = false
+amount = 100
+one_shot = true
+explosiveness = 0.9
+spread = 180.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+scale_amount_min = 10.0
+scale_amount_max = 20.0
+color_ramp = SubResource("Gradient_3ivfx")
+
+[node name="LifetimeTimer" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[connection signal="timeout" from="LifetimeTimer" to="." method="_on_lifetime_timer_timeout"]

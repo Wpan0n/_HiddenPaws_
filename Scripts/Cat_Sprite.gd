@@ -2,44 +2,43 @@ extends Sprite2D
 
 # --- What This Script Does ---
 # This script makes a sprite (like a cat in the game) clickable.
-# When the player clicks the sprite, it changes color, plays a sound, and sends a signal to another script (like GameUI.gd) to update the score.
+# When the player clicks the sprite, it changes color, plays a sound,
+# sends a signal to update the score, and spawns a confetti effect.
 
 # --- Signal for Clicking ---
-# This creates a signal called "sprite_color_changed" that other scripts can listen for.
-# It’s like sending a message saying, “Hey, this sprite was clicked!”
 signal sprite_color_changed
 
+# --- Preloaded Confetti Scene ---
+const CONFETTI_SCENE = preload("res://Scenes/Confetti.tscn")
+
 # --- Node References ---
-# This connects to the AudioStreamPlayer node to play a sound when the sprite is clicked.
 @onready var audio_player = $"../AudioStreamPlayer"
 
 # --- Click State ---
-# This keeps track of whether the sprite has already been clicked.
 var clicked = false  # False means it hasn’t been clicked yet, True means it has.
 
 # --- Handle Mouse Clicks ---
 func _input(event):
 	# This runs whenever the player uses the mouse or keyboard.
-	
-	# Check if the player clicked the left mouse button.
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			# Check if the click was on this sprite.
-			# "get_local_mouse_position()" finds where the mouse is compared to the sprite.
-			# "is_pixel_opaque()" makes sure the click was on a visible part of the sprite (not a transparent area).
 			if is_pixel_opaque(get_local_mouse_position()):
 				# Print a message to the console to help with debugging.
 				print("sprite clicked")
 				# Change the sprite’s color to gray to show it’s been clicked.
-				# "#bebebe" is a gray color in hex code (a way to write colors).
 				modulate = Color("#bebebe")  # Changed to hex color code
 				
 				# Play a sound to let the player know they clicked the sprite.
 				if audio_player:
 					audio_player.play()
 				else:
-					# If the AudioStreamPlayer isn’t found, show an error in the console.
 					print("AudioStreamPlayer node not found")
+				
+				# Spawn confetti effect at the sprite's position.
+				var confetti = CONFETTI_SCENE.instantiate()
+				confetti.global_position = global_position
+				get_tree().root.add_child(confetti)
 				
 				# If the sprite hasn’t been clicked before, send the signal.
 				if not clicked:
@@ -65,3 +64,7 @@ func _input(event):
 # 3. If the sprite doesn’t change color:
 #    - Make sure the color "#bebebe" is correct. You can change it to another color, like "Color.GRAY", if you prefer.
 #    - Make sure GameUI.gd is listening for the "sprite_color_changed" signal (it should be connected in GameUI.gd’s "_ready()" function).
+# 4. If the confetti doesn’t appear:
+#    - Ensure `Confetti.tscn` is saved at `res://Scenes/Confetti.tscn`.
+#    - Check the Godot Output tab for errors like “Failed to load resource.”
+#    - Verify that the `Confetti.tscn` scene has a `CPUParticles2D` node named `ConfettiParticles` with `Emitting` enabled.
