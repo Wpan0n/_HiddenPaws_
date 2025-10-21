@@ -950,7 +950,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite68" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-1097, -440)
+position = Vector2(-1095, -438.00003)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("67_cy70r")
 script = ExtResource("5_j0mpy")
@@ -970,8 +970,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite70" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-1273, -34)
-scale = Vector2(0.10889, 0.10889)
+position = Vector2(-1095, -30)
+scale = Vector2(0.0940181, 0.0940181)
 texture = ExtResource("69_051pf")
 script = ExtResource("5_j0mpy")
 
@@ -1065,8 +1065,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite79" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-848, -368)
-scale = Vector2(0.353376, 0.353376)
+position = Vector2(-842.00006, -353.00003)
+scale = Vector2(0.22600214, 0.22600214)
 texture = ExtResource("77_0flo3")
 script = ExtResource("5_j0mpy")
 
@@ -1313,7 +1313,6 @@ mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Fog" type="ColorRect" parent="."]
-visible = false
 material = SubResource("ShaderMaterial_ipjb7")
 offset_left = -4010.0
 offset_top = -2274.0
