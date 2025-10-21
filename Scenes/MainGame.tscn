@@ -516,7 +516,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite27" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-2340, 1660)
+position = Vector2(-178.99998, -34)
 scale = Vector2(0.0494748, 0.0494748)
 texture = ExtResource("31_ctn6l")
 script = ExtResource("5_j0mpy")
@@ -546,8 +546,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite30" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-3174, 1170)
-scale = Vector2(0.0632354, 0.0632354)
+position = Vector2(-3383, 1368)
+scale = Vector2(0.055967875, 0.055967875)
 texture = ExtResource("34_j1p2l")
 script = ExtResource("5_j0mpy")
 
@@ -597,7 +597,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite35" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-296.915, -237.84)
+position = Vector2(-2365, 1685)
 scale = Vector2(0.0382448, 0.0382448)
 texture = ExtResource("39_p6lk8")
 script = ExtResource("5_j0mpy")
@@ -750,10 +750,24 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite50" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-2418, -251)
+position = Vector2(-2415, -258)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("53_obqfn")
 script = ExtResource("5_j0mpy")
+
+[node name="ColorRect" type="ColorRect" parent="HiddenPaw_Scene/Sprite50"]
+offset_left = -126.51141
+offset_top = -411.16208
+offset_right = -104.01141
+offset_bottom = 42.33792
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="HiddenPaw_Scene/Sprite50/ColorRect"]
+layout_mode = 0
+offset_top = 569.3014
+offset_right = 22.5
+offset_bottom = 790.6964
+color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer50" type="AudioStreamPlayer" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 stream = ExtResource("6_pm1xx")
@@ -770,7 +784,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite52" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-2257, 2119)
+position = Vector2(-2338, 2215)
 scale = Vector2(0.0632354, 0.0632354)
 texture = ExtResource("55_ynmgs")
 script = ExtResource("5_j0mpy")
@@ -1163,7 +1177,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite90" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(224, 1224)
+position = Vector2(235.00002, 1225)
 scale = Vector2(0.191182, 0.191182)
 texture = ExtResource("88_1mx4w")
 script = ExtResource("5_j0mpy")
@@ -1193,7 +1207,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite93" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-3092, 1454)
+position = Vector2(-2355, 945)
 scale = Vector2(0.2957, 0.2957)
 texture = ExtResource("91_mfyuw")
 script = ExtResource("5_j0mpy")
