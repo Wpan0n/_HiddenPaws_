@@ -2,7 +2,7 @@ extends Control
 
 # --- Game State Variables ---
 var score: int = 0
-var max_score: int = 100  # Updated: 98 interactive sprites (Sprite1 to Sprite100, excluding Sprite62 and Sprite101).
+var max_score: int = 100  # 100 interactive cat sprites (Sprite1-100).
 var time_elapsed: float = 0.0
 var is_game_running: bool = false
 var clicked_cats: Array = []
@@ -21,7 +21,7 @@ const FLASH_CYCLES: int = int(TOTAL_HINT_DURATION / (FLASH_DURATION * 2))  # Num
 
 # --- Cached Data for Optimization ---
 var interactive_sprites: Array = []  # Cache interactive sprites to avoid re-fetching.
-var non_interactive_sprites: Array = ["Sprite2D", "HiddenPaw_Scene"]
+var non_interactive_sprites: Array = ["Sprite2D", "HiddenPaw_Scene"]  # FIXED: Cleaned up—only true UI; no Sprite101 since deleted.
 
 # --- Node References ---
 @onready var scoreLabel: Label = $Score
@@ -51,17 +51,23 @@ func _ready() -> void:
 	add_child(hint_timer)
 	hint_timer.timeout.connect(_on_hint_timer_timeout)
 	
-	# Load saved game state.
+	# FIXED: Force a fresh start unless explicitly loaded as ongoing (prevents "stuck at 99" on restarts).
+	# If game_completed is true, reset to new game state immediately.
 	if SaveGame:
-		if SaveGame.has_method("get_high_score"):
-			score = SaveGame.get_high_score()
-		if SaveGame.has_method("get_best_time"):
-			time_elapsed = SaveGame.get_best_time()
-		if SaveGame.has_method("get_clicked_cats"):
-			clicked_cats = SaveGame.get_clicked_cats()
 		var game_completed: bool = SaveGame.get_game_completed() if SaveGame.has_method("get_game_completed") else false
-		var stopwatch_running: bool = SaveGame.get_stopwatch_running() if SaveGame.has_method("get_stopwatch_running") else true
-		is_game_running = stopwatch_running and not game_completed
+		if game_completed:
+			print("GameUI: Detected completed game, forcing reset for new playthrough.")
+			reset_game_state()  # This clears save and starts fresh.
+		else:
+			# Load only if not completed.
+			if SaveGame.has_method("get_high_score"):
+				score = SaveGame.get_high_score()
+			if SaveGame.has_method("get_best_time"):
+				time_elapsed = SaveGame.get_best_time()
+			if SaveGame.has_method("get_clicked_cats"):
+				clicked_cats = SaveGame.get_clicked_cats()
+			var stopwatch_running: bool = SaveGame.get_stopwatch_running() if SaveGame.has_method("get_stopwatch_running") else true
+			is_game_running = stopwatch_running
 	else:
 		printerr("Error: SaveGame singleton not found!")
 	
@@ -77,7 +83,7 @@ func _ready() -> void:
 	# Validate sprite count and debug.
 	var expected_interactive_sprites: Array = []
 	for i in range(1, 101):
-		if "Sprite" + str(i) != "Sprite62" and "Sprite" + str(i) != "Sprite101":
+		if "Sprite" + str(i) not in non_interactive_sprites:  # FIXED: Includes all 1-100 as cats.
 			expected_interactive_sprites.append("Sprite" + str(i))
 	
 	# Debug non-interactive sprites presence.
@@ -112,7 +118,7 @@ func _ready() -> void:
 			if expected_sprite not in sprite_names:
 				missing_sprites.append(expected_sprite)
 		if missing_sprites.size() > 0:
-			printerr("Missing sprites: ", missing_sprites)
+			printerr("Missing sprites: ", missing_sprites, " - Add these to the scene and sprite_group for full 100 cats.")
 	else:
 		print("GameUI: Found ", interactive_sprites.size(), " interactive sprites in sprite_group as expected (total sprites: ", sprites.size(), ")")
 	
@@ -158,7 +164,7 @@ func _process(delta: float) -> void:
 func _on_sprite_color_changed(sprite: Sprite2D) -> void:
 	if sprite.name not in clicked_cats and score < max_score:
 		if sprite.name in non_interactive_sprites:
-			return
+			return  # Skip non-interactive sprites from counting toward score.
 		score += 1
 		clicked_cats.append(sprite.name)
 		sprite.modulate = Color.GRAY
@@ -249,6 +255,7 @@ func play_hooray_sfx() -> void:
 func save_game_state() -> void:
 	if SaveGame and SaveGame.has_method("save_game"):
 		SaveGame.save_game(time_elapsed, score, clicked_cats)
+		print("GameUI: Saved state - score:", score, "/ time:", time_elapsed, "/ cats:", clicked_cats.size())
 	else:
 		printerr("Error: SaveGame singleton not found or missing save_game method!")
 
@@ -275,3 +282,5 @@ func reset_game_state() -> void:
 	# Optimization: Use cached interactive_sprites.
 	for sprite in interactive_sprites:
 		sprite.modulate = Color.WHITE
+	
+	print("GameUI: Reset to new game - 0/100")

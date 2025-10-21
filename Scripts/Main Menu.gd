@@ -20,6 +20,8 @@ func _ready():
 	# This runs when the game starts.
 	# Print a message to the console to confirm the main menu is ready.
 	print("Main menu ready")
+	
+	# FIXED: Music auto-starts via AutoLoad _ready()—no action needed here.
 
 # --- When the Settings Button Is Pressed ---
 func _on_settings_button_pressed():
@@ -36,6 +38,7 @@ func _on_quit_button_pressed():
 # --- When the Start Button Is Pressed ---
 func _on_start_button_pressed():
 	# This runs when the player clicks the Start button.
+	# FIXED: No music call—AutoLoad already playing.
 	# Switch to the main game scene to start playing.
 	get_tree().change_scene_to_packed(start_level)
 

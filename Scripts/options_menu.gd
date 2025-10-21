@@ -51,10 +51,19 @@ func _ready():
 	print("Options menu ready, loading settings...")
 	# Load the saved settings from the file.
 	load_settings()
-	# Apply the settings to the game (like setting the volume and screen mode).
+	# FIXED: Set sliders to CURRENT bus volume to match playing music—no sudden change on entry.
+	# This preserves the volume from before entering settings.
+	if master_slider:
+		var current_master_linear = db_to_linear(AudioServer.get_bus_volume_db(0))
+		master_slider.value = current_master_linear
+		settings["audio_master_volume"] = current_master_linear  # Update settings to match current.
+		ui_state["slider_positions"]["master"] = current_master_linear
+	if brightness_slider:
+		brightness_slider.value = GlobalWorldEnvironment.environment.adjustment_brightness
+		settings["brightness"] = brightness_slider.value
+		ui_state["slider_positions"]["brightness"] = brightness_slider.value
+	# Apply the settings to the game (like setting the volume and screen mode)—but sliders/bus now synced.
 	apply_settings()
-	# Set the sliders to the saved positions.
-	restore_ui_state()
 	# Print the loaded settings to the console for debugging.
 	print("Initial settings applied: ", settings)
 	
@@ -128,27 +137,35 @@ func apply_settings():
 	
 	# Print the settings we’re applying for debugging.
 	print("Applying settings: ", settings)
-	# Set the sliders to the saved values.
-	if master_slider:
-		master_slider.value = settings["audio_master_volume"]
-	if brightness_slider:
-		brightness_slider.value = settings["brightness"]
+	# FIXED: Bus is already synced to current in _ready()—no change unless slider moved.
 	
 	# Convert the master volume to a decibel value (how Godot handles sound).
 	var master_db = linear_to_db(settings["audio_master_volume"])
 	# Apply the volume to the master audio bus (index 0).
 	AudioServer.set_bus_volume_db(0, master_db)
 	
+	# FIXED: Improved screen mode logic for better borderless/windowed support.
 	# Set the screen mode based on the settings.
 	if settings["fullscreen"]:
-		# Make the game fullscreen.
+		# Make the game fullscreen (with borders).
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		print("Applied: Fullscreen mode")
 	elif settings["borderless"]:
-		# Make the game borderless fullscreen.
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
-	elif settings["windowed"]:
-		# Make the game windowed.
+		# FIXED: Borderless fullscreen as windowed full-size (reliable on all systems).
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		var screen_size = DisplayServer.screen_get_size()
+		DisplayServer.window_set_size(screen_size)
+		DisplayServer.window_set_position(Vector2.ZERO)
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, true)
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, true)
+		print("Applied: Borderless fullscreen (full-size window)")
+	elif settings["windowed"]:
+		# FIXED: Windowed mode with default size (adjust 1024x600 if your project size differs).
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+		DisplayServer.window_set_size(Vector2(1024, 600))  # Default window size—change if needed.
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
+		DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_RESIZE_DISABLED, false)
+		print("Applied: Windowed mode")
 	
 	# Turn vertical sync on or off.
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_ENABLED if settings["vsync"] else DisplayServer.VSYNC_DISABLED)
@@ -203,6 +220,9 @@ func _on_brightness_slider_value_changed(value):
 func _on_fullscreen_toggled(button_pressed):
 	# This runs when the player toggles the fullscreen checkbox.
 	
+	# FIXED: Debug print for troubleshooting.
+	print("Fullscreen toggled to: ", button_pressed)
+	
 	# Update the setting.
 	settings["fullscreen"] = button_pressed
 	# Make sure only one screen mode is active.
@@ -219,6 +239,9 @@ func _on_fullscreen_toggled(button_pressed):
 func _on_borderless_toggled(button_pressed):
 	# This runs when the player toggles the borderless checkbox.
 	
+	# FIXED: Debug print for troubleshooting.
+	print("Borderless toggled to: ", button_pressed)
+	
 	# Update the setting.
 	settings["borderless"] = button_pressed
 	# Make sure only one screen mode is active.
@@ -234,6 +257,9 @@ func _on_borderless_toggled(button_pressed):
 # --- When the Windowed Checkbox Is Toggled ---
 func _on_windowed_toggled(button_pressed):
 	# This runs when the player toggles the windowed checkbox.
+	
+	# FIXED: Debug print for troubleshooting.
+	print("Windowed toggled to: ", button_pressed)
 	
 	# Update the setting.
 	settings["windowed"] = button_pressed

@@ -1,13 +1,21 @@
 extends AudioStreamPlayer
 
 # --- What This Script Does ---
-# This script plays the background music for the game’s levels.
+# This script plays the background music for the game's levels.
 # It loads a music file and has functions to play the music with a specific volume.
+# FIXED: Auto-plays on app launch via AutoLoad _ready() and persists through all scenes.
 
 # --- Preloaded Music File ---
 # This loads the music file so the game can play it.
 # The file is stored in the "assets" folder and is called "inspiring-technology-143299.mp3".
 const level_music = preload("res://assets/Sfx_Music/inspiring-technology-143299.mp3")
+
+# --- How This Works When the Game Starts ---
+func _ready():
+	# FIXED: Auto-start music immediately on app launch (plays through all scenes via AutoLoad).
+	# This runs once at project start, before any scene loads.
+	play_music_level()
+	print("AudioPlayer AutoLoad: Music started on app launch")
 
 # --- Function to Play Music ---
 func _play_music(music: AudioStream, volume = 0.0):
@@ -36,8 +44,8 @@ func play_music_level():
 #    - Make sure the music file exists at "res://assets/Sfx_Music/inspiring-technology-143299.mp3".
 #      In the Godot editor, go to the FileSystem tab (bottom left), and check that the file is in the right folder.
 #    - Make sure this script is attached to an AudioStreamPlayer node in the scene.
-#      Open the scene (like res://Scenes/MainGame.tscn), find the AudioStreamPlayer node, and check its script in the Inspector.
-#    - Make sure something in the game calls "play_music_level()". For example, you might need to call this in MainGame.gd’s "_ready()" function.
+#      Open the scene (res://Global/audio_player.tscn), right-click the AudioStreamPlayer node, and check its script in the Inspector.
+#    - Make sure the AutoLoad is set up (Project Settings > AutoLoad > Path: res://Global/audio_player.tscn).
 # 2. If the music is too loud or too quiet:
 #    - Change the "volume" number in "_play_music(level_music)". For example, change it to -10.0 to make it quieter or 5.0 to make it louder.
 #    - You can also connect this to the volume sliders in audio_options.gd to let the player control the volume.

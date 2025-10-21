@@ -33,6 +33,8 @@ anchors_preset = -1
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_top = 242.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_constants/margin_left = 12
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
@@ -160,7 +162,7 @@ text = "Fullscreen
 "
 
 [node name="Fullscreen" type="CheckBox" parent="VBoxContainer/FullScreenLabel"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 707.0
 offset_top = 4.0
 offset_right = 723.0
@@ -178,7 +180,7 @@ text = "Borderless
 "
 
 [node name="Borderless" type="CheckBox" parent="VBoxContainer/BorderlessLabel"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 707.0
 offset_top = 4.0
 offset_right = 723.0
@@ -195,7 +197,7 @@ theme_override_font_sizes/font_size = 32
 text = "Windowed"
 
 [node name="Windowed" type="CheckBox" parent="VBoxContainer/WindowedLabel"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 707.0
 offset_top = -2.0
 offset_right = 723.0
@@ -213,7 +215,7 @@ text = "VSync
 "
 
 [node name="VSync" type="CheckBox" parent="VBoxContainer/VSyncLabel2"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 707.0
 offset_top = 4.0
 offset_right = 723.0

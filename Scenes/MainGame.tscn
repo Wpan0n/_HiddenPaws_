@@ -80,7 +80,6 @@
 [ext_resource type="Texture2D" uid="uid://c424j4q4l7gdm" path="res://assets/40 cats sprites/a65866164b89c8b81798ad008b6ce595.png" id="70_gyauk"]
 [ext_resource type="Texture2D" uid="uid://bfu6oywhejfo6" path="res://assets/40 cats sprites/b1b58cf01bb83d5a5934f2a9f90dcf14.png" id="71_61gdy"]
 [ext_resource type="Texture2D" uid="uid://t5ta1fyjxir2" path="res://assets/40 cats sprites/b7db0dbcd3a49023b14587edda309e24.png" id="72_hdrcw"]
-[ext_resource type="Texture2D" uid="uid://uty6k8af8etm" path="res://assets/40 cats sprites/cfcdff2ff8cf0722dba4ee5dde7216f6.png" id="73_rkef8"]
 [ext_resource type="Texture2D" uid="uid://drfuahes43o8k" path="res://assets/40 cats sprites/efc167b18f18bf16fcdb908211a97990.png" id="75_8j2dw"]
 [ext_resource type="Texture2D" uid="uid://msvl0yj386b5" path="res://assets/40 cats sprites/last.png" id="76_6wth7"]
 [ext_resource type="Texture2D" uid="uid://dxbveerklc117" path="res://assets/40 cat sprites p2/0e6402efc74a8662ba3d5a4f098d2f9b.png" id="76_rtmnv"]
@@ -90,6 +89,7 @@
 [ext_resource type="Texture2D" uid="uid://cj58uyxblr06j" path="res://assets/40 cat sprites p2/4d5a7a6fe9f0826b0786a5cb901ad6b3.png" id="80_rt3tl"]
 [ext_resource type="Texture2D" uid="uid://gq5ngj73nxd8" path="res://assets/40 cat sprites p2/5fb66d3d1bd9e62491260eb35c40afbd.png" id="81_imk5w"]
 [ext_resource type="Texture2D" uid="uid://ck5wj3qsuenb3" path="res://assets/40 cat sprites p2/9a9cac2ed472ff7c34e00e39b632ea9e.png" id="82_0qlns"]
+[ext_resource type="Texture2D" uid="uid://du72ksid1kuc5" path="res://assets/catsp3/Adobe Express - file.png" id="82_et12g"]
 [ext_resource type="Texture2D" uid="uid://dp7hiyaoxxlrh" path="res://assets/40 cat sprites p2/053b8046e53279c291e75e1068b8e98f.png" id="83_2gbun"]
 [ext_resource type="Texture2D" uid="uid://tdwa2m60q4rv" path="res://assets/40 cat sprites p2/435ba75ec3f11fe54d3dcef3b51bd644.png" id="84_mitvg"]
 [ext_resource type="Texture2D" uid="uid://cxnh1hvepwam1" path="res://assets/40 cat sprites p2/575c090d0705c5075ec3cbf80d7d1df5.png" id="85_x7a8n"]
@@ -119,9 +119,9 @@ frequency = 0.003
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vneeo"]
 width = 8000
 height = 899
+noise = SubResource("FastNoiseLite_bwc7e")
 seamless = true
 seamless_blend_skirt = 0.75
-noise = SubResource("FastNoiseLite_bwc7e")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ipjb7"]
 shader = ExtResource("108_kkxhd")
@@ -242,6 +242,14 @@ texture_normal = ExtResource("7_hllja")
 [node name="HiddenPaw_Scene" type="Sprite2D" parent="." groups=["sprite_group"]]
 texture = ExtResource("1_j1k4u")
 metadata/_edit_lock_ = true
+
+[node name="ColorRect11" type="ColorRect" parent="HiddenPaw_Scene"]
+offset_left = 2903.3872
+offset_top = -102.918015
+offset_right = 3089.632
+offset_bottom = -18.194382
+rotation = 0.04886922
+scale = Vector2(0.87209845, 1.9197996)
 
 [node name="Sprite1" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-3142, 825)
@@ -367,7 +375,7 @@ volume_db = -30.0
 
 [node name="Sprite13" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(3694, 1328)
-scale = Vector2(0.0885509, 0.0885511)
+scale = Vector2(0.093425766, 0.093425974)
 texture = ExtResource("18_shos5")
 script = ExtResource("5_j0mpy")
 
@@ -376,8 +384,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite14" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(608.5, 901.291)
-scale = Vector2(0.264693, 0.264693)
+position = Vector2(763, 877.00006)
+scale = Vector2(0.20329048, 0.20329048)
 texture = ExtResource("21_nipam")
 script = ExtResource("5_j0mpy")
 
@@ -548,7 +556,7 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite31" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-3241, 181)
+position = Vector2(-3239.0002, 183)
 scale = Vector2(0.0328141, 0.0328141)
 texture = ExtResource("35_4ywdu")
 script = ExtResource("5_j0mpy")
@@ -558,8 +566,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite32" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-1552.83, -74.7528)
-scale = Vector2(0.0487272, 0.0487272)
+position = Vector2(-1488.9999, -58)
+scale = Vector2(0.040785752, 0.03841567)
 texture = ExtResource("36_ppdav")
 script = ExtResource("5_j0mpy")
 
@@ -731,7 +739,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite49" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-3637, 863)
+position = Vector2(-3649, 864.99994)
+rotation = 1.5132004
 scale = Vector2(0.221099, 0.221099)
 texture = ExtResource("55_mfkf7")
 script = ExtResource("5_j0mpy")
@@ -863,6 +872,16 @@ script = ExtResource("5_j0mpy")
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
+[node name="Sprite62" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
+position = Vector2(2145, -400)
+scale = Vector2(0.175724, 0.158281)
+texture = ExtResource("104_w4vf7")
+script = ExtResource("5_j0mpy")
+
+[node name="AudioStreamPlayer62" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
+stream = ExtResource("6_pm1xx")
+volume_db = -30.0
+
 [node name="Sprite63" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
 position = Vector2(-708, -633)
 rotation = -0.0610865
@@ -957,9 +976,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite72" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-3959, 521)
+position = Vector2(-3971.9998, 537)
 rotation = -0.0463764
-scale = Vector2(0.115334, 0.115334)
+scale = Vector2(0.055416778, 0.060195684)
 texture = ExtResource("71_61gdy")
 script = ExtResource("5_j0mpy")
 
@@ -978,9 +997,9 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite74" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-2876.42, 962.642)
-scale = Vector2(0.0723981, 0.0723981)
-texture = ExtResource("73_rkef8")
+position = Vector2(2961, 4)
+scale = Vector2(0.15477635, 0.15050422)
+texture = ExtResource("82_et12g")
 script = ExtResource("5_j0mpy")
 
 [node name="AudioStreamPlayer74" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
@@ -999,8 +1018,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite76" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-2707, -19)
-scale = Vector2(0.150561, 0.150561)
+position = Vector2(-2709, -6.000004)
+scale = Vector2(0.06818854, 0.05873204)
 texture = ExtResource("75_8j2dw")
 script = ExtResource("5_j0mpy")
 
@@ -1134,8 +1153,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite89" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-2202, -1628)
-scale = Vector2(0.15, 0.119068)
+position = Vector2(-2201.0002, -1627.0001)
+scale = Vector2(0.20015645, 0.12365734)
 texture = ExtResource("87_c5rfl")
 script = ExtResource("5_j0mpy")
 
@@ -1154,8 +1173,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite91" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(3517.72, 93.2777)
-scale = Vector2(0.18675, 0.18675)
+position = Vector2(3532, 95.00001)
+scale = Vector2(0.20984684, 0.20984684)
 texture = ExtResource("89_68oyg")
 script = ExtResource("5_j0mpy")
 
@@ -1205,8 +1224,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite96" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(-2295, -1742)
-scale = Vector2(0.0587915, 0.0606457)
+position = Vector2(-2295.9998, -1741.0001)
+scale = Vector2(0.04570027, 0.049344476)
 texture = ExtResource("94_e8b4i")
 script = ExtResource("5_j0mpy")
 
@@ -1215,8 +1234,8 @@ stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
 [node name="Sprite97" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(3242, 1353)
-scale = Vector2(0.233296, 0.233296)
+position = Vector2(3956, 1011)
+scale = Vector2(0.17602286, 0.15414798)
 texture = ExtResource("95_1rop7")
 script = ExtResource("5_j0mpy")
 
@@ -1256,16 +1275,6 @@ script = ExtResource("5_j0mpy")
 stream = ExtResource("6_pm1xx")
 volume_db = -30.0
 
-[node name="Sprite101" type="Sprite2D" parent="HiddenPaw_Scene" groups=["sprite_group"]]
-position = Vector2(2145, -400)
-scale = Vector2(0.175724, 0.158281)
-texture = ExtResource("104_w4vf7")
-script = ExtResource("5_j0mpy")
-
-[node name="AudioStreamPlayer101" type="AudioStreamPlayer" parent="HiddenPaw_Scene"]
-stream = ExtResource("6_pm1xx")
-volume_db = -30.0
-
 [node name="ScoreSoundPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("104_mwavp")
 volume_db = -14.0
@@ -1290,6 +1299,7 @@ mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Fog" type="ColorRect" parent="."]
+visible = false
 material = SubResource("ShaderMaterial_ipjb7")
 offset_left = -4010.0
 offset_top = -2274.0
@@ -1418,6 +1428,14 @@ rotation = -0.523599
 mouse_filter = 1
 metadata/_edit_use_anchors_ = true
 
+[node name="ColorRect" type="ColorRect" parent="ColorRect4"]
+layout_mode = 0
+offset_left = 1041.6403
+offset_top = 2537.825
+offset_right = 1175.069
+offset_bottom = 2663.5251
+rotation = 0.5934119
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("7_et12g")]
@@ -1428,5 +1446,21 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect12" type="ColorRect" parent="."]
+offset_left = 3040.0
+offset_top = -97.0
+offset_right = 3043.0
+offset_bottom = 63.0
+color = Color(0, 0, 0, 0.9647059)
+
+[node name="ColorRect12" type="ColorRect" parent="ColorRect12"]
+layout_mode = 0
+offset_left = -147.00002
+offset_top = 147.0
+offset_right = -144.00002
+offset_bottom = 297.30078
+rotation = -1.4835298
+color = Color(0, 0, 0, 0.9647059)
 
 [connection signal="pressed" from="UserInterface/GameUI/HintButton" to="UserInterface/GameUI" method="_on_hint_button_pressed"]
