@@ -167,3 +167,4 @@ func save_game_state():
 #      In the Godot editor, go to the FileSystem tab (bottom left), and check that these files are in the right folders.
 #    - Make sure the AnimationPlayer has a "blur" animation.
 #      Select the AnimationPlayer node in the scene, open the Animation tab (bottom), and check that there’s a "blur" animation.
+# Path to your logo (update if needed)

@@ -126,7 +126,7 @@ seamless_blend_skirt = 0.75
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ipjb7"]
 shader = ExtResource("108_kkxhd")
 shader_parameter/noise_texture = SubResource("NoiseTexture2D_vneeo")
-shader_parameter/density = 1.0
+shader_parameter/density = 2.250000106875
 shader_parameter/speed = Vector2(-0.004, 0.02)
 
 [sub_resource type="Curve" id="Curve_ovdql"]

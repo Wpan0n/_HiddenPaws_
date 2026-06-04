@@ -18,6 +18,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_s0d8h")
+metadata/_edit_lock_ = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -30,9 +31,11 @@ grow_vertical = 2
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
+anchor_top = 0.15
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 242.0
+anchor_bottom = 0.15
+offset_top = 80.0
+offset_bottom = 918.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 12
@@ -68,15 +71,15 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AudioOptions"]
 layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = 451.0
-offset_top = -184.0
-offset_right = -484.0
-offset_bottom = -37.0
-grow_horizontal = 2
+anchors_preset = -1
+anchor_left = 0.46300003
+anchor_top = 0.21100001
+anchor_right = 0.52900004
+anchor_bottom = 0.21100001
+offset_left = -405.96008
+offset_top = 113.119995
+offset_right = 380.8755
+offset_bottom = 562.5575
 grow_vertical = 2
 
 [node name="MasterLabel3" type="Label" parent="AudioOptions/VBoxContainer"]
@@ -124,15 +127,15 @@ tick_count = 15
 
 [node name="Back_Button" type="Button" parent="."]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = -1
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.845
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -21.0
-offset_top = -83.0
-offset_right = 21.0
-offset_bottom = -51.0
+anchor_bottom = 0.845
+offset_left = -38.0
+offset_top = 61.399963
+offset_right = 38.0
+offset_bottom = 116.39996
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 4
@@ -144,13 +147,16 @@ text = "Back"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 4
+anchors_preset = 8
+anchor_left = 0.5
 anchor_top = 0.5
+anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 540.0
-offset_top = 68.0
-offset_right = 694.0
-offset_bottom = 270.0
+offset_left = -377.0
+offset_top = -21.0
+offset_right = -223.0
+offset_bottom = 329.0
+grow_horizontal = 2
 grow_vertical = 2
 
 [node name="FullScreenLabel" type="Label" parent="VBoxContainer"]
@@ -224,8 +230,17 @@ scale = Vector2(2, 2)
 theme = ExtResource("5_ugnno")
 button_pressed = true
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(963, 118.811)
+[node name="Sprite2D" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.071
+anchor_right = 1.0
+anchor_bottom = 0.071
+offset_left = 591.0
+offset_top = -76.68
+offset_right = 1911.0
+offset_bottom = 991.32
+grow_horizontal = 2
 scale = Vector2(0.234436, 0.234436)
 texture = ExtResource("6_7rbxh")
 

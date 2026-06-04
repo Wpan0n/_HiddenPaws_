@@ -8,11 +8,15 @@
 
 config_version=5
 
+[animation]
+
+compatibility/default_parent_skeleton_in_mesh_instance_3d=true
+
 [application]
 
 config/name="_Hidden Paws_"
 run/main_scene="uid://beo8dbmvqir2k"
-config/features=PackedStringArray("4.5", "Forward Plus")
+config/features=PackedStringArray("4.6", "Forward Plus")
 boot_splash/bg_color=Color(1, 1, 1, 1)
 boot_splash/image="uid://dqv63ftdm1cyi"
 config/icon="uid://6iqtcmfqrlfa"
@@ -27,8 +31,8 @@ SaveGame="*res://Scripts/SaveGame.gd"
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
+window/size/mode=3
 window/stretch/mode="canvas_items"
-window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
 mouse_cursor/custom_image="res://assets/pawcursor32.png"
 

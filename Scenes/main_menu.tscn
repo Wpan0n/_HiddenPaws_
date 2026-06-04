@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://bbvq4quc60gam" path="res://assets/themes/Default_Theme.tres" id="1_ce3w2"]
 [ext_resource type="Script" uid="uid://cqfc6khixvhee" path="res://Scripts/Main Menu.gd" id="2_n45e2"]
 [ext_resource type="FontFile" uid="uid://c2ep0aaegexyu" path="res://assets/fonts/Nabana-ShadowBold - DEMO.ttf" id="3_opfnp"]
-[ext_resource type="Texture2D" uid="uid://bj74ihceuxwln" path="res://assets/HiddenPaws Logo.png" id="4_cp0ys"]
+[ext_resource type="Texture2D" uid="uid://btuy3hji2agwd" path="res://assets/Resize_HiddenPaws Logo.png" id="4_ce3w2"]
 
 [node name="Main Menu" type="Control"]
 layout_mode = 3
@@ -20,6 +20,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 0.00024414063
+offset_right = -0.00024414063
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -75,10 +77,23 @@ theme_override_fonts/font = ExtResource("3_opfnp")
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(960, 219)
-scale = Vector2(0.422056, 0.422056)
-texture = ExtResource("4_cp0ys")
+[node name="MarginContainer2" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.224
+anchor_top = 0.113000005
+anchor_right = 0.97800004
+anchor_bottom = 0.113000005
+offset_left = -130.08002
+offset_top = -122.04001
+offset_right = 1662.2399
+offset_bottom = 945.95996
+grow_horizontal = 2
+scale = Vector2(0.4, 0.4)
+
+[node name="Sprite2D" type="TextureRect" parent="MarginContainer2"]
+layout_mode = 2
+texture = ExtResource("4_ce3w2")
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Settings_Button" to="." method="_on_settings_button_pressed"]
